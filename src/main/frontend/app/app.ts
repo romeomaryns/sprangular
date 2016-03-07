@@ -1,0 +1,41 @@
+import {Component} from 'angular2/core';
+import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
+import {FORM_PROVIDERS} from 'angular2/common';
+
+import {RouterActive} from './directives/router-active';
+import {Home} from './home/home';
+
+
+@Component({
+  selector: 'app',
+  providers: [...FORM_PROVIDERS],
+  directives: [...ROUTER_DIRECTIVES, RouterActive as any],
+  pipes: [],
+  styles: [require('./app.css')],
+  template: require('./app.html')
+})
+@RouteConfig([
+  {path: '/', component: Home, name: 'Index'},
+  {path: '/home', component: Home, name: 'Home'},
+  {
+    path: '/about',
+    loader: () => require('es6-promise!./about/about')('About'),
+    name: 'About'
+  },
+  {
+    path: '/playground',
+    loader: () => require('es6-promise!./playground/playground')('Playground'),
+    name: 'Playground'
+  },
+  {path: '/**', redirectTo: ['Index']}
+])
+export class App {
+  angularLogo = 'assets/img/angular-logo.png';
+  name = 'Spring Boot Angular 2 Webpack Starter';
+  url = 'https://github.com/kucharzyk';
+
+  constructor() {
+
+  }
+}
+

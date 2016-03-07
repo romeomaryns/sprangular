@@ -1,0 +1,46 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+nav li {
+  display: inline;
+}
+
+main {
+  margin-top: 30px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  background-color: #2F6FAD;
+  padding: 10px;
+}
+
+nav li.active a {
+  background-color: #0e52ad;
+  padding: 10px;
+}
+
+nav li:hover a {
+  background-color: #5186ad;
+}
+
+
+footer {
+  border-top: 1px solid #2F6FAD;
+  padding-top: 3px;
+  margin-top: 30px;
+}
