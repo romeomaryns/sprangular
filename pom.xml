@@ -5,7 +5,7 @@
 
   <groupId>com.shardis</groupId>
   <artifactId>spring-angular2-starter</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>spring-angular2-starter</name>

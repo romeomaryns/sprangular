@@ -11,6 +11,8 @@ var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var WebpackMd5Hash = require('webpack-md5-hash');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+
 
 var validateWebpackConfig = require('webpack-validator');
 
@@ -67,7 +69,7 @@ var baseWebpackConfig = {
       // Support for .ts files.
       {
         test: /\.ts$/,
-        loader: 'ts-loader'
+        loader: 'awesome-typescript-loader'
       },
 
       // Support for *.json files.
@@ -94,6 +96,7 @@ var baseWebpackConfig = {
     ]
   },
   plugins: [
+    new ForkCheckerPlugin()
   ]
 };
 

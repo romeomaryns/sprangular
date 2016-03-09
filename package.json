@@ -1,6 +1,6 @@
 {
   "name": "spring-angular2-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Spring Boot Angular2 starter",
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "zone.js": "0.5.15"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^0.16.0-rc.0",
     "copy-webpack-plugin": "1.1.1",
     "css-loader": "0.23.1",
     "es6-promise-loader": "1.0.1",
@@ -49,8 +50,6 @@
     "rimraf": "2.5.2",
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.0",
-    "ts-helper": "0.0.1",
-    "ts-loader": "0.8.1",
     "ts-node": "0.5.5",
     "tsconfig-lint": "0.6.0",
     "tslint": "^3.3.0",
