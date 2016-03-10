@@ -5,7 +5,6 @@ import {FORM_PROVIDERS} from 'angular2/common';
 import {RouterActive} from './directives/router-active';
 import {Home} from './home/home';
 import {OnInit} from 'angular2/core';
-import {Ng2BootstrapConfig, Ng2BootstrapTheme} from 'ng2-bootstrap/ng2-bootstrap';
 
 
 @Component({
@@ -37,13 +36,11 @@ export class App implements OnInit {
   url = 'https://github.com/kucharzyk';
 
   constructor() {
-    Ng2BootstrapConfig.theme = Ng2BootstrapTheme.BS4;
   }
 
 
   ngOnInit():any {
     console.log('app on init');
-    console.log(Ng2BootstrapConfig.theme);
   }
 }
 

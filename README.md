@@ -53,6 +53,9 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.1 (10.03.2016)
+* Temporary removed ng2-bootstrap
+
 ### 1.1.0 (10.03.2016)
 
 * Switched to Angular2 beta 9
