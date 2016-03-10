@@ -69,30 +69,45 @@ var baseWebpackConfig = {
       // Support for .ts files.
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript'
       },
 
       // Support for *.json files.
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json'
       },
 
       // Support for CSS as raw text
       {
         test: /\.css$/,
-        loader: 'raw-loader'
+        loader: 'raw'
       },
-
+      // Support for SCSS as raw CSS text
+      {
+        test: /\.scss$/,
+        loader: 'raw!sass'
+      },
       // support for .html as raw text
       {
         test: /\.html$/,
-        loader: 'raw-loader',
+        loader: 'raw',
         exclude: [
           rootDir('src/main/frontend/index.html')
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: '[name].[ext]?[hash]'
+        }
+      },
+      {
+        test: /\.(woff|eot|ttf|woff(2)?|otf)/i,
+        loader: 'file-loader?[name].[ext]?[hash]'
       }
-
     ]
   },
   plugins: [
@@ -111,9 +126,10 @@ function customizeForDev(config) {
   config.metadata.host = 'localhost';
   config.metadata.port = 3000;
 
-  config.devtool= 'source-map';
+  config.devtool = 'source-map';
 
   config.entry = {
+    'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'main': './src/main/frontend/main.ts'
   };
@@ -164,9 +180,10 @@ function customizeForProd(config) {
   config.resolve.cache = false;
   config.cache = false;
 
-  config.devtool= 'source-map';
+  config.devtool = 'source-map';
 
   config.entry = {
+    'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'main': './src/main/frontend/main.ts'
   };

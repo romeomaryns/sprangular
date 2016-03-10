@@ -17,7 +17,7 @@ import {HeroService} from './hero.service';
     </ul>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
   `,
-  styles:[require('./app.component.css')],
+  styles:[require('./app.component.scss')],
   directives: [HeroDetailComponent],
   providers: [HeroService]
 })

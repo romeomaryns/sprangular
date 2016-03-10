@@ -1,6 +1,6 @@
 {
   "name": "spring-angular2-starter",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Spring Boot Angular2 starter",
   "repository": {
     "type": "git",
@@ -13,10 +13,13 @@
   },
   "private": true,
   "dependencies": {
-    "angular2": "^2.0.0-beta.8",
+    "angular2": "^2.0.0-beta.9",
+    "bootstrap": "^4.0.0-alpha.2",
     "es6-promise": "3.1.2",
     "es6-shim": "0.33.3",
     "es7-reflect-metadata": "^1.6.0",
+    "font-awesome": "^4.5.0",
+    "ng2-bootstrap": "^1.0.6",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.5.15"
   },
@@ -41,6 +44,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.7.0",
+    "node-sass": "^3.4.2",
     "parse5": "^2.1.5",
     "phantomjs-polyfill": "0.0.1",
     "phantomjs-prebuilt": "2.1.4",
@@ -48,6 +52,7 @@
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.5.1",
     "rimraf": "2.5.2",
+    "sass-loader": "^3.1.2",
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.0",
     "ts-node": "0.5.5",
