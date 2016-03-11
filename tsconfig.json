@@ -10,6 +10,12 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "resolveGlobs": true,
+    "forkChecker": true,
+    "cacheDirectory": "node_modules/.awesome-typescript-loader-cache"
+  },
   "exclude": [
     "node_modules",
     "typings/main.d.ts",
