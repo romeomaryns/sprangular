@@ -1,22 +1,20 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
-import {FORM_PROVIDERS} from 'angular2/common';
+import {RouteConfig, Router} from 'angular2/router';
 
-import {RouterActive} from './directives/router-active';
 import {Home} from './home/home';
 import {OnInit} from 'angular2/core';
 
 
 @Component({
   selector: 'app',
-  providers: [...FORM_PROVIDERS],
-  directives: [...ROUTER_DIRECTIVES, RouterActive as any],
   pipes: [],
+  providers: [],
+  directives: [],
   styles: [require('./app.scss')],
   template: require('./app.html')
 })
 @RouteConfig([
-  {path: '/', component: Home, name: 'Index'},
+  {path: '/', component: Home, name: 'Index', useAsDefault: true},
   {path: '/home', component: Home, name: 'Home'},
   {
     path: '/about',

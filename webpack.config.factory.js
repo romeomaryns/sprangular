@@ -40,7 +40,7 @@ var baseWebpackConfig = {
   // we need this due to problems with es6-shim
   node: {
     global: 'window',
-    progress: false,
+    process: true,
     crypto: 'empty',
     module: false,
     clearImmediate: false,
@@ -131,7 +131,8 @@ function customizeForDev(config) {
   config.entry = {
     'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
-    'main': './src/main/frontend/main.ts'
+    'vendor': './src/main/frontend/vendor.ts',
+    'app': './src/main/frontend/main.ts'
   };
 
   config.tslint = {
@@ -165,13 +166,13 @@ function customizeForDev(config) {
 
   // additional plugins
   config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
-  config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-    name: 'polyfills',
-    filename: 'polyfills.bundle.js',
+  config.plugins.push(new CommonsChunkPlugin({
+    name: ['app','vendor','polyfills'],
+    filename: '[name].bundle.js',
     minChunks: Infinity
   }));
   config.plugins.push(new CopyWebpackPlugin([{from: 'src/main/frontend/assets', to: 'assets'}]));
-  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html', chunksSortMode: 'none'}));
 
 }
 
@@ -185,7 +186,8 @@ function customizeForProd(config) {
   config.entry = {
     'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
-    'main': './src/main/frontend/main.ts'
+    'vendor': './src/main/frontend/vendor.ts',
+    'app': './src/main/frontend/main.ts'
   };
 
   config.output = {
@@ -207,9 +209,9 @@ function customizeForProd(config) {
   config.plugins.push(new DedupePlugin());
   config.plugins.push(new OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
-    name: 'polyfills',
-    filename: 'polyfills.[chunkhash].bundle.js',
-    chunks: Infinity
+    name: ['app','vendor','polyfills'],
+    filename: '[name].[chunkhash].bundle.js',
+    minChunks: Infinity
   }));
   config.plugins.push(new CopyWebpackPlugin([
     {
@@ -217,7 +219,7 @@ function customizeForProd(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html', chunksSortMode: 'none'}));
   config.plugins.push(new UglifyJsPlugin({
     // to debug prod builds uncomment //debug lines and comment //prod lines
 
@@ -290,12 +292,8 @@ function createConfig(environment) {
   };
 
   config.plugins.push(new DefinePlugin({
-    // Environment helpers
-    'process.env': {
-      'ENV': JSON.stringify(environment),
-      'NODE_ENV': JSON.stringify(environment),
-      'HMR': (ENV_DEV === environment)
-    }
+    'ENV': JSON.stringify(environment),
+    'HMR': (ENV_DEV === environment)
   }));
 
   switch (environment) {
