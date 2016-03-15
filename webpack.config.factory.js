@@ -30,6 +30,8 @@ var baseWebpackConfig = {
   cache: true,
   debug: false,
 
+  devtool: 'source-map',
+
   // Other module loader config
   tslint: {
     emitErrors: false,
@@ -40,7 +42,7 @@ var baseWebpackConfig = {
   // we need this due to problems with es6-shim
   node: {
     global: 'window',
-    process: true,
+    process: false,
     crypto: 'empty',
     module: false,
     clearImmediate: false,
@@ -126,13 +128,11 @@ function customizeForDev(config) {
   config.metadata.host = 'localhost';
   config.metadata.port = 3000;
 
-  config.devtool = 'source-map';
-
   config.entry = {
     'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
-    'app': './src/main/frontend/main.ts'
+    'main': './src/main/frontend/main.ts'
   };
 
   config.tslint = {
@@ -167,7 +167,7 @@ function customizeForDev(config) {
   // additional plugins
   config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
-    name: ['app','vendor','polyfills'],
+    name: ['main','vendor','polyfills'],
     filename: '[name].bundle.js',
     minChunks: Infinity
   }));
@@ -181,13 +181,11 @@ function customizeForProd(config) {
   config.resolve.cache = false;
   config.cache = false;
 
-  config.devtool = 'source-map';
-
   config.entry = {
     'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
-    'app': './src/main/frontend/main.ts'
+    'main': './src/main/frontend/main.ts'
   };
 
   config.output = {
@@ -209,7 +207,7 @@ function customizeForProd(config) {
   config.plugins.push(new DedupePlugin());
   config.plugins.push(new OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
-    name: ['app','vendor','polyfills'],
+    name: ['main','vendor','polyfills'],
     filename: '[name].[chunkhash].bundle.js',
     minChunks: Infinity
   }));
@@ -252,7 +250,6 @@ function customizeForProd(config) {
 }
 
 function customizeForTest(config) {
-  config.devtool = 'inline-source-map';
 
   config.stats = {
     colors: true,

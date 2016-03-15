@@ -53,6 +53,9 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.3 (15.03.2016)
+* some other fixes from original AngularClass starter
+
 ### 1.1.2 (14.03.2016)
 * some fixes from original AngularClass starter
 
