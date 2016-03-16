@@ -1,3 +1,3 @@
-require('!style!css!sass!./scss/main.scss');
+require('./scss/main.scss');
 
 

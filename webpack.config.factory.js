@@ -13,6 +13,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
+var autoprefixer = require('autoprefixer');
+
 // Environments
 const ENV = {
   DEV: 'development',
@@ -73,8 +75,15 @@ var baseWebpackConfig = {
       },
 
       {
+        test: /main\.scss$/,
+        loader: 'style!css!postcss!sass'
+      },
+      {
         test: /\.scss$/,
-        loader: 'raw!sass'
+        loader: 'raw!postcss!sass',
+        exclude: [
+          fullPathTo('src/main/frontend/scss/main.scss')
+        ]
       },
 
       {
@@ -107,6 +116,9 @@ var baseWebpackConfig = {
       'node_modules/font-awesome/scss'
     ]
   },
+  postcss: [
+      autoprefixer({browsers: ['last 2 versions'], remove: false})
+    ],
   plugins: [
     new ForkCheckerPlugin()
   ]

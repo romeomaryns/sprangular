@@ -53,6 +53,9 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.5 (16.03.2016)
+* postcss and autoprefixer
+
 ### 1.1.4 (16.03.2016)
 * Webpack config refactor and cleanup
 * Sass loader path configuration
