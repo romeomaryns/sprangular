@@ -50,7 +50,6 @@ if ('production' === ENV) {
   APPLICATION_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS);
 }
 
-
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
@@ -63,7 +62,6 @@ export function main() {
     ])
     .catch(err => console.error(err));
 }
-
 
 /*
  * Vendors

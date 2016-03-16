@@ -1,6 +1,6 @@
 {
   "name": "spring-angular2-starter",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Spring Boot Angular2 starter",
   "repository": {
     "type": "git",
@@ -14,9 +14,9 @@
   "private": true,
   "dependencies": {
     "angular2": "^2.0.0-beta.9",
-    "bootstrap": "^4.0.0-alpha.2",
     "core-js": "^2.1.5",
     "font-awesome": "^4.5.0",
+    "foundation-sites": "^6.2.0",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.5.15"
   },
@@ -84,7 +84,7 @@
     "prebuild:dev": "npm run clean:dist",
     "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached --bail",
     "prebuild:prod": "npm run clean:dist",
-    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached  --bail",
+    "build:prod": "webpack --config webpack.prod.config.js --profile --colors --display-error-details --display-cached  --bail",
     "server": "npm run server:dev",
     "server:dev": "webpack-dev-server --hot --inline --progress --profile --colors --watch --display-error-details --display-cached  --content-base src/main/frontend",
     "webdriver:update": "webdriver-manager update",

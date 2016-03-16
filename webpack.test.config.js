@@ -1,3 +1,3 @@
-var webpackConfgFactory = require('./webpack.config.factory');
+var webpackConfigFactory = require('./webpack.config.factory');
 
-module.exports = webpackConfgFactory.createConfig('test');
+module.exports = webpackConfigFactory.createConfig('test');

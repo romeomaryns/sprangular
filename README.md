@@ -53,6 +53,11 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.4 (16.03.2016)
+* Webpack config refactor and cleanup
+* Sass loader path configuration
+* Bootstrap 4 (alpha) replaced by Foundation 6
+
 ### 1.1.3 (15.03.2016)
 * some other fixes from original AngularClass starter
 

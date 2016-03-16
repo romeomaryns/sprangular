@@ -1,4 +1,8 @@
-@import "bootstrap";
-@import "animations";
-@import "layout";
+@charset "utf-8";
+
+@import "settings";
+@import "foundation";
+
+@include foundation-everything(true);
+
 @import "fonts";
