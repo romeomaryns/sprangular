@@ -12,6 +12,7 @@ var WebpackMd5Hash = require('webpack-md5-hash');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var autoprefixer = require('autoprefixer');
 
@@ -75,18 +76,6 @@ var baseWebpackConfig = {
       },
 
       {
-        test: /main\.scss$/,
-        loader: 'style!css!postcss!sass'
-      },
-      {
-        test: /\.scss$/,
-        loader: 'raw!postcss!sass',
-        exclude: [
-          fullPathTo('src/main/frontend/scss/main.scss')
-        ]
-      },
-
-      {
         test: /\.html$/,
         loader: 'raw',
         exclude: [
@@ -117,8 +106,8 @@ var baseWebpackConfig = {
     ]
   },
   postcss: [
-      autoprefixer({browsers: ['last 2 versions'], remove: false})
-    ],
+    autoprefixer({browsers: ['last 2 versions'], remove: false})
+  ],
   plugins: [
     new ForkCheckerPlugin()
   ]
@@ -138,7 +127,6 @@ function customizeForDev(config) {
   config.metadata.port = 3000;
 
   config.entry = {
-    'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
     'main': './src/main/frontend/main.ts'
@@ -169,6 +157,20 @@ function customizeForDev(config) {
     }
   };
 
+  // Saas config
+  config.module.loaders.push({
+    test: /main\.scss$/,
+    loader: 'style!css?sourceMap!postcss!sass?sourceMap'
+  });
+
+  config.module.loaders.push({
+    test: /\.scss$/,
+    loader: 'raw!postcss!sass',
+    exclude: [
+      fullPathTo('src/main/frontend/scss/main.scss')
+    ]
+  });
+
   // Additional plugins
   config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
@@ -192,7 +194,6 @@ function customizeForProd(config) {
   config.cache = false;
 
   config.entry = {
-    'styles': './src/main/frontend/styles.ts',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
     'main': './src/main/frontend/main.ts'
@@ -207,6 +208,26 @@ function customizeForProd(config) {
   };
 
   config.tslint.emitErrors = true;
+  
+  // Saas config
+
+  var extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
+  
+  config.module.loaders.push({
+    test: /main\.scss$/,
+    loader: extractCSS.extract(['css?sourceMap', 'postcss', 'sass?sourceMap'])
+  });
+
+  config.module.loaders.push({
+    test: /\.scss$/,
+    loader: 'raw!postcss!sass',
+    exclude: [
+      fullPathTo('src/main/frontend/scss/main.scss')
+    ]
+  });
+  
+  config.plugins.push(extractCSS);
+
 
   // additional plugins
   config.plugins.push(new WebpackMd5Hash());
@@ -251,6 +272,20 @@ function customizeForTest(config) {
     colors: true,
     reasons: true
   };
+
+  // Saas config
+  config.module.loaders.push({
+    test: /main\.scss$/,
+    loader: 'style!css!sass'
+  });
+
+  config.module.loaders.push({
+    test: /\.scss$/,
+    loader: 'raw!sass',
+    exclude: [
+      fullPathTo('src/main/frontend/scss/main.scss')
+    ]
+  });
 
   config.module.postLoaders = [
     // instrument only testing sources with Istanbul

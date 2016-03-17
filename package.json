@@ -1,6 +1,6 @@
 {
   "name": "spring-angular2-starter",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Spring Boot Angular2 starter",
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "es7-reflect-metadata": "^1.6.0",
     "exports-loader": "0.6.3",
     "expose-loader": "0.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "0.8.5",
     "html-webpack-plugin": "2.9.0",
     "http-server": "0.9.0",

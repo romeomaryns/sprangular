@@ -52,6 +52,11 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.6 (17.03.2016)
+* added sourcemaps for css
+* added webpack text extract plugin for production
+* removed styles.ts entry point
+
 ### 1.1.5 (16.03.2016)
 * postcss and autoprefixer
 

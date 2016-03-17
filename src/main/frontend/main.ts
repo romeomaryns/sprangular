@@ -1,6 +1,9 @@
 /*
  * Providers provided by Angular
  */
+
+require('./scss/main.scss');
+
 import * as browser from 'angular2/platform/browser';
 import * as ngCore from 'angular2/core';
 import {
