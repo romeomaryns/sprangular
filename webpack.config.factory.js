@@ -175,7 +175,6 @@ function customizeForDev(config) {
   config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
     name: ['main', 'vendor', 'polyfills'],
-    filename: '[name].bundle.js',
     minChunks: Infinity
   }));
   config.plugins.push(new CopyWebpackPlugin([
@@ -235,7 +234,6 @@ function customizeForProd(config) {
   config.plugins.push(new OccurenceOrderPlugin(true));
   config.plugins.push(new CommonsChunkPlugin({
     name: ['main', 'vendor', 'polyfills'],
-    filename: '[name].[chunkhash].bundle.js',
     minChunks: Infinity
   }));
   config.plugins.push(new CopyWebpackPlugin([
