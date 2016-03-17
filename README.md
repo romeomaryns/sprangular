@@ -6,9 +6,8 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 * Build and testing process integrated with maven
 * Spring Boot application in development mode use resources from webpack dev server
 * scss support
-* Bootstrap 4
+* Foundation 6
 * font-awesome
-* ng-bootstrap (still buggy)
 * All features from AngularClass starter
 
 ## PRODUCTION USAGE:
@@ -64,24 +63,4 @@ npm run e2e
 ### 1.1.3 (15.03.2016)
 * some other fixes from original AngularClass starter
 
-### 1.1.2 (14.03.2016)
-* some fixes from original AngularClass starter
-
-### 1.1.1 (10.03.2016)
-* Temporary removed ng2-bootstrap
-
-### 1.1.0 (10.03.2016)
-
-* Switched to Angular2 beta 9
-* Added scss support
-* Added font-awesome package
-* Added Bootstrap 4
-* Added ng-bootstrap (still buggy)
-
-### 1.0.1 (09.03.2016)
-
-* Replaced ts-loader with awesome-typescript-loader
-
-### 1.0.0 (07.03.2016)
-
-* Initial Version
+[show full changelog](CHANGELOG.md)
