@@ -69,3 +69,9 @@ npm run e2e
 * some other fixes from original AngularClass starter
 
 [show full changelog](CHANGELOG.md)
+
+## Known bugs
+
+Upgrade to Angular 2 beta 10 not working due https://github.com/angular/angular/issues/7656
+
+
