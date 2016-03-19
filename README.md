@@ -53,7 +53,7 @@ npm run e2e
 ## Changelog
 
 ### 1.1.7 (19.03.2016)
-* switched to Angular2 beta 11
+* Switched to Angular2 beta 11
 
 ### 1.1.6 (17.03.2016)
 * Added sourcemaps for css
