@@ -1,13 +1,9 @@
 // Polyfills
 import  'core-js';
-import 'zone.js/dist/zone-microtask';
+require('zone.js');
 
 
-if ('production' === ENV) {
-
-} else {
-
+if ('production' !== ENV) {
   Error['stackTraceLimit'] = Infinity;
   require('zone.js/dist/long-stack-trace-zone');
-
 }
