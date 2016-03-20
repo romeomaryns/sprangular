@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
-import {Home} from './home/home';
+import {Home} from './home/home.component';
 import {OnInit} from 'angular2/core';
 
 
@@ -10,20 +10,20 @@ import {OnInit} from 'angular2/core';
   pipes: [],
   providers: [],
   directives: [],
-  styles: [require('./app.scss')],
-  template: require('./app.html')
+  styles: [require('./app.component.scss')],
+  template: require('./app.component.html')
 })
 @RouteConfig([
   {path: '/', component: Home, name: 'Index', useAsDefault: true},
   {path: '/home', component: Home, name: 'Home'},
   {
     path: '/about',
-    loader: () => require('es6-promise!./about/about')('About'),
+    loader: () => require('es6-promise!./about/about.component')('About'),
     name: 'About'
   },
   {
     path: '/playground',
-    loader: () => require('es6-promise!./playground/playground')('Playground'),
+    loader: () => require('es6-promise!./playground/playground.component')('Playground'),
     name: 'Playground'
   },
   {path: '/**', redirectTo: ['Index']}

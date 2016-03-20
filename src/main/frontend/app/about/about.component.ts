@@ -13,7 +13,7 @@ console.log('`About` component loaded asynchronously');
 
 @Component({
   selector: 'about',
-  styles: [require('./about.scss')],
+  styles: [require('./about.component.scss')],
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
   template: `<div>
   <li class="fa fa-star fa-6"></li>

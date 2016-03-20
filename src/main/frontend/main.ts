@@ -2,25 +2,20 @@
  * Providers provided by Angular
  */
 
-require('./scss/main.scss');
-
 import * as browser from 'angular2/platform/browser';
 import * as ngCore from 'angular2/core';
-import {
-  ROUTER_PROVIDERS,
-  ROUTER_DIRECTIVES,
-  LocationStrategy,
-  HashLocationStrategy
-} from 'angular2/router';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {FORM_PROVIDERS} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {App} from './app/app.component';
+import {RouterActive} from './app/directives/router-active.directive';
+
 
 /*
- * App Component
- * our top level component that holds all of our components
+ * Load styles
  */
-import {App} from './app/app';
-import {RouterActive} from './app/directives/router-active';
+require('./scss/main.scss');
+
 
 /*
  * Application Providers/Directives/Pipes
@@ -65,13 +60,6 @@ export function main() {
     ])
     .catch(err => console.error(err));
 }
-
-/*
- * Vendors
- * For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app
- * You can also import them in vendors to ensure that they are bundled in one file
- * Also see custom-typings.d.ts as you also need to do `typings install x` where `x` is your module
- */
 
 
 /*

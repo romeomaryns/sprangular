@@ -1,7 +1,8 @@
-// Polyfills
+// Ccre.js 
 import  'core-js';
-require('zone.js');
 
+// Zone.js
+require('zone.js');
 
 if ('production' !== ENV) {
   Error['stackTraceLimit'] = Infinity;

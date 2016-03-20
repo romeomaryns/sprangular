@@ -13,8 +13,8 @@ import {MockBackend} from 'angular2/http/testing';
 
 
 // Load the implementations that should be tested
-import {Home} from './home';
-import {Title} from './services/title';
+import {Home} from './home.component';
+import {Title} from './services/title.service';
 import {Response} from 'angular2/http';
 import {ResponseOptions} from 'angular2/http';
 import {MockConnection} from 'angular2/src/http/backends/mock_backend';

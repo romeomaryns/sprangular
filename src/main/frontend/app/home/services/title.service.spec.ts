@@ -11,7 +11,7 @@ import {BaseRequestOptions, Http} from 'angular2/http';
 import {MockBackend} from 'angular2/http/testing';
 
 
-import {Title} from './title';
+import {Title} from './title.service';
 import {ResponseOptions} from 'angular2/http';
 import {Response} from 'angular2/http';
 
