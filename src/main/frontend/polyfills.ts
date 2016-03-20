@@ -2,7 +2,7 @@
 import  'core-js';
 
 // Zone.js
-require('zone.js');
+import 'zone.js/lib/browser/browser';
 
 if ('production' !== ENV) {
   Error['stackTraceLimit'] = Infinity;

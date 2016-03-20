@@ -3,6 +3,7 @@
 ### 1.1.8 (20.03.2016)
 * Typescript files naming convention
 * Foundation kitchensink wit samples
+* Some changes from AngularClass
 
 ### 1.1.7 (19.03.2016)
 * Switched to Angular2 beta 11
