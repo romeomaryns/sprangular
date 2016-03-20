@@ -1,7 +1,4 @@
-import {Component} from 'angular2/core';
-import {OnInit} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
-import {FORM_DIRECTIVES} from 'angular2/common';
+import {Component, OnInit} from 'angular2/core';
 
 /*
  * We're loading this component asynchronously
@@ -14,7 +11,6 @@ console.log('`About` component loaded asynchronously');
 @Component({
   selector: 'about',
   styles: [require('./about.component.scss')],
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
   template: `<div>
   <li class="fa fa-star fa-6"></li>
   <span>Spring boot Angular 2 starter</span>

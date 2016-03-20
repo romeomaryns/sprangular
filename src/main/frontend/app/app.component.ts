@@ -26,6 +26,11 @@ import {OnInit} from 'angular2/core';
     loader: () => require('es6-promise!./playground/playground.component')('Playground'),
     name: 'Playground'
   },
+  {
+    path: '/kitchensink',
+    loader: () => require('es6-promise!./kitchensink/kitchensink.component')('KitchenSink'),
+    name: 'KitchenSink'
+  },
   {path: '/**', redirectTo: ['Index']}
 ])
 export class App implements OnInit {

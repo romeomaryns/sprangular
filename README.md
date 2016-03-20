@@ -52,6 +52,10 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.8 (20.03.2016)
+* Typescript files naming convention
+* Foundation kitchensink wit samples
+
 ### 1.1.7 (19.03.2016)
 * Switched to Angular2 beta 11
 
