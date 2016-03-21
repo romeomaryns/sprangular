@@ -2,7 +2,6 @@ import {
   it,
   inject,
   injectAsync,
-  describe,
   beforeEachProviders,
   TestComponentBuilder
 } from 'angular2/testing';
@@ -12,16 +11,11 @@ import {BaseRequestOptions, Http} from 'angular2/http';
 import {MockBackend} from 'angular2/http/testing';
 
 
-// Load the implementations that should be tested
-import {Home} from './home.component';
-import {Title} from './services/title.service';
-import {Response} from 'angular2/http';
+import {Title} from './title.service.ts';
 import {ResponseOptions} from 'angular2/http';
-import {MockConnection} from 'angular2/src/http/backends/mock_backend';
-import {ResponseOptionsArgs} from 'angular2/http';
+import {Response} from 'angular2/http';
 
-describe('Home', () => {
-  // provide our implementations or mocks to the dependency injector
+describe('Title', () => {
   beforeEachProviders(() => [
     BaseRequestOptions,
     MockBackend,
@@ -31,23 +25,18 @@ describe('Home', () => {
       },
       deps: [MockBackend, BaseRequestOptions]
     }),
-
-    Title,
-    Home
+    Title
   ]);
 
-  it('should have default data', inject([Home], (home) => {
-    expect(home.data).toEqual({value: ''});
+
+  it('should have http', inject([Title], (title) => {
+    expect(!!title.http).toEqual(true);
   }));
 
-  it('should have a title', inject([Home], (home) => {
-    expect(!!home.title).toEqual(true);
-  }));
-
-  it('should log ngOnInit', inject([Home, MockBackend], (home, backend) => {
-
+  it('should get data from the server', injectAsync([Title, MockBackend], (title, backend) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
+
 
     var mockedResponse = new Response(
       new ResponseOptions({
@@ -59,10 +48,19 @@ describe('Home', () => {
       connection.mockRespond(mockedResponse);
     });
 
-    home.ngOnInit();
+    return new Promise((pass, fail) => {
+      title.getData().subscribe(
+        (next) => {
+          expect(console.log).toHaveBeenCalled();
+          expect(next).toEqual({value: 'API SERVER IS ALIVE'});
+          pass();
+        }, (error) => {
+          fail(error);
+        }
+      );
 
+    });
 
-    expect(console.log).toHaveBeenCalled();
   }));
 
 });

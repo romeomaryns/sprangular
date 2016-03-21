@@ -11,12 +11,7 @@ console.log('`About` component loaded asynchronously');
 @Component({
   selector: 'about',
   styles: [require('./about.component.scss')],
-  template: `<div>
-  <li class="fa fa-star fa-6"></li>
-  <span>Spring boot Angular 2 starter</span>
-  <li class="fa fa-star fa-6"></li>
-</div>
-`
+  template: require('./about.component.html')
 })
 export class About implements OnInit {
 

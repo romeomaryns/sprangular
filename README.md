@@ -52,6 +52,10 @@ npm run e2e
 
 ## Changelog
 
+### 1.1.9 (21.03.2016)
+* Refactoring
+* First Angular component for Foundation : Accordion
+
 ### 1.1.8 (20.03.2016)
 * Typescript files naming convention
 * Foundation kitchensink wit samples

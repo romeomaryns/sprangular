@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {AppComponent} from './heroes/app.component';
+import {AppComponent} from './heroes/app.component.ts';
 
 console.log('`Playground` component loaded asynchronously...');
 

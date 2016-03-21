@@ -2,6 +2,7 @@ import {
   it,
   inject,
   injectAsync,
+  describe,
   beforeEachProviders,
   TestComponentBuilder
 } from 'angular2/testing';
@@ -11,11 +12,16 @@ import {BaseRequestOptions, Http} from 'angular2/http';
 import {MockBackend} from 'angular2/http/testing';
 
 
-import {Title} from './title.service';
-import {ResponseOptions} from 'angular2/http';
+// Load the implementations that should be tested
+import {Home} from './home.component.ts';
+import {Title} from './services/title.service.ts';
 import {Response} from 'angular2/http';
+import {ResponseOptions} from 'angular2/http';
+import {MockConnection} from 'angular2/src/http/backends/mock_backend';
+import {ResponseOptionsArgs} from 'angular2/http';
 
-describe('Title', () => {
+describe('Home', () => {
+  // provide our implementations or mocks to the dependency injector
   beforeEachProviders(() => [
     BaseRequestOptions,
     MockBackend,
@@ -25,18 +31,23 @@ describe('Title', () => {
       },
       deps: [MockBackend, BaseRequestOptions]
     }),
-    Title
+
+    Title,
+    Home
   ]);
 
-
-  it('should have http', inject([Title], (title) => {
-    expect(!!title.http).toEqual(true);
+  it('should have default data', inject([Home], (home) => {
+    expect(home.data).toEqual({value: ''});
   }));
 
-  it('should get data from the server', injectAsync([Title, MockBackend], (title, backend) => {
+  it('should have a title', inject([Home], (home) => {
+    expect(!!home.title).toEqual(true);
+  }));
+
+  it('should log ngOnInit', inject([Home, MockBackend], (home, backend) => {
+
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
-
 
     var mockedResponse = new Response(
       new ResponseOptions({
@@ -48,19 +59,10 @@ describe('Title', () => {
       connection.mockRespond(mockedResponse);
     });
 
-    return new Promise((pass, fail) => {
-      title.getData().subscribe(
-        (next) => {
-          expect(console.log).toHaveBeenCalled();
-          expect(next).toEqual({value: 'API SERVER IS ALIVE'});
-          pass();
-        }, (error) => {
-          fail(error);
-        }
-      );
+    home.ngOnInit();
 
-    });
 
+    expect(console.log).toHaveBeenCalled();
   }));
 
 });

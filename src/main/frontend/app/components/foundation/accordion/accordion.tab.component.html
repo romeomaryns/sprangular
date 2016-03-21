@@ -1,0 +1,6 @@
+<li class="accordion-item" [ngClass]="{'is-active': selected}">
+  <a href="#" (click)="onTabClick($event)" role="tab" class="accordion-title">{{ title }}</a>
+  <div class="accordion-content" role="tabpanel" [style.display]="selected ? 'block' : 'none'">
+    <ng-content></ng-content>
+  </div>
+</li>

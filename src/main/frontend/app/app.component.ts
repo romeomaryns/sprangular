@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
-import {Home} from './home/home.component';
+import {Home} from './views/home/home.component';
 import {OnInit} from 'angular2/core';
 
 
@@ -18,17 +18,17 @@ import {OnInit} from 'angular2/core';
   {path: '/home', component: Home, name: 'Home'},
   {
     path: '/about',
-    loader: () => require('es6-promise!./about/about.component')('About'),
+    loader: () => require('es6-promise!./views/about/about.component')('About'),
     name: 'About'
   },
   {
     path: '/playground',
-    loader: () => require('es6-promise!./playground/playground.component')('Playground'),
+    loader: () => require('es6-promise!./views/playground/playground.component')('Playground'),
     name: 'Playground'
   },
   {
     path: '/kitchensink',
-    loader: () => require('es6-promise!./kitchensink/kitchensink.component')('KitchenSink'),
+    loader: () => require('es6-promise!./views/kitchensink/kitchensink.component')('KitchenSink'),
     name: 'KitchenSink'
   },
   {path: '/**', redirectTo: ['Index']}

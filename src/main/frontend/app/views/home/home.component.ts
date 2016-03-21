@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 
-import {Title} from './services/title.service';
-import {XLarge} from './directives/x-large.directive';
+import {Title} from './services/title.service.ts';
+import {XLarge} from './../../directives/x-large.directive.ts';
 
 @Component({
   // The selector is what angular internally uses
