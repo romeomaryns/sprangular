@@ -96,7 +96,7 @@
     "pree2e": "npm run webdriver:update -- --standalone",
     "e2e": "protractor",
     "e2e:live": "protractor --elementExplorer",
-    "test": "karma start",
+    "test": "karma start ./config/karma.conf.js",
     "ci": "npm run e2e && npm run test",
     "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./src/main/frontend/\"",
     "start": "npm run server:dev",

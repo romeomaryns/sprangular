@@ -1,5 +1,5 @@
 module.exports = function(config) {
-  var testWebpackConfig = require('./config/webpack.test.config.js');
+  var testWebpackConfig = require('./webpack.test.config.js');
 
   config.set({
 
@@ -25,7 +25,7 @@ module.exports = function(config) {
     webpack: testWebpackConfig,
 
     coverageReporter: {
-      dir : 'coverage/',
+      dir : '../coverage/',
       reporters: [
         { type: 'text-summary' },
         { type: 'json' },
