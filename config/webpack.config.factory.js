@@ -39,7 +39,7 @@ var baseWebpackConfig = {
   tslint: {
     emitErrors: false,
     failOnHint: false,
-    resourcePath: 'src/main/frontend'
+    resourcePath: './src/main/frontend'
   },
 
   module: {
@@ -48,14 +48,14 @@ var baseWebpackConfig = {
         test: /\.ts$/,
         loader: 'tslint-loader',
         exclude: [
-          fullPathTo('node_modules')
+          fullPathTo('../node_modules')
         ]
       },
       {
         test: /\.js$/,
         loader: "source-map-loader",
         exclude: [
-          fullPathTo('node_modules/rxjs')
+          fullPathTo('../node_modules/rxjs')
         ]
       }
     ],
@@ -79,7 +79,7 @@ var baseWebpackConfig = {
         test: /\.html$/,
         loader: 'raw',
         exclude: [
-          fullPathTo('src/main/frontend/index.html')
+          fullPathTo('../src/main/frontend/index.html')
         ]
       },
 
@@ -101,8 +101,8 @@ var baseWebpackConfig = {
   },
   sassLoader: {
     includePaths: [
-      'node_modules/foundation-sites/scss',
-      'node_modules/font-awesome/scss'
+      './node_modules/foundation-sites/scss',
+      './node_modules/font-awesome/scss'
     ]
   },
   postcss: [
@@ -133,7 +133,7 @@ function customizeForDev(config) {
   };
 
   config.output = {
-    path: fullPathTo('src/main/resources/static/'),
+    path: fullPathTo('../src/main/resources/static/'),
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js',
@@ -167,7 +167,7 @@ function customizeForDev(config) {
     test: /\.scss$/,
     loader: 'raw!postcss!sass',
     exclude: [
-      fullPathTo('src/main/frontend/scss/main.scss')
+      fullPathTo('../src/main/frontend/scss/main.scss')
     ]
   });
 
@@ -179,11 +179,11 @@ function customizeForDev(config) {
   }));
   config.plugins.push(new CopyWebpackPlugin([
     {
-      from: 'src/main/frontend/assets',
+      from: './src/main/frontend/assets',
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
 
 }
 
@@ -199,7 +199,7 @@ function customizeForProd(config) {
   };
 
   config.output = {
-    path: fullPathTo('src/main/resources/static'),
+    path: fullPathTo('../src/main/resources/static'),
     filename: '[name].[chunkhash].bundle.js',
     sourceMapFilename: '[name].[chunkhash].bundle.map',
     chunkFilename: '[id].[chunkhash].chunk.js',
@@ -221,7 +221,7 @@ function customizeForProd(config) {
     test: /\.scss$/,
     loader: 'raw!postcss!sass',
     exclude: [
-      fullPathTo('src/main/frontend/scss/main.scss')
+      fullPathTo('../src/main/frontend/scss/main.scss')
     ]
   });
   
@@ -238,11 +238,11 @@ function customizeForProd(config) {
   }));
   config.plugins.push(new CopyWebpackPlugin([
     {
-      from: 'src/main/frontend/assets',
+      from: './src/main/frontend/assets',
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: 'src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
   config.plugins.push(new UglifyJsPlugin({
     dead_code: true,
     unused: true,
@@ -281,7 +281,7 @@ function customizeForTest(config) {
     test: /\.scss$/,
     loader: 'raw!sass',
     exclude: [
-      fullPathTo('src/main/frontend/scss/main.scss')
+      fullPathTo('../src/main/frontend/scss/main.scss')
     ]
   });
 
@@ -289,7 +289,7 @@ function customizeForTest(config) {
     // instrument only testing sources with Istanbul
     {
       test: /\.(js|ts)$/,
-      include: fullPathTo('src/main/frontend'),
+      include: fullPathTo('../src/main/frontend'),
       loader: 'istanbul-instrumenter-loader',
       exclude: [
         /\.(e2e|spec)\.ts$/,
