@@ -98,7 +98,7 @@
     "e2e:live": "protractor --elementExplorer ./config/protractor.conf.js",
     "test": "karma start ./config/karma.conf.js",
     "ci": "npm run e2e && npm run test",
-    "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./src/main/frontend/\"",
+    "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./typings/browser.d.ts\" \"./node_modules/zone.js/dist/zone.js.d.ts\" \"./src/main/frontend/\"",
     "start": "npm run server:dev",
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",
