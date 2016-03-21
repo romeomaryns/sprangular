@@ -5,7 +5,7 @@ exports.config = {
 
   // use `npm run e2e`
   specs: [
-    'src/main/frontend/**/*.e2e.ts'
+    '../src/main/frontend/**/*.e2e.ts'
   ],
   exclude: [],
 
