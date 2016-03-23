@@ -10,6 +10,8 @@ export class Accordion implements OnInit {
 
   @Input() multi:boolean = false;
 
+  @Input() animated:boolean = true;
+
   public tabs:AccordionTab[] = [];
 
   constructor() {

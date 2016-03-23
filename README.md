@@ -52,6 +52,10 @@ npm run e2e
 
 ## Changelog
 
+### 1.2.0 (23.03.2016)
+* Added motion-ui integration
+* Added fancy animation for accordion
+
 ### 1.1.9 (21.03.2016)
 * Refactoring
 * First Angular component for Foundation : Accordion

@@ -102,7 +102,8 @@ var baseWebpackConfig = {
   sassLoader: {
     includePaths: [
       './node_modules/foundation-sites/scss',
-      './node_modules/font-awesome/scss'
+      './node_modules/font-awesome/scss',
+      './node_modules/motion-ui/src'
     ]
   },
   postcss: [
