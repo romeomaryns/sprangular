@@ -37,7 +37,7 @@ export class AccordionTab implements OnInit {
         .addClass(class2)
         .start(animatedElement)
         .onComplete(() => {
-          this.selected = !this.selected;
+          this.toggleSelected();
           this.animationBuilder.css()
             .addClass(class3)
             .start(animatedElement)
@@ -50,14 +50,17 @@ export class AccordionTab implements OnInit {
             });
         });
     } else {
-      this.selected = !this.selected;
-    }
-
-    if (this.selected && !this.accordion.multi) {
-      this.hideOtherTabs();
+      this.toggleSelected();
     }
 
     event.preventDefault();
+  }
+
+  toggleSelected() {
+    this.selected = !this.selected;
+    if (this.selected && !this.accordion.multi) {
+      this.hideOtherTabs();
+    }
   }
 
   ngOnInit():any {
