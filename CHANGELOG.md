@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.2.1 (24.03.2016)
+* Updated Angular to beta 12
+* Removed zone.js fixes for beta 11
+
 ### 1.2.0 (23.03.2016)
 * Added motion-ui integration
 * Added fancy animation for accordion

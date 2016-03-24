@@ -52,6 +52,10 @@ npm run e2e
 
 ## Changelog
 
+### 1.2.1 (24.03.2016)
+* Updated Angular to beta 12
+* Removed zone.js fixes for beta 11
+
 ### 1.2.0 (23.03.2016)
 * Added motion-ui integration
 * Added fancy animation for accordion
@@ -64,17 +68,6 @@ npm run e2e
 * Typescript files naming convention
 * Foundation kitchensink wit samples
 * Some changes from AngularClass
-
-### 1.1.7 (19.03.2016)
-* Switched to Angular2 beta 11
-
-### 1.1.6 (17.03.2016)
-* Added sourcemaps for css
-* Added webpack text extract plugin for production
-* Removed styles.ts entry point
-
-### 1.1.5 (16.03.2016)
-* Postcss and autoprefixer
 
 
 [show full changelog](CHANGELOG.md)
