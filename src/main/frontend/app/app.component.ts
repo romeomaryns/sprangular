@@ -1,9 +1,7 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, Router} from 'angular2/router';
-
+import {Component, OnInit} from 'angular2/core';
+import {RouteConfig} from 'angular2/router';
 import {Home} from './views/home/home.component';
-import {OnInit} from 'angular2/core';
-
+import {LazyLoader, LazyModule} from './utils/lazy.loader.ts';
 
 @Component({
   selector: 'app',
@@ -18,17 +16,17 @@ import {OnInit} from 'angular2/core';
   {path: '/home', component: Home, name: 'Home'},
   {
     path: '/about',
-    loader: () => require('es6-promise!./views/about/about.component')('About'),
+    loader: () => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
     name: 'About'
   },
   {
     path: '/playground',
-    loader: () => require('es6-promise!./views/playground/playground.component')('Playground'),
+    loader: () => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
     name: 'Playground'
   },
   {
     path: '/kitchensink',
-    loader: () => require('es6-promise!./views/kitchensink/kitchensink.component')('KitchenSink'),
+    loader: () => LazyLoader.lazyLoad(LazyModule.KITCHENSINK).then(m => m['KitchenSink']),
     name: 'KitchenSink'
   },
   {path: '/**', redirectTo: ['Index']}

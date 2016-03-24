@@ -53,6 +53,7 @@ interface WebpackModule {
   };
 }
 interface WebpackRequire {
+  ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
   context(file: string, flag?: boolean, exp?: RegExp): any;
 }
 

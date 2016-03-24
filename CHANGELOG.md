@@ -3,6 +3,7 @@
 ### 1.2.1 (24.03.2016)
 * Updated Angular to beta 12
 * Removed zone.js fixes for beta 11
+* Replaced es6-promise loader with custom solution
 
 ### 1.2.0 (23.03.2016)
 * Added motion-ui integration
