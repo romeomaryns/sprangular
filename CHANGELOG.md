@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.3.0 (UNRELEASED)
+* refactoring to microservices
+* multi module pom project
+* shared common library
+* maven enforcer plugin
+* custom schema for webpack config validator
+
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13
 

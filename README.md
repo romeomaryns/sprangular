@@ -2,7 +2,7 @@
 
 Originally based on great [AngularClass](https://github.com/AngularClass) webpack starter
 
-## FEATURES:
+## FEATURES (OUTDATED):
 * Build and testing process integrated with maven
 * Spring Boot application in development mode use resources from webpack dev server
 * scss support
@@ -10,7 +10,7 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 * font-awesome
 * All features from AngularClass starter
 
-## PRODUCTION USAGE:
+## PRODUCTION USAGE (OUTDATED):
 
 To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
 
@@ -24,7 +24,7 @@ Just package application in production mode:
 mvn clean package
 ```
 
-## DEVELOPMENT USAGE:
+## DEVELOPMENT USAGE (OUTDATED):
 
 To use development mode you need also webpack development server running in background.
 
@@ -51,6 +51,13 @@ npm run e2e
 ```
 
 ## Changelog
+
+### 1.3.0 (UNRELEASED)
+* refactoring to microservices
+* multi module pom project
+* shared common library
+* maven enforcer plugin
+* custom schema for webpack config validator
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13

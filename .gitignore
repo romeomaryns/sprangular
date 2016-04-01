@@ -1,16 +1,20 @@
 ### idea
 .idea/
 *.iml
-### dist
-src/main/resources/static/
+
 ### maven
-target/
+shardis-common/target/
+shardis-ui/target/
+shardis-api/target/
+
 ### node
-etc/
-node/
-node_modules/
-npm-debug.log
+shardis-ui/etc/
+shardis-ui/etc/node/
+shardis-ui/etc/node_modules/
+shardis-ui/npm-debug.log
 ### coverage
-coverage/
+shardis-ui/coverage/
 ### docs
-doc/
+shardis-ui/doc/
+### dist
+shardis-ui/src/main/resources/static/
