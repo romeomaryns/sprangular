@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.2.2 (01.04.2016)
+* Updated Angular to beta 13
+
 ### 1.2.1 (24.03.2016)
 * Updated Angular to beta 12
 * Removed zone.js fixes for beta 11
