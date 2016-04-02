@@ -10,31 +10,50 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 * font-awesome
 * All features from AngularClass starter
 
-## PRODUCTION USAGE (OUTDATED):
+## PRODUCTION USAGE:
 
 To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
-
-Run application in production mode:
-```
-mvn spring-boot:run
-```
 
 Just package application in production mode:
 ```
 mvn clean package
 ```
 
-## DEVELOPMENT USAGE (OUTDATED):
+Then run api server:
+```
+java -jar ./shardis-api/target/shardis-api-1.3.0.jar
+```
+
+And run ui server:
+```
+java -jar ./shardis-ui/target/shardis-ui-1.3.0.jar
+```
+
+
+## DEVELOPMENT USAGE:
 
 To use development mode you need also webpack development server running in background.
 
-Run application in development mode:
+Install all dependencies at first
 ```
+mvn install -P dev -Dspring.profiles.active=dev
+```
+
+Run api server in development mode:
+```
+cd shardis-api
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+```
+
+Run ui server in development mode:
+```
+cd shardis-ui
 mvn spring-boot:run -P dev -Dspring.profiles.active=dev
 ```
 
 Run webpack development server:
 ```
+cd shardis-ui
 npm run server
 ```
 
@@ -42,11 +61,13 @@ npm run server
 
 Run unit tests:
 ```
+cd shardis-ui
 npm run test
 ```
 
 Run e2e tests:
 ```
+cd shardis-ui
 npm run e2e
 ```
 
@@ -58,6 +79,7 @@ npm run e2e
 * shared common library
 * maven enforcer plugin
 * custom schema for webpack config validator
+* zull proxy
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13

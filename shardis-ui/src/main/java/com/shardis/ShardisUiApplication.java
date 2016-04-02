@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.ErrorPage;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 
@@ -13,6 +14,7 @@ import org.springframework.http.HttpStatus;
  */
 @SpringBootApplication
 @EnableCaching
+@EnableZuulProxy
 public class ShardisUiApplication {
 
   public static void main(String[] args) {
