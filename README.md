@@ -14,19 +14,27 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 
 To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
 
-Just package application in production mode:
+Install parent and common libraries:
 ```
+cd shardis-parent/
+mvn install
+
+cd shardis-common/
+mvn install
+```
+
+Then build and run api server:
+```
+cd shardis-api/
 mvn clean package
+java -jar ./target/shardis-api-1.3.0.jar
 ```
 
-Then run api server:
+Then build and run ui server:
 ```
-java -jar ./shardis-api/target/shardis-api-1.3.0.jar
-```
-
-And run ui server:
-```
-java -jar ./shardis-ui/target/shardis-ui-1.3.0.jar
+cd shardis-api/
+mvn clean package
+java -jar ./target/shardis-ui-1.3.0.jar
 ```
 
 
@@ -35,8 +43,13 @@ java -jar ./shardis-ui/target/shardis-ui-1.3.0.jar
 To use development mode you need also webpack development server running in background.
 
 Install all dependencies at first
+Install parent and common libraries:
 ```
-mvn install -P dev -Dspring.profiles.active=dev
+cd shardis-parent/
+mvn install
+
+cd shardis-common/
+mvn install
 ```
 
 Run api server in development mode:
