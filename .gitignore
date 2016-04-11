@@ -4,8 +4,10 @@
 
 ### maven
 shardis-common/target/
-shardis-ui/target/
+shardis-discovery/target/
+shardis-auth/target/
 shardis-api/target/
+shardis-ui/target/
 
 ### node
 shardis-ui/etc/

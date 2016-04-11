@@ -23,11 +23,25 @@ cd shardis-common/
 mvn install
 ```
 
+Then build and run discovery server:
+```
+cd shardis-discovery/
+mvn clean package
+java -jar ./target/shardis-discovery-1.3.0.jar
+```
+
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
 java -jar ./target/shardis-api-1.3.0.jar
+```
+
+Then build and run auth server:
+```
+cd shardis-auth/
+mvn clean package
+java -jar ./target/shardis-auth-1.3.0.jar
 ```
 
 Then build and run ui server:
@@ -52,9 +66,21 @@ cd shardis-common/
 mvn install
 ```
 
+Run discovery server in development mode:
+```
+cd shardis-discovery
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+```
+
 Run api server in development mode:
 ```
 cd shardis-api
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+```
+
+Run auth server in development mode:
+```
+cd shardis-auth
 mvn spring-boot:run -P dev -Dspring.profiles.active=dev
 ```
 
@@ -93,6 +119,9 @@ npm run e2e
 * maven enforcer plugin
 * custom schema for webpack config validator
 * zull proxy
+* auth module
+* service discovery module (eureka)
+* oauth2 security
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13

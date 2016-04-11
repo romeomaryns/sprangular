@@ -157,7 +157,8 @@ function customizeForDev(config) {
     quiet: false,
     noInfo: false,
     proxy: {
-      '/api/*': 'http://localhost:8080'
+      '/api/*': 'http://localhost:8080',
+      '/auth/*': 'http://localhost:8080'
     }
   };
 

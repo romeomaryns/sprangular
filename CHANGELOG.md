@@ -7,6 +7,9 @@
 * maven enforcer plugin
 * custom schema for webpack config validator
 * zull proxy
+* auth module
+* service discovery module (eureka)
+* oauth2 security
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13
