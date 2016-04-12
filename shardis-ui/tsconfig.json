@@ -6,7 +6,6 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "sourceMap": true,
     "removeComments": false,
     "noImplicitAny": false

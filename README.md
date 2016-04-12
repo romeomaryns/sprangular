@@ -9,6 +9,8 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 * Foundation 6
 * font-awesome
 * All features from AngularClass starter
+* Updated Angular to beta 14
+* Included all rxjs
 
 ## PRODUCTION USAGE:
 

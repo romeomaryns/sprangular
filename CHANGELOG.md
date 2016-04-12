@@ -10,6 +10,8 @@
 * auth module
 * service discovery module (eureka)
 * oauth2 security
+* Updated Angular to beta 14
+* Included all rxjs
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13
