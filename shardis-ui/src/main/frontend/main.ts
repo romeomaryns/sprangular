@@ -24,8 +24,8 @@ require('./scss/main.scss');
 export function main() {
 
   return bootstrap(App, [
-    ...ENV_PROVIDERS,
     ...PROVIDERS,
+    ...ENV_PROVIDERS,
     ...DIRECTIVES,
     ...PIPES
   ])

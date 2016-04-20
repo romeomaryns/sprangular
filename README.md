@@ -128,6 +128,7 @@ npm run e2e
 * Included all rxjs
 * updated Angular to beta 15
 * updated some dependencies
+* path location strategy
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13
