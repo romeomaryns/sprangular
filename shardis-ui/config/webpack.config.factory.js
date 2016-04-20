@@ -271,6 +271,8 @@ function customizeForProd(config) {
 // Customize config for test environment
 function customizeForTest(config) {
 
+  config.devtool = 'inline-source-map';
+
   config.stats = {
     colors: true,
     reasons: true
