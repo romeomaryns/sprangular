@@ -2,15 +2,15 @@
 
 Originally based on great [AngularClass](https://github.com/AngularClass) webpack starter
 
-## FEATURES (OUTDATED):
+## FEATURES:
 * Build and testing process integrated with maven
+* Spring cloud microservices with Zull and Eureka
+* Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
 * scss support
 * Foundation 6
 * font-awesome
-* All features from AngularClass starter
-* Updated Angular to beta 14
-* Included all rxjs
+
 
 ## PRODUCTION USAGE:
 
@@ -154,12 +154,3 @@ npm run e2e
 
 
 [show full changelog](CHANGELOG.md)
-
-## Known bugs
-
-```
-Uncaught TypeError: Cannot read property 'cancelTask' of undefined
-```
-
-https://github.com/angular/angular/issues/7666
-
