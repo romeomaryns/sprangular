@@ -1,5 +1,22 @@
 ## Changelog
 
+### 1.3.0 (21.07.2016)
+* refactoring to microservices
+* multi module pom project
+* shared common library
+* maven enforcer plugin
+* custom schema for webpack config validator
+* zull proxy
+* auth module
+* service discovery module (eureka)
+* oauth2 security
+* Updated Angular to beta 14
+* Included all rxjs
+* updated Angular to beta 15
+* updated some dependencies
+* path location strategy
+* implicit login flow
+
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13
 

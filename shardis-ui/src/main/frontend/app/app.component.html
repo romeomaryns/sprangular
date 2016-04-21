@@ -1,0 +1,46 @@
+<div class="app">
+
+  <img [src]="angularLogo" alt="">
+
+  <header>
+    <nav>
+      <h1>{{ name }}</h1>
+      <ul>
+        <li router-active>
+          <a class="button" [routerLink]=" ['Index'] ">Index</a>
+        </li>
+        <li router-active>
+          <a class="button" [routerLink]=" ['Home'] ">Home</a>
+        </li>
+        <li router-active>
+          <a class="button" [routerLink]=" ['KitchenSink'] ">KitchenSink</a>
+        </li>
+        <li router-active>
+          <a class="button" [routerLink]=" ['Playground'] ">Playground</a>
+        </li>
+        <li router-active>
+          <a class="button" [routerLink]=" ['About'] ">About</a>
+        </li>
+        <li router-active>
+          <a class="button" (click)="authService.authenticate()">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Authenticated {{authService.isAuthenticated()}}</h2>
+
+  <div style="width: 100%">
+  <pre *ngIf="authService.isAuthenticated()">
+    {{ authService.getUserData() | json }}
+  </pre>
+  </div>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    {{ name }} by <a [href]="url">Tomasz Kucharzyk</a>
+  </footer>
+</div>
