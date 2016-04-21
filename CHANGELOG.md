@@ -1,6 +1,6 @@
 ## Changelog
 
-### 1.3.0 (UNRELEASED)
+### 1.3.0 (21.07.2016)
 * refactoring to microservices
 * multi module pom project
 * shared common library
@@ -15,6 +15,7 @@
 * updated Angular to beta 15
 * updated some dependencies
 * path location strategy
+* implicit login flow
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13

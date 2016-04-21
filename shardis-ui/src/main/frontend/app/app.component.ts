@@ -1,12 +1,13 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig} from 'angular2/router';
 import {Home} from './views/home/home.component';
-import {LazyLoader, LazyModule} from './utils/lazy.loader.ts';
+import {LazyLoader, LazyModule} from './utils/lazy.loader';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [],
+  providers: [AuthService],
   directives: [],
   styles: [require('./app.component.scss')],
   template: require('./app.component.html')
@@ -36,12 +37,12 @@ export class App implements OnInit {
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
 
-  constructor() {
+  constructor(public authService: AuthService) {
   }
 
-
-  ngOnInit():any {
+  ngOnInit():void {
     console.log('app on init');
   }
+
 }
 

@@ -21,9 +21,20 @@
         <li router-active>
           <a class="button" [routerLink]=" ['About'] ">About</a>
         </li>
+        <li router-active>
+          <a class="button" (click)="authService.authenticate()">Login</a>
+        </li>
       </ul>
     </nav>
   </header>
+
+  <h2>Authenticated {{authService.isAuthenticated()}}</h2>
+
+  <div style="width: 100%">
+  <pre *ngIf="authService.isAuthenticated()">
+    {{ authService.getUserData() | json }}
+  </pre>
+  </div>
 
   <main>
     <router-outlet></router-outlet>

@@ -15,10 +15,10 @@ import java.security.Principal;
 @RequestMapping("/")
 public class TestRestController {
 
-  @RequestMapping("/title")
-  public ValueObject getTitle() {
-    return new ValueObject("API SERVER IS ALIVE");
-  }
+    @RequestMapping("/title")
+    public ValueObject getTitle() {
+        return new ValueObject("API SERVER IS ALIVE");
+    }
 
     @RequestMapping("/user")
     public Principal user(Principal user) {

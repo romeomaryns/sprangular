@@ -1,4 +1,4 @@
-package com.shardis.ui.config;
+package com.shardis.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,7 @@ public class SecurityConfig implements ResourceServerConfigurer {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("shardis-ui");
+        resources.resourceId("shardis-api");
     }
 
     @Override
@@ -33,9 +33,7 @@ public class SecurityConfig implements ResourceServerConfigurer {
             .anonymous()
             .and()
             .authorizeRequests()
-            .antMatchers("/auth/**").permitAll()
-            .antMatchers("/api/**").permitAll()
-            .antMatchers("/test").authenticated()
+            .antMatchers("/user").authenticated()
             .anyRequest().permitAll()
             .and()
             .csrf().disable()
@@ -44,6 +42,7 @@ public class SecurityConfig implements ResourceServerConfigurer {
             .and()
             .logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
+
 
 
 }

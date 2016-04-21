@@ -36,11 +36,6 @@ security:
   oauth2:
     sso:
       loginPath: /login
-    client:
-      accessTokenUri: http://localhost:${server.port}/auth/oauth/token
-      userAuthorizationUri: /auth/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
     resource:
       jwt:
         keyValue: |

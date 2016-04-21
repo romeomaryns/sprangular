@@ -40,8 +40,9 @@ public class OAuth2AuthorizationConfig extends
         clients.inMemory()
             .withClient("acme")
             .secret("acmesecret")
-            .authorizedGrantTypes("implicit","authorization_code", "refresh_token", "password")
-            .scopes("openid");
+            .authorizedGrantTypes("implicit","authorization_code", "refresh_token","password")
+            .scopes("openid")
+            .autoApprove(false);
     }
 
 
