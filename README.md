@@ -29,28 +29,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.3.0.jar
+java -jar ./target/shardis-discovery-1.4.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.3.0.jar
+java -jar ./target/shardis-api-1.4.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.3.0.jar
+java -jar ./target/shardis-auth-1.4.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.3.0.jar
+java -jar ./target/shardis-ui-1.4.0.jar
 ```
 
 
@@ -113,6 +113,8 @@ npm run e2e
 ```
 
 ## Changelog
+
+### 1.4.0 (UNRELEASED)
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices

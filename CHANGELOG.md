@@ -1,5 +1,7 @@
 ## Changelog
 
+### 1.4.0 (UNRELEASED)
+
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices
 * multi module pom project
