@@ -4,6 +4,7 @@
 * updated Angular to beta 16
 * updated node dependencies
 * updated maven dependencies
+* fixed .gitignore
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices
