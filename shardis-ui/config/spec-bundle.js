@@ -16,6 +16,7 @@ require('zone.js/dist/long-stack-trace-zone');
 require('zone.js/dist/jasmine-patch');
 
 require('rxjs/Rx');
+require('rxjs/subject/ReplaySubject');
 
 
 var testing = require('angular2/testing');
