@@ -119,6 +119,9 @@ npm run e2e
 * updated node dependencies
 * updated maven dependencies
 * fixed .gitignore
+* fully stateless authentication
+* storing oauth2 token in localstorage
+* removed form authentication
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices

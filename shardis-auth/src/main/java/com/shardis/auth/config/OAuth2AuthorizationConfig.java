@@ -40,9 +40,11 @@ public class OAuth2AuthorizationConfig extends
         clients.inMemory()
             .withClient("acme")
             .secret("acmesecret")
+            .authorities("ROLE_TRUSTED_CLIENT")
             .authorizedGrantTypes("implicit","authorization_code", "refresh_token","password")
+            .accessTokenValiditySeconds(360)
             .scopes("openid")
-            .autoApprove(false);
+            .autoApprove(true);
     }
 
 
@@ -54,8 +56,9 @@ public class OAuth2AuthorizationConfig extends
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
         oauthServer
-            .tokenKeyAccess("permitAll()")
+            .tokenKeyAccess("isAnonymous() || hasAuthority('ROLE_TRUSTED_CLIENT')")
             .checkTokenAccess("isAuthenticated()");
     }
+
 
 }

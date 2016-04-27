@@ -5,25 +5,12 @@ import {Http, Headers} from 'angular2/http';
 export class AuthService {
 
   private authenticated:boolean = false;
-
-  private access_token:string = null;
-  private token_type:string = null;
-  private expires_in:string = null;
-  private scope:string = null;
-  private jti:string = null;
-
+  private tokenData:Oauth2TokenData = new Oauth2TokenData();
   private userData:any = null;
 
   constructor(public http:Http) {
-    var locationHash = window.location.hash;
-    if (locationHash.length) {
-      this.access_token = this.getTokenParameterByName('access_token', locationHash);
-      this.token_type = this.getTokenParameterByName('token_type', locationHash);
-      this.expires_in = this.getTokenParameterByName('expires_in', locationHash);
-      this.scope = this.getTokenParameterByName('scope', locationHash);
-      this.jti = this.getTokenParameterByName('jti', locationHash);
-    }
-    if (this.access_token) {
+    if (window.localStorage.getItem('tokenData')) {
+      this.tokenData = JSON.parse(window.localStorage.getItem('tokenData'));
       this.authenticated = true;
       this.userData = this.fetchUserData();
     }
@@ -35,29 +22,50 @@ export class AuthService {
 
   public authenticate():void {
     console.log('Authentication pending...');
-    var redirectUrl = window.location.href;
-    console.log(`redirect url = ${redirectUrl}`);
-    var authorizationUrl = `/auth/oauth/authorize?response_type=token&client_id=acme&redirect_uri=${redirectUrl}`;
-    console.log(`authorization url = ${authorizationUrl}`);
-    window.location.href = authorizationUrl;
+
+    var username = 'admin';
+    var password = 'xxxxxx';
+
+
+    var basicAuthHeader = btoa(`acme:acmesecret`);
+
+    var headers = new Headers();
+    headers.append('Authorization', `Basic  ${basicAuthHeader}`);
+    headers.append('Accept', `application/json`);
+    headers.append('Content-Type', `application/x-www-form-urlencoded`);
+
+    var data = 'username=' + encodeURIComponent(username) + '&password='
+      + encodeURIComponent(password) + '&grant_type=password';
+
+    this.http.post('/auth/oauth/token', data, {headers: headers})
+      .subscribe(
+        data => {
+          this.tokenData = data.json();
+          window.localStorage.setItem('tokenData', JSON.stringify(this.tokenData));
+          console.log(this.tokenData);
+          this.authenticated = true;
+          this.userData = this.fetchUserData();
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
+
+  public logout():any {
+    window.localStorage.removeItem('tokenData');
+    this.tokenData = new Oauth2TokenData();
+    this.userData = null;
+    this.authenticated = false;
   }
 
   public getUserData():any {
     return this.userData;
   }
 
-  private getTokenParameterByName(name:string, hash:string):string {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(hash.replace('#', '?'));
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-  }
-
   private fetchUserData() {
     var authorizationHeaders = new Headers();
-    authorizationHeaders.append('Authorization', `Bearer ${this.access_token}`);
+    authorizationHeaders.append('Authorization', `Bearer ${this.tokenData.access_token}`);
     this.http.get('/api/user', {headers: authorizationHeaders})
       .subscribe(
         data => {
@@ -67,4 +75,15 @@ export class AuthService {
       );
   }
 
+}
+
+class Oauth2TokenData {
+  access_token:string = null;
+  token_type:string = null;
+  expires_in:string = null;
+  scope:string = null;
+  jti:string = null;
+
+  constructor() {
+  }
 }

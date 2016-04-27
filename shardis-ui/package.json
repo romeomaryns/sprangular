@@ -89,7 +89,7 @@
     "prebuild:prod": "npm run clean:dist",
     "build:prod": "webpack --config ./config/webpack.prod.config.js --profile --colors --display-error-details --display-cached  --bail",
     "server": "npm run server:dev",
-    "server:dev": "webpack-dev-server --config ./config/webpack.dev.config.js --hot --inline --progress --profile --colors --watch --display-error-details --display-cached  --content-base ./src/main/frontend",
+    "server:dev": "webpack-dev-server --config ./config/webpack.dev.config.js --hot --inline --progress --profile --colors --watch --display-error-details --display-cached ",
     "webdriver:update": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
     "lint": "tslint -t prose \"./src/main/frontend/**/*.ts\"",
