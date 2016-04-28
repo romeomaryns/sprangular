@@ -1,7 +1,7 @@
 import {
   it,
   inject,
-  injectAsync,
+  async,
   beforeEachProviders,
   TestComponentBuilder
 } from 'angular2/testing';
@@ -33,7 +33,7 @@ describe('Title', () => {
     expect(!!title.http).toEqual(true);
   }));
 
-  it('should get data from the server', injectAsync([Title, MockBackend], (title, backend) => {
+  it('should get data from the server', async(inject([Title, MockBackend], (title, backend) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
@@ -61,6 +61,6 @@ describe('Title', () => {
 
     });
 
-  }));
+  })));
 
 });
