@@ -33,8 +33,9 @@
 
   <h2>Authenticated {{authService.isAuthenticated()}}</h2>
 
-  <div style="width: 100%">
-  <pre *ngIf="authService.isAuthenticated()">
+  <div style="width: 100%" *ngIf="authService.isAuthenticated()">
+    <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy HH:mm:ss'}}</h3>
+  <pre>
     {{ authService.getUserData() | json }}
   </pre>
   </div>

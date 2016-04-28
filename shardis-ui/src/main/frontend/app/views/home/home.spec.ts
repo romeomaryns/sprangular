@@ -19,6 +19,7 @@ import {Response} from 'angular2/http';
 import {ResponseOptions} from 'angular2/http';
 import {MockConnection} from 'angular2/src/http/backends/mock_backend';
 import {ResponseOptionsArgs} from 'angular2/http';
+import {AuthService} from '../../services/auth.service';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
@@ -33,7 +34,8 @@ describe('Home', () => {
     }),
 
     Title,
-    Home
+    Home,
+    AuthService
   ]);
 
   it('should have default data', inject([Home], (home) => {

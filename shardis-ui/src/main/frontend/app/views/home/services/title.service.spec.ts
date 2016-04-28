@@ -14,6 +14,7 @@ import {MockBackend} from 'angular2/http/testing';
 import {Title} from './title.service.ts';
 import {ResponseOptions} from 'angular2/http';
 import {Response} from 'angular2/http';
+import {AuthService} from '../../../services/auth.service';
 
 describe('Title', () => {
   beforeEachProviders(() => [
@@ -25,7 +26,8 @@ describe('Title', () => {
       },
       deps: [MockBackend, BaseRequestOptions]
     }),
-    Title
+    Title,
+    AuthService
   ]);
 
 

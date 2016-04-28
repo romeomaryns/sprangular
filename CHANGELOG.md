@@ -9,7 +9,7 @@
 * storing oauth2 token in localstorage
 * removed form authentication
 * removed deprecated injectAsync
-
+* decoding user token and showing expiration date
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices
