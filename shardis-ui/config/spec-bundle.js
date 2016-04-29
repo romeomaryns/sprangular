@@ -17,8 +17,6 @@ require('zone.js/dist/jasmine-patch');
 require('zone.js/dist/async-test');
 
 require('rxjs/Rx');
-require('rxjs/subject/ReplaySubject');
-
 
 var testing = require('angular2/testing');
 var browser = require('angular2/platform/testing/browser');

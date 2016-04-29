@@ -10,6 +10,7 @@
 * removed form authentication
 * removed deprecated injectAsync
 * decoding user token and showing expiration date
+* updated Angular to beta 17
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices
