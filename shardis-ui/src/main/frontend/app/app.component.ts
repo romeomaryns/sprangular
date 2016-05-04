@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {RouteConfig} from '@angular/router-deprecated';
+import {Routes, Route} from '@angular/router';
 import {Home} from './views/home/home.component';
 import {LazyLoader, LazyModule} from './utils/lazy.loader';
 import {AuthService} from './services/auth.service';
+import {About} from './views/about/about.component';
+import {Playground} from './views/playground/playground.component';
+import {KitchenSink} from './views/kitchensink/kitchensink.component';
 
 @Component({
   selector: 'app',
@@ -12,25 +15,22 @@ import {AuthService} from './services/auth.service';
   styles: [require('./app.component.scss')],
   template: require('./app.component.html')
 })
-@RouteConfig([
-  {path: '/', component: Home, name: 'Index', useAsDefault: true},
-  {path: '/home', component: Home, name: 'Home'},
+@Routes([
+  new Route({path: '/', component: Home}),
+  new Route({path: '/home', component: Home}),
   {
     path: '/about',
-    loader: () => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
-    name: 'About'
+    component: About //() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
   },
   {
     path: '/playground',
-    loader: () => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
-    name: 'Playground'
+    component: Playground //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
   },
   {
     path: '/kitchensink',
-    loader: () => LazyLoader.lazyLoad(LazyModule.KITCHENSINK).then(m => m['KitchenSink']),
-    name: 'KitchenSink'
+    component: KitchenSink //() => LazyLoader.lazyLoad(LazyModule.KITCHENSINK).then(m => m['KitchenSink']),
   },
-  {path: '/**', redirectTo: ['Index']}
+  {path: '*', component: Home}
 ])
 export class App implements OnInit {
   angularLogo = 'assets/img/angular-logo.png';

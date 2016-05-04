@@ -1,4 +1,4 @@
-import {Router} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
 import {isPresent} from '@angular/core/src/facade/lang';
 import {
   Directive,
@@ -10,7 +10,7 @@ import {
   Optional,
   Input
 } from '@angular/core';
-import {Instruction, RouterLink} from '@angular/router-deprecated';
+import {RouterLink} from '@angular/router/src/directives/router_link';
 
 /**
  * RouterActive dynamically finds the first element with routerLink and toggles the active class
@@ -43,23 +43,23 @@ export class RouterActive {
     this.routerLink.changes.subscribe(() => {
       if (this.routerLink.first) {
         this._updateClass();
-        this._findRootRouter().subscribe(() => {
-          this._updateClass();
-        });
+        // this._findRootRouter().subscribe(() => {
+        //   this._updateClass();
+        // });
       }
     });
   }
 
-  private _findRootRouter(): Router {
-    var router: Router = this.router;
-    while (isPresent(router.parent)) {
-      router = router.parent;
-    }
-    return router;
-  }
+ // private _findRootRouter(): Router {
+    // var router: Router = this.router;
+    // while (isPresent(router.parent)) {
+    //   router = router.parent;
+    // }
+    // return router;
+  //}
 
   private _updateClass() {
-    let active = this.routerLink.first.isRouteActive;
+    let active = this.routerLink.first.isActive;
     this.renderer.setElementClass(this.element.nativeElement, this._attrOrProp(), active);
   }
 

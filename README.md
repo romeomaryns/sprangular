@@ -115,17 +115,35 @@ npm run e2e
 ## Changelog
 
 ### 1.4.0 (UNRELEASED)
-* updated Angular to beta 16
-* updated node dependencies
-* updated maven dependencies
-* fixed .gitignore
-* fully stateless authentication
-* storing oauth2 token in localstorage
-* removed form authentication
-* removed deprecated injectAsync
-* decoding user token and showing expiration date
-* updated Angular to beta 17
+* Ppdated Angular to beta 16
+* Updated node dependencies
+* Updated maven dependencies
+* Fixed .gitignore
+* Fully stateless authentication
+* Storing oauth2 token in localstorage
+* Removed form authentication
+* Removed deprecated injectAsync
+* Decoding user token and showing expiration date
+* Updated Angular to beta 17
 * Updated Angular to rc.1
+* Replaced router-deprecated with router (temporary no async routes)
+
+### 1.3.0 (21.07.2016)
+* Refactoring to microservices
+* Multi module pom project
+* Shared common library
+* Maven enforcer plugin
+* Custom schema for webpack config validator
+* Zull proxy
+* Auth module
+* Service discovery module (eureka)
+* Oauth2 security
+* Updated Angular to beta 14
+* Included all rxjs
+* Updated Angular to beta 15
+* Updated some dependencies
+* Path location strategy
+* Implicit login flow
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices

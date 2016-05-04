@@ -7,19 +7,19 @@
       <h1>{{ name }}</h1>
       <ul>
         <li router-active>
-          <a class="button" [routerLink]=" ['Index'] ">Index</a>
+          <a class="button" [routerLink]="['/']">Index</a>
         </li>
         <li router-active>
-          <a class="button" [routerLink]=" ['Home'] ">Home</a>
+          <a class="button" [routerLink]="['/home']">Home</a>
         </li>
         <li router-active>
-          <a class="button" [routerLink]=" ['KitchenSink'] ">KitchenSink</a>
+          <a class="button" [routerLink]="['/kitchensink']">KitchenSink</a>
         </li>
         <li router-active>
-          <a class="button" [routerLink]=" ['Playground'] ">Playground</a>
+          <a class="button" [routerLink]="['/playground']">Playground</a>
         </li>
         <li router-active>
-          <a class="button" [routerLink]=" ['About'] ">About</a>
+          <a class="button" [routerLink]="['/about']">About</a>
         </li>
         <li router-active>
           <a class="button" (click)="authService.authenticate()">Login</a>
