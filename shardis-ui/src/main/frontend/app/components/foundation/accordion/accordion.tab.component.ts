@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, ElementRef} from 'angular2/core';
+import {Component, OnInit, Input, ElementRef} from '@angular/core';
 import {Accordion} from './accordion.component';
-import {AnimationBuilder} from 'angular2/animate';
+import {AnimationBuilder} from '@angular/platform-browser/src/animate/animation_builder';
 
 @Component({
   selector: 'accordion-tab',

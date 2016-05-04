@@ -28,6 +28,7 @@
 * updated some dependencies
 * path location strategy
 * implicit login flow
+* Updated Angular to rc.1
 
 ### 1.2.2 (01.04.2016)
 * Updated Angular to beta 13

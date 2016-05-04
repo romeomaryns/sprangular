@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 import {Title} from './services/title.service.ts';
 import {XLarge} from './../../directives/x-large.directive.ts';

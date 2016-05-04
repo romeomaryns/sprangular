@@ -1,5 +1,5 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteConfig} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {RouteConfig} from '@angular/router-deprecated';
 import {Home} from './views/home/home.component';
 import {LazyLoader, LazyModule} from './utils/lazy.loader';
 import {AuthService} from './services/auth.service';

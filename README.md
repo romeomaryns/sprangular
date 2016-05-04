@@ -125,6 +125,7 @@ npm run e2e
 * removed deprecated injectAsync
 * decoding user token and showing expiration date
 * updated Angular to beta 17
+* Updated Angular to rc.1
 
 ### 1.3.0 (21.07.2016)
 * refactoring to microservices
