@@ -16,8 +16,8 @@ import java.security.Principal;
 public class TestRestController {
 
     @RequestMapping("/title")
-    public ValueObject getTitle() {
-        return new ValueObject("API SERVER IS ALIVE");
+    public ValueObject getTitle(Principal user) {
+        return new ValueObject("API SERVER IS ALIVE" + (user == null ? "" : " " + user.getName()));
     }
 
     @RequestMapping("/user")

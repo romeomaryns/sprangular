@@ -11,8 +11,8 @@ shardis-ui/target/
 
 ### node
 shardis-ui/etc/
-shardis-ui/etc/node/
-shardis-ui/etc/node_modules/
+shardis-ui/node/
+shardis-ui/node_modules/
 shardis-ui/npm-debug.log
 ### coverage
 shardis-ui/coverage/

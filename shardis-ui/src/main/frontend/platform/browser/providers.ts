@@ -1,12 +1,15 @@
-import {provide} from 'angular2/core';
+import {provide} from '@angular/core';
 
 // Angular 2
-import {FORM_PROVIDERS} from 'angular2/common';
+import {FORM_PROVIDERS} from '@angular/common';
 
 // Angular 2 Http
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS} from '@angular/http';
 // Angular 2 Router
-import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy} from 'angular2/router';
+import {ROUTER_PROVIDERS} from '@angular/router';
+import {LocationStrategy} from '@angular/common/src/location/location_strategy';
+import {PathLocationStrategy} from '@angular/common/src/location/path_location_strategy';
+
 
 // Angular 2 Material
 // import {MdRadioDispatcher} from '@angular2-material/radio/radio_dispatcher';
@@ -19,10 +22,10 @@ import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy} from 'angular2
 * providers/directives/pipes that only live in our browser environment
 */
 export const APPLICATION_PROVIDERS = [
+  ...ROUTER_PROVIDERS,
   ...FORM_PROVIDERS,
   ...HTTP_PROVIDERS,
   // ...MATERIAL_PROVIDERS,
-  ...ROUTER_PROVIDERS,
   provide(LocationStrategy, { useClass: PathLocationStrategy }),
 ];
 

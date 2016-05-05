@@ -1,19 +1,19 @@
 import {
   it,
   inject,
-  injectAsync,
-  beforeEachProviders,
-  TestComponentBuilder
-} from 'angular2/testing';
+  async,
+  beforeEachProviders
+} from '@angular/core/testing';
 
-import {Component, provide} from 'angular2/core';
-import {BaseRequestOptions, Http} from 'angular2/http';
-import {MockBackend} from 'angular2/http/testing';
+import {Component, provide} from '@angular/core';
+import {BaseRequestOptions, Http} from '@angular/http';
+import {MockBackend} from '@angular/http/testing';
 
 
 import {Title} from './title.service.ts';
-import {ResponseOptions} from 'angular2/http';
-import {Response} from 'angular2/http';
+import {ResponseOptions} from '@angular/http';
+import {Response} from '@angular/http';
+import {AuthService} from '../../../services/auth.service';
 
 describe('Title', () => {
   beforeEachProviders(() => [
@@ -25,7 +25,8 @@ describe('Title', () => {
       },
       deps: [MockBackend, BaseRequestOptions]
     }),
-    Title
+    Title,
+    AuthService
   ]);
 
 
@@ -33,7 +34,7 @@ describe('Title', () => {
     expect(!!title.http).toEqual(true);
   }));
 
-  it('should get data from the server', injectAsync([Title, MockBackend], (title, backend) => {
+  it('should get data from the server', async(inject([Title, MockBackend], (title, backend) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
@@ -61,6 +62,6 @@ describe('Title', () => {
 
     });
 
-  }));
+  })));
 
 });

@@ -1,24 +1,24 @@
 import {
   it,
   inject,
-  injectAsync,
+  async,
   describe,
-  beforeEachProviders,
-  TestComponentBuilder
-} from 'angular2/testing';
+  beforeEachProviders
+} from '@angular/core/testing';
 
-import {Component, provide} from 'angular2/core';
-import {BaseRequestOptions, Http} from 'angular2/http';
-import {MockBackend} from 'angular2/http/testing';
+import {Component, provide} from '@angular/core';
+import {BaseRequestOptions, Http} from '@angular/http';
+import {MockBackend} from '@angular/http/testing';
 
 
 // Load the implementations that should be tested
 import {Home} from './home.component.ts';
 import {Title} from './services/title.service.ts';
-import {Response} from 'angular2/http';
-import {ResponseOptions} from 'angular2/http';
-import {MockConnection} from 'angular2/src/http/backends/mock_backend';
-import {ResponseOptionsArgs} from 'angular2/http';
+import {Response} from '@angular/http';
+import {ResponseOptions} from '@angular/http';
+import {MockConnection} from '@angular/http/testing/mock_backend';
+import {ResponseOptionsArgs} from '@angular/http';
+import {AuthService} from '../../services/auth.service';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
@@ -33,7 +33,8 @@ describe('Home', () => {
     }),
 
     Title,
-    Home
+    Home,
+    AuthService
   ]);
 
   it('should have default data', inject([Home], (home) => {

@@ -1,7 +1,7 @@
-import {provide, PLATFORM_DIRECTIVES} from 'angular2/core';
+import {provide, PLATFORM_DIRECTIVES} from '@angular/core';
 
 // Angular 2 Router
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {FOUNDATION_COMPONENTS} from '../../app/components/foundation/accordion/foundation-components';
 
 // platform common directives
