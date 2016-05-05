@@ -114,7 +114,7 @@ npm run e2e
 
 ## Changelog
 
-### 1.4.0 (UNRELEASED)
+### 1.4.0 (05.05.2016)
 * Ppdated Angular to beta 16
 * Updated node dependencies
 * Updated maven dependencies
