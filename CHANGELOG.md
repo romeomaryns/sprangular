@@ -1,5 +1,7 @@
 ## Changelog
 
+### 1.5.0 (unreleased)
+
 ### 1.4.0 (05.05.2016)
 * Ppdated Angular to beta 16
 * Updated node dependencies
