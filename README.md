@@ -115,6 +115,7 @@ npm run e2e
 ## Changelog
 
 ### 1.5.0 (unreleased)
+* Updated Spring Boot to 1.3.4
 
 ### 1.4.0 (05.05.2016)
 * Updated Angular to beta 16
