@@ -149,7 +149,7 @@ function customizeForDev(config) {
     port: config.metadata.port,
     host: config.metadata.host,
     contentBase: './src/main/frontend',
-    outputPath: './tmp',
+    outputPath: './tmp/',
     historyApiFallback: true,
     watchOptions: {
       aggregateTimeout: 300,
