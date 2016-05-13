@@ -1,7 +1,10 @@
 ## Changelog
 
-### 1.5.0 (unreleased)
+### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4
+* Updated Spring Boot to 1.3.5
+* Added Spring IO Platform dependency
+* Various bugfixes
 
 ### 1.4.0 (05.05.2016)
 * Updated Angular to beta 16
