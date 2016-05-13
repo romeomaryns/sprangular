@@ -29,28 +29,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.4.0.jar
+java -jar ./target/shardis-discovery-1.5.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.4.0.jar
+java -jar ./target/shardis-api-1.5.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.4.0.jar
+java -jar ./target/shardis-auth-1.5.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.4.0.jar
+java -jar ./target/shardis-ui-1.5.0.jar
 ```
 
 
@@ -114,8 +114,14 @@ npm run e2e
 
 ## Changelog
 
+### 1.5.0 (13.05.2016)
+* Updated Spring Boot to 1.3.4
+* Updated Spring Boot to 1.3.5
+* Added Spring IO Platform dependency
+* Various bugfixes
+
 ### 1.4.0 (05.05.2016)
-* Ppdated Angular to beta 16
+* Updated Angular to beta 16
 * Updated node dependencies
 * Updated maven dependencies
 * Fixed .gitignore
