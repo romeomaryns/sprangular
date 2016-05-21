@@ -1,5 +1,7 @@
 ## Changelog
 
+### 1.6.0 (unreleased)
+
 ### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4
 * Updated Spring Boot to 1.3.5

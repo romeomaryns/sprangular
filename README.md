@@ -29,28 +29,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.5.0.jar
+java -jar ./target/shardis-discovery-1.6.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.5.0.jar
+java -jar ./target/shardis-api-1.6.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.5.0.jar
+java -jar ./target/shardis-auth-1.6.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.5.0.jar
+java -jar ./target/shardis-ui-1.6.0.jar
 ```
 
 
@@ -114,6 +114,8 @@ npm run e2e
 
 ## Changelog
 
+### 1.6.0 (unreleased)
+
 ### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4
 * Updated Spring Boot to 1.3.5
@@ -150,44 +152,5 @@ npm run e2e
 * Updated some dependencies
 * Path location strategy
 * Implicit login flow
-
-### 1.3.0 (21.07.2016)
-* refactoring to microservices
-* multi module pom project
-* shared common library
-* maven enforcer plugin
-* custom schema for webpack config validator
-* zull proxy
-* auth module
-* service discovery module (eureka)
-* oauth2 security
-* Updated Angular to beta 14
-* Included all rxjs
-* updated Angular to beta 15
-* updated some dependencies
-* path location strategy
-* implicit login flow
-
-### 1.2.2 (01.04.2016)
-* Updated Angular to beta 13
-
-### 1.2.1 (24.03.2016)
-* Updated Angular to beta 12
-* Removed zone.js fixes for beta 11
-* Replaced es6-promise loader with custom solution
-
-### 1.2.0 (23.03.2016)
-* Added motion-ui integration
-* Added fancy animation for accordion
-
-### 1.1.9 (21.03.2016)
-* Refactoring
-* First Angular component for Foundation : Accordion
-
-### 1.1.8 (20.03.2016)
-* Typescript files naming convention
-* Foundation kitchensink wit samples
-* Some changes from AngularClass
-
 
 [show full changelog](CHANGELOG.md)
