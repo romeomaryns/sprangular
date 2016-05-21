@@ -107,7 +107,7 @@
     "e2e": "protractor ./config/protractor.conf.js",
     "e2e:live": "protractor --elementExplorer ./config/protractor.conf.js",
     "test": "karma start ./config/karma.conf.js",
-    "ci": "npm run e2e && npm run test",
+    "ci": "npm run test && npm run e2e",
     "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./src/main/frontend/\"",
     "start": "npm run server:dev",
     "typings-install": "typings install",
