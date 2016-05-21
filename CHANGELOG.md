@@ -8,6 +8,7 @@
 * Updated all node packages
 * Fixed problem with nonexistent static directory
 * Fixed webpack validator custom schema config
+* Some fixes from AngularClass starter
 
 ### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4

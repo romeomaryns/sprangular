@@ -1,9 +1,11 @@
 // Ccre.js
-import  'core-js';
+import 'core-js/es6';
+import 'core-js/es7/reflect';
 
 // Zone.js
-import 'zone.js/lib/browser/browser';
+require('zone.js/dist/zone');
 
+// Typescript emit helpers polyfill
 import 'ts-helpers';
 
 if ('production' !== ENV) {

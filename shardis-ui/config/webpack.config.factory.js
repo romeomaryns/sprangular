@@ -188,7 +188,7 @@ function customizeForDev(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
 
 }
 
@@ -247,7 +247,7 @@ function customizeForProd(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
   config.plugins.push(new UglifyJsPlugin({
     // beautify: true, //debug
     // mangle: false, //debug
