@@ -3,6 +3,7 @@
 ### 1.6.0 (unreleased)
 * Updated node to 6.2.0
 * Updated npm to 3.9.2
+* Removed typings from git
 
 ### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4
