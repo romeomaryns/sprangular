@@ -94,7 +94,6 @@
 * Temporary removed ng2-bootstrap
 
 ### 1.1.0 (10.03.2016)
-
 * Switched to Angular2 beta 9
 * Added scss support
 * Added font-awesome package
@@ -102,9 +101,7 @@
 * Added ng-bootstrap (still buggy)
 
 ### 1.0.1 (09.03.2016)
-
 * Replaced ts-loader with awesome-typescript-loader
 
 ### 1.0.0 (07.03.2016)
-
 * Initial Version
