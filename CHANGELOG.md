@@ -1,6 +1,6 @@
 ## Changelog
 
-### 1.6.0 (unreleased)
+### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
 * Updated npm to 3.9.2
 * Removed typings from git
