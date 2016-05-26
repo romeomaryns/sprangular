@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shardis-discovery</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
     <packaging>jar</packaging>
 
     <name>shardis-discovery</name>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.shardis</groupId>
         <artifactId>shardis-parent</artifactId>
-        <version>1.5.0</version>
+        <version>1.6.0</version>
         <relativePath/>
     </parent>
 

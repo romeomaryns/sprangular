@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 var validateWebpackConfig = require('webpack-validator');
-var webpackValidationSchema = require('webpack-validator').schema;
 var Joi = require('joi');
 
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
@@ -189,7 +188,7 @@ function customizeForDev(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
 
 }
 
@@ -248,7 +247,7 @@ function customizeForProd(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'none'}));
+  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
   config.plugins.push(new UglifyJsPlugin({
     // beautify: true, //debug
     // mangle: false, //debug
@@ -332,13 +331,13 @@ function customizeForTest(config) {
 }
 
 function customWebpackConfigValidation(config) {
-  var customSchema = webpackValidationSchema.concat(Joi.object({
+  var customSchema = Joi.object({
     // this would just allow the property and doesn't perform any additional validation
     sassLoader: Joi.any(),
     htmlLoader: Joi.any()
-  }));
+  });
 
-  return validateWebpackConfig(config,customSchema);
+  return validateWebpackConfig(config, {schemaExtension: customSchema});
 }
 
 // Create webpack config of given type

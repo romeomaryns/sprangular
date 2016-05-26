@@ -1,5 +1,15 @@
 ## Changelog
 
+### 1.6.0 (26.05.2016)
+* Updated node to 6.2.0
+* Updated npm to 3.9.2
+* Removed typings from git
+* Updated typings
+* Updated all node packages
+* Fixed problem with nonexistent static directory
+* Fixed webpack validator custom schema config
+* Some fixes from AngularClass starter
+
 ### 1.5.0 (13.05.2016)
 * Updated Spring Boot to 1.3.4
 * Updated Spring Boot to 1.3.5
@@ -84,7 +94,6 @@
 * Temporary removed ng2-bootstrap
 
 ### 1.1.0 (10.03.2016)
-
 * Switched to Angular2 beta 9
 * Added scss support
 * Added font-awesome package
@@ -92,9 +101,7 @@
 * Added ng-bootstrap (still buggy)
 
 ### 1.0.1 (09.03.2016)
-
 * Replaced ts-loader with awesome-typescript-loader
 
 ### 1.0.0 (07.03.2016)
-
 * Initial Version
