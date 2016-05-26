@@ -29,28 +29,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.6.0.jar
+java -jar ./target/shardis-discovery-1.7.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.6.0.jar
+java -jar ./target/shardis-api-1.7.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.6.0.jar
+java -jar ./target/shardis-auth-1.7.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.6.0.jar
+java -jar ./target/shardis-ui-1.7.0.jar
 ```
 
 
@@ -114,6 +114,8 @@ npm run e2e
 
 ## Changelog
 
+### 1.7.0 (unreleased)
+
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
 * Updated npm to 3.9.2
@@ -143,22 +145,5 @@ npm run e2e
 * Updated Angular to beta 17
 * Updated Angular to rc.1
 * Replaced router-deprecated with router (temporary no async routes)
-
-### 1.3.0 (21.07.2016)
-* Refactoring to microservices
-* Multi module pom project
-* Shared common library
-* Maven enforcer plugin
-* Custom schema for webpack config validator
-* Zull proxy
-* Auth module
-* Service discovery module (eureka)
-* Oauth2 security
-* Updated Angular to beta 14
-* Included all rxjs
-* Updated Angular to beta 15
-* Updated some dependencies
-* Path location strategy
-* Implicit login flow
 
 [show full changelog](CHANGELOG.md)
