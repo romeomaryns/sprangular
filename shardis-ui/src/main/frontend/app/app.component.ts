@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes, Route} from '@angular/router';
+import {Routes} from '@angular/router';
 import {Home} from './views/home/home.component';
-import {LazyLoader, LazyModule} from './utils/lazy.loader';
 import {AuthService} from './services/auth.service';
 import {About} from './views/about/about.component';
 import {Playground} from './views/playground/playground.component';
@@ -15,17 +14,22 @@ import {Playground} from './views/playground/playground.component';
   template: require('./app.component.html')
 })
 @Routes([
-  {path: '/', component: Home},
-  {path: '/home', component: Home},
+  {
+    path: '/home',
+    component: Home as any
+  },
   {
     path: '/about',
-    component: About //() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
+    component: About as any//() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
   },
   {
     path: '/playground',
-    component: Playground //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
+    component: Playground as any //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
   },
-  {path: '*', component: Home}
+  {
+    path: '*',
+    component: Home as any
+  }
 ])
 export class App implements OnInit {
   angularLogo = 'assets/img/angular-logo.png';
