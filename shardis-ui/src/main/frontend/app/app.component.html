@@ -1,47 +1,33 @@
-<div class="app">
+<md-content>
+  <md-toolbar color="primary">
+    <span>{{ name }}</span>
+    <span class="fill"></span>
+    <a md-button router-active [routerLink]="['/']">Index</a>
+    <a md-button router-active [routerLink]="['/home']">Home</a>
+    <a md-button router-active [routerLink]="['/playground']">Playground</a>
+    <a md-button router-active [routerLink]="['/about']">About</a>
+    <button md-button (click)="authService.authenticate()">Login</button>
+    <button md-button (click)="authService.logout()">Logout</button>
+  </md-toolbar>
+  <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
+  <router-outlet></router-outlet>
 
-  <img [src]="angularLogo" alt="">
+  <md-content>
+    <h2>Authenticated {{authService.isAuthenticated()}}</h2>
 
-  <header>
-    <nav>
-      <h1>{{ name }}</h1>
-      <ul>
-        <li router-active>
-          <a class="button" [routerLink]="['/']">Index</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/home']">Home</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/playground']">Playground</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/about']">About</a>
-        </li>
-        <li router-active>
-          <a class="button" (click)="authService.authenticate()">Login</a>
-        </li>
-        <li router-active>
-          <a class="button" (click)="authService.logout()">Logout</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <h2>Authenticated {{authService.isAuthenticated()}}</h2>
-
-  <div style="width: 100%" *ngIf="authService.isAuthenticated()">
-    <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy HH:mm:ss'}}</h3>
+    <div style="width: 100%" *ngIf="authService.isAuthenticated()">
+      <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy HH:mm:ss'}}</h3>
   <pre>
     {{ authService.getUserData() | json }}
   </pre>
-  </div>
+    </div>
 
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+    <img class="logo" [src]="angularLogo" alt="">
+
+  </md-content>
+
 
   <footer>
-    {{ name }} by <a [href]="url">Tomasz Kucharzyk</a>
+    <span id="footerText">{{ name }} by <a [href]="url">Tomasz Kucharzyk</a></span>
   </footer>
-</div>
+</md-content>

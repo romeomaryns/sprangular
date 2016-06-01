@@ -1,28 +1,41 @@
-.app {
+html, body{
+  height: 100%;
+  background: #F4FAFA;
+}
+a.active,button.active{
+  background: #fff;
+  color: #009688;
+}
+a.active:hover,button.active:hover{
+  color: #fff;
+}
+.fill{
+  flex: 1 1 auto;
+}
+.app-state{
+  margin: 15px;
+  flex: 1;
+}
+.home{
+  flex: 1;
+}
+
+img.logo{
+    width: 368px;
+}
+
+md-content{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center
+  height: 100%;
+  align-items: center;
 }
 
-nav ul{
+footer{
+  flex: 0 0 60px;
+  padding: 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center
-}
-
-nav li {
-  display: inline;
-}
-
-main {
-  margin-top: 30px;
-}
-
-
-footer {
-  border-top: 1px solid #2F6FAD;
-  padding-top: 3px;
-  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
 }
