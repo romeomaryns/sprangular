@@ -106,7 +106,7 @@ var baseWebpackConfig = {
   sassLoader: {
     includePaths: [
       './node_modules/font-awesome/scss',
-      './node_modules/normailize.css'
+      './node_modules/normalize.css'
     ]
   },
   postcss: [
