@@ -59,7 +59,7 @@ var baseWebpackConfig = {
         exclude: [
           fullPathTo('../node_modules/rxjs'),
           fullPathTo('../node_modules/@angular'),
-          fullPathTo('../node_modules/@angular2-material'),
+          fullPathTo('../node_modules/@angular2-material')
         ]
       }
     ],
@@ -105,7 +105,8 @@ var baseWebpackConfig = {
   },
   sassLoader: {
     includePaths: [
-      './node_modules/font-awesome/scss'
+      './node_modules/font-awesome/scss',
+      './node_modules/normailize.css'
     ]
   },
   postcss: [

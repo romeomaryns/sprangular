@@ -121,6 +121,7 @@ npm run e2e
 * Removed foundation and motion-ui
 * Added angular2-material
 * Basic angular2-material styling
+* Added normalize.css
 
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
