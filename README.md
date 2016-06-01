@@ -8,7 +8,7 @@ Originally based on great [AngularClass](https://github.com/AngularClass) webpac
 * Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
 * scss support
-* Foundation 6
+* Angular material
 * font-awesome
 
 
