@@ -116,6 +116,7 @@ npm run e2e
 
 ### 1.7.0 (unreleased)
 * Added npm-check-updates as dev dependency
+* removed kitchensink page
 
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0

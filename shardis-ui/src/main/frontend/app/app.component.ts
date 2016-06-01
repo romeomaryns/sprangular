@@ -5,7 +5,6 @@ import {LazyLoader, LazyModule} from './utils/lazy.loader';
 import {AuthService} from './services/auth.service';
 import {About} from './views/about/about.component';
 import {Playground} from './views/playground/playground.component';
-import {KitchenSink} from './views/kitchensink/kitchensink.component';
 
 @Component({
   selector: 'app',
@@ -16,8 +15,8 @@ import {KitchenSink} from './views/kitchensink/kitchensink.component';
   template: require('./app.component.html')
 })
 @Routes([
-  new Route({path: '/', component: Home}),
-  new Route({path: '/home', component: Home}),
+  {path: '/', component: Home},
+  {path: '/home', component: Home},
   {
     path: '/about',
     component: About //() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
@@ -25,10 +24,6 @@ import {KitchenSink} from './views/kitchensink/kitchensink.component';
   {
     path: '/playground',
     component: Playground //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
-  },
-  {
-    path: '/kitchensink',
-    component: KitchenSink //() => LazyLoader.lazyLoad(LazyModule.KITCHENSINK).then(m => m['KitchenSink']),
   },
   {path: '*', component: Home}
 ])
