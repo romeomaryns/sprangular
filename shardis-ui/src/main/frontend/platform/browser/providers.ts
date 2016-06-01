@@ -9,13 +9,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import {ROUTER_PROVIDERS} from '@angular/router';
 import {LocationStrategy} from '@angular/common/src/location/location_strategy';
 import {PathLocationStrategy} from '@angular/common/src/location/path_location_strategy';
-
-
-// Angular 2 Material
-// import {MdRadioDispatcher} from '@angular2-material/radio/radio_dispatcher';
-// const MATERIAL_PROVIDERS = [
-//   MdRadioDispatcher
-// ];
+import {MATERIAL_PROVIDERS} from './material2';
 
 /*
 * Application Providers/Directives/Pipes
@@ -25,8 +19,8 @@ export const APPLICATION_PROVIDERS = [
   ...ROUTER_PROVIDERS,
   ...FORM_PROVIDERS,
   ...HTTP_PROVIDERS,
-  // ...MATERIAL_PROVIDERS,
-  provide(LocationStrategy, { useClass: PathLocationStrategy }),
+   ...MATERIAL_PROVIDERS,
+  provide(LocationStrategy, { useClass: PathLocationStrategy as any }),
 ];
 
 export const PROVIDERS = [

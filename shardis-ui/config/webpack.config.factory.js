@@ -57,7 +57,9 @@ var baseWebpackConfig = {
         test: /\.js$/,
         loader: "source-map-loader",
         exclude: [
-          fullPathTo('../node_modules/rxjs')
+          fullPathTo('../node_modules/rxjs'),
+          fullPathTo('../node_modules/@angular'),
+          fullPathTo('../node_modules/@angular2-material'),
         ]
       }
     ],

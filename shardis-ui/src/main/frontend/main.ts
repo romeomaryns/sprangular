@@ -23,7 +23,7 @@ require('./scss/main.scss');
  */
 export function main() {
 
-  return bootstrap(App, [
+  return bootstrap(App as any, [
     ...PROVIDERS,
     ...ENV_PROVIDERS,
     ...DIRECTIVES,

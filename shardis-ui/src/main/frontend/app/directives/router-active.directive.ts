@@ -33,7 +33,7 @@ export class RouterActive {
     public router: Router,
     public element: ElementRef,
     public renderer: Renderer,
-    @Query(RouterLink) public routerLink: QueryList<RouterLink>,
+    @Query(RouterLink as any) public routerLink: QueryList<RouterLink>,
     @Optional() @Attribute('router-active') routerActiveAttr?: string) {
 
       this.routerActiveAttr = this._defaultAttrValue(routerActiveAttr);
