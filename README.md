@@ -122,6 +122,8 @@ npm run e2e
 * Added angular2-material
 * Basic angular2-material styling
 * Added normalize.css
+* Added fancy loading screen
+* Removed development ribbon
 
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
