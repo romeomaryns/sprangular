@@ -125,6 +125,7 @@ npm run e2e
 * Added fancy loading screen
 * Removed development ribbon
 * Updated angular2-material to 2.0.0-alpha.5-2
+* Added angular2-material palette to main.scss
 
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
