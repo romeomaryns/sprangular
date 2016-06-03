@@ -1,17 +1,20 @@
 <div>
-  <span x-large>Content from server:</span>
 
 
-  <div>
-<!--
-  Rather than wiring up two-way data-binding ourselves
-  we can use Angular's [(ngModel)] syntax
-  <input type="text" [(ngModel)]="title.value">
--->
+  <div style="width: 100%" *ngIf="authService.isAuthenticated()">
+    <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy
+      HH:mm:ss'}}</h3>
+  <pre>
+    {{ authService.getUserData() | json }}
+  </pre>
 
-    <input type="text" [value]="data.value" (input)="data.value = $event.target.value" autofocus>
+    <span x-large>Content from server:</span>
+
+    <div>
+      <input type="text" [value]="data.value" (input)="data.value = $event.target.value" autofocus>
+    </div>
+
+
+    <pre>this.data = {{ data | json }}</pre>
   </div>
-
-
-  <pre>this.data = {{ data | json }}</pre>
 </div>

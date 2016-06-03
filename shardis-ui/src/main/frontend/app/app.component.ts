@@ -35,8 +35,36 @@ export class App implements OnInit {
   angularLogo = 'assets/img/angular-logo.png';
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
+  loading: boolean = false;
 
-  constructor(public authService: AuthService) {
+  views: Object[] = [
+    {
+      name: 'Index',
+      description: 'Index page',
+      icon: 'public',
+      link: ['/home']
+    },
+    {
+      name: 'Home',
+      description: 'Home page',
+      icon: 'domain',
+      link: ['/home']
+    },
+    {
+      name: 'Playground',
+      description: 'Playground page',
+      icon: 'casino',
+      link: ['/playground']
+    },
+    {
+      name: 'About',
+      description: 'About page',
+      icon: 'person',
+      link: ['/about']
+    }
+  ];
+
+  constructor(public authService:AuthService) {
   }
 
   ngOnInit():void {

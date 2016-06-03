@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 import {Title} from './services/title.service.ts';
 import {XLarge} from './../../directives/x-large.directive.ts';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   // The selector is what angular internally uses
@@ -26,7 +27,7 @@ export class Home {
   // Set our default values
   data = {value: ''};
   // TypeScript public modifiers
-  constructor(public title: Title) {
+  constructor(public title: Title, public authService: AuthService) {
   }
 
   ngOnInit() {
