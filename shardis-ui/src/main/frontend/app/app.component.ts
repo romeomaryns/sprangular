@@ -4,6 +4,7 @@ import {Home} from './views/home/home.component';
 import {AuthService} from './services/auth.service';
 import {About} from './views/about/about.component';
 import {Playground} from './views/playground/playground.component';
+import {Login} from './views/login/login.component';
 
 @Component({
   selector: 'app',
@@ -25,6 +26,10 @@ import {Playground} from './views/playground/playground.component';
   {
     path: '/playground',
     component: Playground as any //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
+  },
+  {
+    path: '/login',
+    component: Login as any
   },
   {
     path: '*',
