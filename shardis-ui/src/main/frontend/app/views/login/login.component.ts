@@ -30,7 +30,6 @@ export class Login implements OnInit {
         this.message = 'Bad credentials';
       }
     );
-
   }
 
   ngOnInit():any {

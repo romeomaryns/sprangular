@@ -1,18 +1,20 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {LocalStorage} from 'ng2-webstorage/index';
 
 @Injectable()
 export class AuthService {
 
   private authenticated:boolean = false;
-  private tokenData:Oauth2TokenData = new Oauth2TokenData();
   private tokenExpirationDate:Date = null;
   private userData:any = null;
 
+  @LocalStorage()
+  private tokenData:Oauth2TokenData = new Oauth2TokenData();
+
   constructor(public http:Http) {
-    if (window.localStorage.getItem('tokenData')) {
-      this.tokenData = JSON.parse(window.localStorage.getItem('tokenData'));
+    if (this.tokenData && this.tokenData.access_token) {
       this.authenticated = true;
       this.userData = this.decodeAccessToken(this.tokenData.access_token);
       this.tokenExpirationDate = new Date(this.userData.exp * 1000);
@@ -45,7 +47,6 @@ export class AuthService {
     response.subscribe(
         data => {
           this.tokenData = data.json();
-          window.localStorage.setItem('tokenData', JSON.stringify(this.tokenData));
           this.authenticated = true;
           this.userData = this.decodeAccessToken(this.tokenData.access_token);
           this.tokenExpirationDate = new Date(this.userData.exp * 1000);
@@ -59,7 +60,6 @@ export class AuthService {
   }
 
   public logout():any {
-    window.localStorage.removeItem('tokenData');
     this.tokenData = new Oauth2TokenData();
     this.userData = null;
     this.authenticated = false;
