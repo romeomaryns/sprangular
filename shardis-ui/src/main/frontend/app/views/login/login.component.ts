@@ -13,14 +13,24 @@ export class Login implements OnInit {
 
   username = 'admin';
   password = 'xxxxxx';
+  message = '';
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService:AuthService, public router:Router) {
   }
 
   logMeIn() {
     console.log('LogMeIn');
-    this.authService.authenticate();
-    this.router.navigate(['/about']);
+    this.authService.authenticate(this.username, this.password).subscribe(
+      data => {
+        if (this.authService.isAuthenticated()) {
+          this.router.navigate(['/about']);
+        }
+      },
+      err => {
+        this.message = 'Bad credentials';
+      }
+    );
+
   }
 
   ngOnInit():any {

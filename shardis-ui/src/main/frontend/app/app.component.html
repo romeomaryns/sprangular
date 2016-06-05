@@ -19,8 +19,8 @@
       </button>
       <span>{{ name }}</span>
       <span class="fill"></span>
-      <button md-button (click)="authService.authenticate()">Login</button>
-      <button md-button (click)="authService.logout()">Logout</button>
+      <a md-button router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
+      <button md-button (click)="authService.logout()" *ngIf="authService.isAuthenticated()">Logout</button>
     </md-toolbar>
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 

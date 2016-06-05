@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
@@ -26,12 +27,8 @@ export class AuthService {
     return this.authenticated;
   }
 
-  public authenticate():void {
+  public authenticate(username: string, password: string) :Observable<Response> {
     console.log('Authentication pending...');
-
-    var username = 'admin';
-    var password = 'xxxxxx';
-
 
     var basicAuthHeader = btoa(`acme:acmesecret`);
 
@@ -43,8 +40,9 @@ export class AuthService {
     var data = 'username=' + encodeURIComponent(username) + '&password='
       + encodeURIComponent(password) + '&grant_type=password';
 
-    this.http.post('/auth/oauth/token', data, {headers: headers})
-      .subscribe(
+    var response: Observable<Response> = this.http.post('/auth/oauth/token', data, {headers: headers});
+
+    response.subscribe(
         data => {
           this.tokenData = data.json();
           window.localStorage.setItem('tokenData', JSON.stringify(this.tokenData));
@@ -56,6 +54,8 @@ export class AuthService {
           console.log(err);
         }
       );
+
+    return response;
   }
 
   public logout():any {
