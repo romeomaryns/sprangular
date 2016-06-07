@@ -1,4 +1,5 @@
 var path = require('path');
+var fs = require('fs');
 var webpack = require('webpack');
 
 var validateWebpackConfig = require('webpack-validator');
@@ -190,7 +191,13 @@ function customizeForDev(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
+  var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: './src/main/frontend/index.html',
+    chunksSortMode: 'dependency',
+    minify: false,
+    inlineCss: '<style>'+inlinedCss+'</style>'
+  }));
 
 }
 
@@ -249,7 +256,13 @@ function customizeForProd(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
+  var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: './src/main/frontend/index.html',
+    chunksSortMode: 'dependency',
+    minify: {minimize: true, removeComments: true, preserveLineBreaks: true, collapseWhitespace: true},
+    inlineCss: '<style>'+inlinedCss+'</style>'
+  }));
   config.plugins.push(new UglifyJsPlugin({
     // beautify: true, //debug
     // mangle: false, //debug
@@ -289,7 +302,10 @@ function customizeForProd(config) {
       [/\*/, /(?:)/],
       [/\[?\(?/, /(?:)/]
     ],
-    customAttrAssign: [/\)?\]?=/]
+    customAttrAssign: [/\)?\]?=/],
+    removeComments: true,
+    preserveLineBreaks: true,
+    collapseWhitespace: true
   };
 }
 

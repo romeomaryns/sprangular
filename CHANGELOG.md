@@ -15,6 +15,7 @@
 * Added sidenav navigation
 * Added working login form
 * Added ng2-webstorage library
+* Inline base css from file and minify html
 
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
