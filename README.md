@@ -147,18 +147,4 @@ npm run e2e
 * Added Spring IO Platform dependency
 * Various bugfixes
 
-### 1.4.0 (05.05.2016)
-* Updated Angular to beta 16
-* Updated node dependencies
-* Updated maven dependencies
-* Fixed .gitignore
-* Fully stateless authentication
-* Storing oauth2 token in localstorage
-* Removed form authentication
-* Removed deprecated injectAsync
-* Decoding user token and showing expiration date
-* Updated Angular to beta 17
-* Updated Angular to rc.1
-* Replaced router-deprecated with router (temporary no async routes)
-
 [show full changelog](CHANGELOG.md)
