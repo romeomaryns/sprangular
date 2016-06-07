@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers, Response} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import {Http, Headers} from '@angular/http';
 import {LocalStorage} from 'ng2-webstorage/index';
 
 @Injectable()
@@ -29,34 +28,46 @@ export class AuthService {
     return this.authenticated;
   }
 
-  public authenticate(username: string, password: string) :Observable<Response> {
+  public authenticate(username: string, password: string) :Promise<string> {
+
     console.log('Authentication pending...');
 
-    var basicAuthHeader = btoa(`acme:acmesecret`);
+    return new Promise<string>((resolve, reject) => {
 
-    var headers = new Headers();
-    headers.append('Authorization', `Basic  ${basicAuthHeader}`);
-    headers.append('Accept', `application/json`);
-    headers.append('Content-Type', `application/x-www-form-urlencoded`);
+      if (!username.trim()) {
+        reject('Username cannot be blank');
+      }
+      if (!password.trim()) {
+        reject('Password cannot be blank');
+      }
 
-    var data = 'username=' + encodeURIComponent(username) + '&password='
-      + encodeURIComponent(password) + '&grant_type=password';
+      var basicAuthHeader = btoa(`acme:acmesecret`);
 
-    var response: Observable<Response> = this.http.post('/auth/oauth/token', data, {headers: headers});
+      var headers = new Headers();
+      headers.append('Authorization', `Basic  ${basicAuthHeader}`);
+      headers.append('Accept', `application/json`);
+      headers.append('Content-Type', `application/x-www-form-urlencoded`);
 
-    response.subscribe(
-        data => {
-          this.tokenData = data.json();
-          this.authenticated = true;
-          this.userData = this.decodeAccessToken(this.tokenData.access_token);
-          this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-        },
-        err => {
-          console.log(err);
-        }
-      );
+      var data = 'username=' + encodeURIComponent(username) + '&password='
+        + encodeURIComponent(password) + '&grant_type=password';
 
-    return response;
+      this.http
+        .post('/auth/oauth/token', data, {headers: headers})
+        .subscribe(
+          data => {
+            this.tokenData = data.json();
+            this.authenticated = true;
+            this.userData = this.decodeAccessToken(this.tokenData.access_token);
+            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+            resolve('OK');
+          },
+          err => {
+            console.log(err);
+            reject('Username and password doesn\'t match');
+          }
+        );
+
+    });
   }
 
   public logout():any {

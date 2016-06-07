@@ -20,16 +20,15 @@ export class Login implements OnInit {
 
   logMeIn() {
     console.log('LogMeIn');
-    this.authService.authenticate(this.username, this.password).subscribe(
-      data => {
+    this.authService
+      .authenticate(this.username, this.password)
+      .catch(errorMessage => this.message = errorMessage)
+      .then(() => {
         if (this.authService.isAuthenticated()) {
           this.router.navigate(['/about']);
         }
-      },
-      err => {
-        this.message = 'Bad credentials';
-      }
-    );
+      });
+
   }
 
   ngOnInit():any {

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes} from '@angular/router';
+import {Routes, Router} from '@angular/router';
 import {Home} from './views/home/home.component';
 import {AuthService} from './services/auth.service';
 import {About} from './views/about/about.component';
@@ -16,7 +16,7 @@ import {Login} from './views/login/login.component';
 })
 @Routes([
   {
-    path: '/home',
+    path: '/',
     component: Home as any
   },
   {
@@ -39,14 +39,15 @@ import {Login} from './views/login/login.component';
 export class App implements OnInit {
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
-  loading: boolean = false;
+  loading:boolean = false;
 
-  views: Object[] = [
+  views:Object[] = [
+
     {
       name: 'Home',
       description: 'Home page',
       icon: 'public',
-      link: ['/home']
+      link: ['/']
     },
     {
       name: 'Playground',
@@ -62,10 +63,15 @@ export class App implements OnInit {
     }
   ];
 
-  constructor(public authService:AuthService) {
+  constructor(public authService: AuthService, public router: Router) {
   }
 
-  ngOnInit():void {
+  logMeOut(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
+  ngOnInit(): void {
     console.log('app on init');
   }
 

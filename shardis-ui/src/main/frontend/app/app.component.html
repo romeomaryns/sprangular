@@ -20,7 +20,7 @@
       <span>{{ name }}</span>
       <span class="fill"></span>
       <a md-raised-button color="primary" router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
-      <button md-raised-button color="primary" (click)="authService.logout()" *ngIf="authService.isAuthenticated()">Logout</button>
+      <button md-raised-button color="primary" (click)="logMeOut()" *ngIf="authService.isAuthenticated()">Logout</button>
     </md-toolbar>
 
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
