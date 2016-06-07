@@ -43,15 +43,9 @@ export class App implements OnInit {
 
   views: Object[] = [
     {
-      name: 'Index',
-      description: 'Index page',
-      icon: 'public',
-      link: ['/home']
-    },
-    {
       name: 'Home',
       description: 'Home page',
-      icon: 'domain',
+      icon: 'public',
       link: ['/home']
     },
     {

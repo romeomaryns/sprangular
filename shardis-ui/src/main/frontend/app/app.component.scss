@@ -1,17 +1,19 @@
+.fill {
+  flex: 1 1 auto;
+}
+
 .footer {
   align-items: center;
   font-size: 1em;
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 25px auto;
 
   a, a:hover, a:visited {
     text-decoration: none;
     color: black;
   }
 
-  div {
-    margin: 10px auto;
-  }
 }
 

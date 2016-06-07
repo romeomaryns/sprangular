@@ -19,8 +19,8 @@
       </button>
       <span>{{ name }}</span>
       <span class="fill"></span>
-      <a md-button router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
-      <button md-button (click)="authService.logout()" *ngIf="authService.isAuthenticated()">Logout</button>
+      <a md-raised-button color="primary" router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
+      <button md-raised-button color="primary" (click)="authService.logout()" *ngIf="authService.isAuthenticated()">Logout</button>
     </md-toolbar>
 
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
@@ -30,8 +30,11 @@
   </div>
 
   <md-card class="footer" color="primary">
-    <div><span>{{ name }}</span></div>
-    <div><span><a [href]="url">by Tomasz Kucharzyk</a></span></div>
+    <md-card-header>
+      <img md-card-avatar src="/assets/img/angular-logo.png">
+      <md-card-title>{{ name }}</md-card-title>
+      <md-card-subtitle><a [href]="url">by Tomasz Kucharzyk</a></md-card-subtitle>
+    </md-card-header>
   </md-card>
 
 </md-sidenav-layout>
