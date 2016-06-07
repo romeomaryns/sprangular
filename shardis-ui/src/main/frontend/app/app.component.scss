@@ -1,39 +1,17 @@
-html, body{
-  height: 100%;
-  background: #dedede;
-}
-a.active,button.active{
-  color: #009688;
-}
-a.active:hover,button.active:hover{
-font-weight: bold;
-}
-.fill{
-  flex: 1 1 auto;
-}
-.app-state{
-  margin: 15px;
-  flex: 1;
-}
-.home{
-  flex: 1;
-}
-
-img.logo{
-    width: 368px;
-}
-
-md-content{
+.footer {
+  align-items: center;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  align-items: center;
+  text-align: center;
+
+  a, a:hover, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  div {
+    margin: 10px auto;
+  }
 }
 
-footer{
-  flex: 0 0 60px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

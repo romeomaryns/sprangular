@@ -1,4 +1,4 @@
-<md-sidenav-layout fullscreen>
+<md-sidenav-layout fullscreen class="sidenav-layout">
 
   <md-sidenav #sidenav>
     <md-nav-list>
@@ -10,7 +10,7 @@
     </md-nav-list>
   </md-sidenav>
 
-  <md-content>
+  <div class="main-content">
     <md-toolbar color="primary">
       <button md-icon-button (click)="sidenav.open()">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -22,22 +22,17 @@
       <a md-button router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
       <button md-button (click)="authService.logout()" *ngIf="authService.isAuthenticated()">Logout</button>
     </md-toolbar>
+
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 
+    <router-outlet></router-outlet>
 
+  </div>
 
-      <h2 style="margin-top: 20px">Authenticated {{authService.isAuthenticated()}}</h2>
-
-      <img class="logo" [src]="angularLogo" alt="">
-
-      <router-outlet></router-outlet>
-
-
-
-
-    <footer>
-      <span id="footerText">{{ name }} by <a [href]="url">Tomasz Kucharzyk</a></span>
-    </footer>
-  </md-content>
+  <md-card class="footer" color="primary">
+    <div><span>{{ name }}</span></div>
+    <div><span><a [href]="url">by Tomasz Kucharzyk</a></span></div>
+  </md-card>
 
 </md-sidenav-layout>
+

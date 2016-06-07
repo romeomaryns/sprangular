@@ -1,5 +1,9 @@
 <div>
 
+  <h2 style="margin-top: 20px">Authenticated {{authService.isAuthenticated()}}</h2>
+
+  <img class="logo" [src]="angularLogo" alt="">
+
 
   <div style="width: 100%" *ngIf="authService.isAuthenticated()">
     <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy

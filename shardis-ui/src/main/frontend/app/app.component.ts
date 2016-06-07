@@ -37,7 +37,6 @@ import {Login} from './views/login/login.component';
   }
 ])
 export class App implements OnInit {
-  angularLogo = 'assets/img/angular-logo.png';
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
   loading: boolean = false;

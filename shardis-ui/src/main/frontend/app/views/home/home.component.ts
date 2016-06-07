@@ -24,6 +24,7 @@ import {AuthService} from '../../services/auth.service';
   template: require('./home.component.html')
 })
 export class Home {
+  angularLogo = 'assets/img/angular-logo.png';
   // Set our default values
   data = {value: ''};
   // TypeScript public modifiers

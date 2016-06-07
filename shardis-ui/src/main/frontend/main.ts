@@ -34,14 +34,6 @@ export function main() {
 }
 
 /*
- * Vendors
- * For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app
- * You can also import them in vendors to ensure that they are bundled in one file
- * Also see custom-typings.d.ts as you also need to do `typings install x` where `x` is your module
- */
-
-
-/*
  * Hot Module Reload
  * experimental version by @gdi2290
  */
