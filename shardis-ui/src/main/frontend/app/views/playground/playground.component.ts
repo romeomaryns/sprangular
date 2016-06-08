@@ -5,7 +5,7 @@ console.log('`Playground` component loaded asynchronously...');
 
 @Component({
   selector: 'playground',
-  template: `<br><div><my-app></my-app></div>`,
+  template: `<div><my-app></my-app></div>`,
   directives: [AppComponent]
 })
 export class Playground {
