@@ -1,5 +1,7 @@
 ## Changelog
 
+### 1.8.0 (unreleased)
+
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency
 * Removed kitchensink page

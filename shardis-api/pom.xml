@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shardis-api</artifactId>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
     <packaging>jar</packaging>
 
     <name>shardis-api</name>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.shardis</groupId>
         <artifactId>shardis-parent</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.0</version>
         <relativePath/>
     </parent>
 

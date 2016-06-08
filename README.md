@@ -29,28 +29,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.7.0.jar
+java -jar ./target/shardis-discovery-1.8.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.7.0.jar
+java -jar ./target/shardis-api-1.8.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.7.0.jar
+java -jar ./target/shardis-auth-1.8.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.7.0.jar
+java -jar ./target/shardis-ui-1.8.0.jar
 ```
 
 
@@ -114,6 +114,8 @@ npm run e2e
 
 ## Changelog
 
+### 1.8.0 (unreleased)
+
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency
 * Removed kitchensink page
@@ -140,11 +142,5 @@ npm run e2e
 * Fixed problem with nonexistent static directory
 * Fixed webpack validator custom schema config
 * Some fixes from AngularClass starter
-
-### 1.5.0 (13.05.2016)
-* Updated Spring Boot to 1.3.4
-* Updated Spring Boot to 1.3.5
-* Added Spring IO Platform dependency
-* Various bugfixes
 
 [show full changelog](CHANGELOG.md)
