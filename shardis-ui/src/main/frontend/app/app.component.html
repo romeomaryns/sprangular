@@ -1,7 +1,7 @@
 <md-sidenav-layout fullscreen class="sidenav-layout">
 
   <md-sidenav #sidenav>
-    <md-nav-list>
+    <md-nav-list class="navigation">
       <a md-list-item router-active [routerLink]="view.link" (click)="sidenav.close()" *ngFor="let view of views">
         <md-icon md-list-icon>{{view.icon}}</md-icon>
         <span md-line>{{view.name}}</span>
