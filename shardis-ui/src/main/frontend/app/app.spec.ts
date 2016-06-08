@@ -11,6 +11,7 @@ import {AuthService} from './services/auth.service';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing/mock_backend';
 import {provide} from '@angular/core';
+import { ROUTER_FAKE_PROVIDERS } from '@angular/router/testing';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
@@ -18,6 +19,7 @@ describe('App', () => {
     App,
     BaseRequestOptions,
     MockBackend,
+    ROUTER_FAKE_PROVIDERS,
     provide(Http, {
       useFactory: function (backend, defaultOptions) {
         return new Http(backend, defaultOptions);
