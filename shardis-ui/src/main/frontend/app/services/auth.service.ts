@@ -10,7 +10,7 @@ export class AuthService {
   private userData:any = null;
 
   @LocalStorage()
-  private tokenData:Oauth2TokenData = new Oauth2TokenData();
+  private tokenData:Oauth2TokenData;
 
   constructor(public http:Http) {
     if (this.tokenData && this.tokenData.access_token) {
