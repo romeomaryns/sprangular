@@ -1,5 +1,22 @@
 ## Changelog
 
+### 1.7.0 (08.06.2016)
+* Added npm-check-updates as dev dependency
+* Removed kitchensink page
+* Updated dependencies
+* Removed foundation and motion-ui
+* Added angular2-material
+* Basic angular2-material styling
+* Added normalize.css
+* Added fancy loading screen
+* Removed development ribbon
+* Updated angular2-material to 2.0.0-alpha.5-2
+* Added angular2-material palette to main.scss
+* Added sidenav navigation
+* Added working login form
+* Added ng2-webstorage library
+* Inline base css from file and minify html
+
 ### 1.6.0 (26.05.2016)
 * Updated node to 6.2.0
 * Updated npm to 3.9.2

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shardis-ui</artifactId>
-    <version>1.6.0</version>
+    <version>1.7.0</version>
     <packaging>jar</packaging>
 
     <name>shardis-ui</name>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.shardis</groupId>
         <artifactId>shardis-parent</artifactId>
-        <version>1.6.0</version>
+        <version>1.7.0</version>
         <relativePath/>
     </parent>
 
@@ -22,10 +22,10 @@
             <groupId>com.shardis</groupId>
             <artifactId>shardis-common</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-devtools</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

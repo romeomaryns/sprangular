@@ -1,28 +1,19 @@
-.app {
+.fill {
+  flex: 1 1 auto;
+}
+
+.footer {
+  align-items: center;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center
+  text-align: center;
+  margin: 25px auto;
+
+  a, a:hover, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
 }
 
-nav ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center
-}
-
-nav li {
-  display: inline;
-}
-
-main {
-  margin-top: 30px;
-}
-
-
-footer {
-  border-top: 1px solid #2F6FAD;
-  padding-top: 3px;
-  margin-top: 30px;
-}

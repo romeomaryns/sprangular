@@ -29,31 +29,42 @@
   <meta name="theme-color" content="#00bcd4">
   <!-- end favicon -->
 
-  <% if (webpackConfig.metadata.ENV === 'development') { %>
-  <!--development ribbon css-->
-  <link rel="stylesheet" href="/assets/css/dev.css">
-  <% } %>
+  <!-- basic style -->
+  <%= htmlWebpackPlugin.options.inlineCss %>
+  <!-- end basic style -->
+
+  <!-- icon fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- end icon fonts -->
 
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
+  <!-- end base url -->
 
 </head>
 
 <body>
-<% if (webpackConfig.metadata.ENV === 'development') { %>
-<!--development ribbon-->
-<div class="development"></div>
-<% } %>
 
-<!--application-->
+<!-- application -->
 <app>
-  Loading...
+<div class="loader-overlay">
+  <div class="loader-box">
+    <div class="loader-animation">
+      <% if (webpackConfig.metadata.ENV === 'development') { %>
+      <span>Loading deveploment version...</span>
+      <% } else { %>
+      <span>Loading...</span>
+      <% } %>
+    </div>
+  </div>
+</div>
 </app>
+<!-- end application -->
 
 <% if (webpackConfig.metadata.ENV === 'development') { %>
-<!-- Webpack Dev Server reload -->
-<script
-  src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
+<!-- webpack dev server reload -->
+<script src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
+<!-- end webpack dev server reload -->
 <% } %>
 
 </body>

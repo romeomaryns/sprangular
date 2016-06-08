@@ -1,50 +1,41 @@
-<div class="app">
+<md-sidenav-layout fullscreen class="sidenav-layout">
 
-  <img [src]="angularLogo" alt="">
+  <md-sidenav #sidenav>
+    <md-nav-list class="navigation">
+      <a md-list-item router-active [routerLink]="view.link" (click)="sidenav.close()" *ngFor="let view of views">
+        <md-icon md-list-icon>{{view.icon}}</md-icon>
+        <span md-line>{{view.name}}</span>
+        <span md-line>{{view.description}}</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
 
-  <header>
-    <nav>
-      <h1>{{ name }}</h1>
-      <ul>
-        <li router-active>
-          <a class="button" [routerLink]="['/']">Index</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/home']">Home</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/kitchensink']">KitchenSink</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/playground']">Playground</a>
-        </li>
-        <li router-active>
-          <a class="button" [routerLink]="['/about']">About</a>
-        </li>
-        <li router-active>
-          <a class="button" (click)="authService.authenticate()">Login</a>
-        </li>
-        <li router-active>
-          <a class="button" (click)="authService.logout()">Logout</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div class="main-content">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.open()">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+        </svg>
+      </button>
+      <span>{{ name }}</span>
+      <span class="fill"></span>
+      <a md-raised-button color="primary" router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
+      <button md-raised-button color="primary" (click)="logMeOut()" *ngIf="authService.isAuthenticated()">Logout</button>
+    </md-toolbar>
 
-  <h2>Authenticated {{authService.isAuthenticated()}}</h2>
+    <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 
-  <div style="width: 100%" *ngIf="authService.isAuthenticated()">
-    <h3 style="text-align: center">Token will expire {{authService.getTokenExpirationDate() | date:'MM/dd/yy HH:mm:ss'}}</h3>
-  <pre>
-    {{ authService.getUserData() | json }}
-  </pre>
+    <router-outlet></router-outlet>
+
   </div>
 
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+  <md-card class="footer" color="primary">
+    <md-card-header>
+      <img md-card-avatar src="/assets/img/angular-logo.png">
+      <md-card-title>{{ name }}</md-card-title>
+      <md-card-subtitle><a [href]="url">by Tomasz Kucharzyk</a></md-card-subtitle>
+    </md-card-header>
+  </md-card>
 
-  <footer>
-    {{ name }} by <a [href]="url">Tomasz Kucharzyk</a>
-  </footer>
-</div>
+</md-sidenav-layout>
+

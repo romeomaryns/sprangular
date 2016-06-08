@@ -1,8 +1,0 @@
-@import 'motion-ui';
-
-@include motion-ui-transitions;
-@include motion-ui-animations;
-
-.slideAndSpinAndFade {
-  @include mui-animation(fade, spin, slide($direction: up, $amount: 120%));
-}

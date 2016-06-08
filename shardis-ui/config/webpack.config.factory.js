@@ -1,4 +1,5 @@
 var path = require('path');
+var fs = require('fs');
 var webpack = require('webpack');
 
 var validateWebpackConfig = require('webpack-validator');
@@ -57,7 +58,10 @@ var baseWebpackConfig = {
         test: /\.js$/,
         loader: "source-map-loader",
         exclude: [
-          fullPathTo('../node_modules/rxjs')
+          fullPathTo('../node_modules/rxjs'),
+          fullPathTo('../node_modules/@angular'),
+          fullPathTo('../node_modules/@angular2-material'),
+          fullPathTo('../node_modules/ng2-webstorage')
         ]
       }
     ],
@@ -103,9 +107,8 @@ var baseWebpackConfig = {
   },
   sassLoader: {
     includePaths: [
-      './node_modules/foundation-sites/scss',
       './node_modules/font-awesome/scss',
-      './node_modules/motion-ui/src'
+      './node_modules/normalize.css'
     ]
   },
   postcss: [
@@ -188,7 +191,13 @@ function customizeForDev(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
+  var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: './src/main/frontend/index.html',
+    chunksSortMode: 'dependency',
+    minify: false,
+    inlineCss: '<style>'+inlinedCss+'</style>'
+  }));
 
 }
 
@@ -247,7 +256,13 @@ function customizeForProd(config) {
       to: 'assets'
     }
   ]));
-  config.plugins.push(new HtmlWebpackPlugin({template: './src/main/frontend/index.html', chunksSortMode: 'dependency'}));
+  var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: './src/main/frontend/index.html',
+    chunksSortMode: 'dependency',
+    minify: {minimize: true, removeComments: true, preserveLineBreaks: true, collapseWhitespace: true},
+    inlineCss: '<style>'+inlinedCss+'</style>'
+  }));
   config.plugins.push(new UglifyJsPlugin({
     // beautify: true, //debug
     // mangle: false, //debug
@@ -287,7 +302,10 @@ function customizeForProd(config) {
       [/\*/, /(?:)/],
       [/\[?\(?/, /(?:)/]
     ],
-    customAttrAssign: [/\)?\]?=/]
+    customAttrAssign: [/\)?\]?=/],
+    removeComments: true,
+    preserveLineBreaks: true,
+    collapseWhitespace: true
   };
 }
 

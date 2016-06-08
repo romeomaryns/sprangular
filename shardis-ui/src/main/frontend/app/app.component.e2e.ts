@@ -14,21 +14,21 @@ describe('App', () => {
     expect(subject).toEqual(result);
   });
 
-  it('should have <header>', () => {
-    let subject = element(by.css('app header')).isPresent();
+  it('should have main-content', () => {
+    let subject = element(by.css('app .main-content')).isPresent();
     let result = true;
     expect(subject).toEqual(result);
   });
 
-  it('should have <main>', () => {
-    let subject = element(by.css('app main')).isPresent();
+  it('should have navigation', () => {
+    let subject = element(by.css('app .navigation')).isPresent();
     let result = true;
     expect(subject).toEqual(result);
   });
 
   it('should have <footer>', () => {
-    let subject = element(by.css('app footer')).getText();
-    let result = 'Spring Boot Angular 2 Webpack Starter by Tomasz Kucharzyk';
+    let subject = element(by.css('app .footer md-card-title')).getText();
+    let result = 'Spring Boot Angular 2 Webpack Starter';
     expect(subject).toEqual(result);
   });
 

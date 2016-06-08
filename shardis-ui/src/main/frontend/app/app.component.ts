@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes, Route} from '@angular/router';
+import {Routes, Router} from '@angular/router';
 import {Home} from './views/home/home.component';
-import {LazyLoader, LazyModule} from './utils/lazy.loader';
 import {AuthService} from './services/auth.service';
 import {About} from './views/about/about.component';
 import {Playground} from './views/playground/playground.component';
-import {KitchenSink} from './views/kitchensink/kitchensink.component';
+import {Login} from './views/login/login.component';
 
 @Component({
   selector: 'app',
@@ -16,31 +15,63 @@ import {KitchenSink} from './views/kitchensink/kitchensink.component';
   template: require('./app.component.html')
 })
 @Routes([
-  new Route({path: '/', component: Home}),
-  new Route({path: '/home', component: Home}),
+  {
+    path: '/',
+    component: Home as any
+  },
   {
     path: '/about',
-    component: About //() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
+    component: About as any//() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
   },
   {
     path: '/playground',
-    component: Playground //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
+    component: Playground as any //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
   },
   {
-    path: '/kitchensink',
-    component: KitchenSink //() => LazyLoader.lazyLoad(LazyModule.KITCHENSINK).then(m => m['KitchenSink']),
+    path: '/login',
+    component: Login as any
   },
-  {path: '*', component: Home}
+  {
+    path: '*',
+    component: Home as any
+  }
 ])
 export class App implements OnInit {
-  angularLogo = 'assets/img/angular-logo.png';
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
+  loading:boolean = false;
 
-  constructor(public authService: AuthService) {
+  views:Object[] = [
+
+    {
+      name: 'Home',
+      description: 'Home page',
+      icon: 'public',
+      link: ['/']
+    },
+    {
+      name: 'Playground',
+      description: 'Playground page',
+      icon: 'casino',
+      link: ['/playground']
+    },
+    {
+      name: 'About',
+      description: 'About page',
+      icon: 'person',
+      link: ['/about']
+    }
+  ];
+
+  constructor(public authService: AuthService, public router: Router) {
   }
 
-  ngOnInit():void {
+  logMeOut(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
+  ngOnInit(): void {
     console.log('app on init');
   }
 
