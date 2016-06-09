@@ -4,7 +4,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import {ROUTER_PROVIDERS} from '@angular/router';
 import {LocationStrategy} from '@angular/common/src/location/location_strategy';
 import {PathLocationStrategy} from '@angular/common/src/location/path_location_strategy';
-import {MATERIAL_PROVIDERS} from './material2/material2';
+import {MATERIAL_PROVIDERS} from './material2';
 import {NG2_WEBSTORAGE} from 'ng2-webstorage';
 
 // Angular 2

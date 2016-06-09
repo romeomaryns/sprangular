@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Routes, Router} from '@angular/router';
-import {Home} from './views/home/home.component';
-import {AuthService} from './services/auth.service';
-import {About} from './views/about/about.component';
-import {Playground} from './views/playground/playground.component';
-import {Login} from './views/login/login.component';
+import {Home} from './home';
+import {AuthService} from './shared';
+import {About} from './about';
+import {Playground} from './playground';
+import {Login} from './login';
 
 @Component({
   selector: 'app',
@@ -63,15 +63,15 @@ export class App implements OnInit {
     }
   ];
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService:AuthService, public router:Router) {
   }
 
-  logMeOut(): void {
+  logMeOut():void {
     this.authService.logout();
     this.router.navigate(['/']);
   }
 
-  ngOnInit(): void {
+  ngOnInit():void {
     console.log('app on init');
   }
 

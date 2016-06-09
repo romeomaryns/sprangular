@@ -115,6 +115,7 @@ npm run e2e
 ## Changelog
 
 ### 1.8.0 (unreleased)
+* Better directory structure for angular components
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency

@@ -1,7 +1,7 @@
 import {provide, PLATFORM_DIRECTIVES} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
-import {MATERIAL_DIRECTIVES} from './material2/material2';
-import {RouterActive} from '../../app/directives/router-active.directive';
+import {MATERIAL_DIRECTIVES} from './material2';
+import {RouterActive} from '../../app/shared/router-active/router-active.directive';
 
 // Angular 2 Router
 
