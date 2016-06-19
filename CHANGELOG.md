@@ -3,6 +3,8 @@
 ### 1.8.0 (unreleased)
 * Better directory structure for angular components
 * Dependency updates
+* Updated Angular to rc.2
+* Migrate awesome-ts-loader to ts-loader due to problems with karma
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency

@@ -14,7 +14,6 @@ var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var WebpackMd5Hash = require('webpack-md5-hash');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var autoprefixer = require('autoprefixer');
@@ -68,7 +67,7 @@ var baseWebpackConfig = {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript'
+        loader: 'ts'
       },
 
       {
@@ -115,7 +114,7 @@ var baseWebpackConfig = {
     autoprefixer({browsers: ['last 2 versions'], remove: false})
   ],
   plugins: [
-    new ForkCheckerPlugin()
+
   ]
 };
 
