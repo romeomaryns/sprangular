@@ -25,7 +25,7 @@ export class Login implements OnInit {
       .catch(errorMessage => this.message = errorMessage)
       .then(() => {
         if (this.authService.isAuthenticated()) {
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         }
       });
 

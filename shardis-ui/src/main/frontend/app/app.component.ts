@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes, Router} from '@angular/router';
-import {Home} from './home';
+import {Router} from '@angular/router';
 import {AuthService} from './shared';
-import {About} from './about';
-import {Playground} from './playground';
-import {Login} from './login';
 
 @Component({
   selector: 'app',
@@ -14,28 +10,6 @@ import {Login} from './login';
   styles: [require('./app.component.scss')],
   template: require('./app.component.html')
 })
-@Routes([
-  {
-    path: '/',
-    component: Home as any
-  },
-  {
-    path: '/about',
-    component: About as any//() => LazyLoader.lazyLoad(LazyModule.ABOUT).then(m => m['About']),
-  },
-  {
-    path: '/playground',
-    component: Playground as any //() => LazyLoader.lazyLoad(LazyModule.PLAYGROUND).then(m => m['Playground']),
-  },
-  {
-    path: '/login',
-    component: Login as any
-  },
-  {
-    path: '*',
-    component: Home as any
-  }
-])
 export class App implements OnInit {
   name = 'Spring Boot Angular 2 Webpack Starter';
   url = 'https://github.com/kucharzyk';
@@ -47,19 +21,19 @@ export class App implements OnInit {
       name: 'Home',
       description: 'Home page',
       icon: 'public',
-      link: ['/']
+      link: ['']
     },
     {
       name: 'Playground',
       description: 'Playground page',
       icon: 'casino',
-      link: ['/playground']
+      link: ['playground']
     },
     {
       name: 'About',
       description: 'About page',
       icon: 'person',
-      link: ['/about']
+      link: ['about']
     }
   ];
 
@@ -68,7 +42,7 @@ export class App implements OnInit {
 
   logMeOut():void {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   ngOnInit():void {

@@ -1,5 +1,4 @@
 import {it, inject, describe, beforeEachProviders} from '@angular/core/testing';
-import {provide} from '@angular/core';
 import {BaseRequestOptions, Http, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {Home} from './home.component';
@@ -14,13 +13,13 @@ describe('Home', () => {
   beforeEachProviders(() => [
     BaseRequestOptions,
     MockBackend,
-    provide(Http, {
+    {
+      provide: Http,
       useFactory: function (backend, defaultOptions) {
         return new Http(backend, defaultOptions);
       },
       deps: [MockBackend, BaseRequestOptions]
-    }),
-
+    },
     Title,
     Home,
     AuthService

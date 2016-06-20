@@ -4,6 +4,7 @@ import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
 import '@angular/http';
+import '@angular/forms';
 import '@angular/router';
 import '@angular2-material/button';
 import '@angular2-material/card';
@@ -21,7 +22,7 @@ import '@angular2-material/slide-toggle';
 import '@angular2-material/tabs';
 import '@angular2-material/toolbar';
 import 'rxjs/Rx';
-// Material import 
+// Material import
 // RxJS
 
 if ('production' === ENV) {

@@ -1,17 +1,17 @@
-import {provide, PLATFORM_DIRECTIVES} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import {PLATFORM_DIRECTIVES} from '@angular/core';
 import {MATERIAL_DIRECTIVES} from './material2';
-import {RouterActive} from '../../app/shared/router-active/router-active.directive';
-
-// Angular 2 Router
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 // application_directives: directives that are global through out the application
 export const APPLICATION_DIRECTIVES = [
-  ...ROUTER_DIRECTIVES,
   ...MATERIAL_DIRECTIVES,
-  RouterActive
+  ...ROUTER_DIRECTIVES,
 ];
 
 export const DIRECTIVES = [
-  provide(PLATFORM_DIRECTIVES, {useValue: APPLICATION_DIRECTIVES, multi: true})
+  {
+    provide: PLATFORM_DIRECTIVES,
+    useValue: APPLICATION_DIRECTIVES,
+    multi: true
+  }
 ];

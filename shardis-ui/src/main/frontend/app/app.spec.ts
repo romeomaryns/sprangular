@@ -3,8 +3,7 @@ import {App} from './app.component';
 import {AuthService} from './shared';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing/mock_backend';
-import {provide} from '@angular/core';
-import {ROUTER_FAKE_PROVIDERS} from '@angular/router/testing';
+import {TEST_ROUTER_PROVIDERS} from './testing/router';
 
 // Load the implementations that should be tested
 
@@ -14,13 +13,14 @@ describe('App', () => {
     App,
     BaseRequestOptions,
     MockBackend,
-    ROUTER_FAKE_PROVIDERS,
-    provide(Http, {
+    ...TEST_ROUTER_PROVIDERS,
+    {
+      provide: Http,
       useFactory: function (backend, defaultOptions) {
         return new Http(backend, defaultOptions);
       },
       deps: [MockBackend, BaseRequestOptions]
-    }),
+    },
     AuthService,
   ]);
 
