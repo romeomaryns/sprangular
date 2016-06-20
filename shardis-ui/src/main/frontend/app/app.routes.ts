@@ -7,7 +7,11 @@ import {Login} from './login';
 const routes:RouterConfig = [
   {
     path: '',
-    component: Home as any
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    component: Home as any,
   },
   {
     path: 'about',
@@ -22,9 +26,10 @@ const routes:RouterConfig = [
     component: Login as any
   },
   {
-    path: '*',
-    component: Home as any
-  }
+    path: '**',
+    redirectTo: 'home',
+    terminal: true
+  },
 ];
 
 export const APP_ROUTER_PROVIDERS = [
