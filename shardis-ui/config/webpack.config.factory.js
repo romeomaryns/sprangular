@@ -1,4 +1,4 @@
-var path = require('path');
+var helpers = require('./webpack.helpers');
 var fs = require('fs');
 var webpack = require('webpack');
 
@@ -50,17 +50,17 @@ var baseWebpackConfig = {
         test: /\.ts$/,
         loader: 'tslint-loader',
         exclude: [
-          fullPathTo('../node_modules')
+          helpers.absolutePath('../node_modules')
         ]
       },
       {
         test: /\.js$/,
         loader: "source-map-loader",
         exclude: [
-          fullPathTo('../node_modules/rxjs'),
-          fullPathTo('../node_modules/@angular'),
-          fullPathTo('../node_modules/@angular2-material'),
-          fullPathTo('../node_modules/ng2-webstorage')
+          helpers.absolutePath('../node_modules/rxjs'),
+          helpers.absolutePath('../node_modules/@angular'),
+          helpers.absolutePath('../node_modules/@angular2-material'),
+          helpers.absolutePath('../node_modules/ng2-webstorage')
         ]
       }
     ],
@@ -84,7 +84,7 @@ var baseWebpackConfig = {
         test: /\.html$/,
         loader: 'raw',
         exclude: [
-          fullPathTo('../src/main/frontend/index.html')
+          helpers.absolutePath('../src/main/frontend/index.html')
         ]
       },
 
@@ -118,11 +118,7 @@ var baseWebpackConfig = {
   ]
 };
 
-// Returns full path to given relative directory
-function fullPathTo(args) {
-  args = Array.prototype.slice.call(arguments, 0);
-  return path.join.apply(path, [__dirname].concat(args));
-}
+
 
 
 // Customize config for dev environment
@@ -138,7 +134,7 @@ function customizeForDev(config) {
   };
 
   config.output = {
-    path: fullPathTo('../src/main/resources/static/'),
+    path: helpers.absolutePath('../src/main/resources/static/'),
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js',
@@ -174,7 +170,7 @@ function customizeForDev(config) {
     test: /\.scss$/,
     loader: 'raw!postcss!sass',
     exclude: [
-      fullPathTo('../src/main/frontend/scss/main.scss')
+      helpers.absolutePath('../src/main/frontend/scss/main.scss')
     ]
   });
 
@@ -212,7 +208,7 @@ function customizeForProd(config) {
   };
 
   config.output = {
-    path: fullPathTo('../src/main/resources/static'),
+    path: helpers.absolutePath('../src/main/resources/static'),
     filename: '[name].[chunkhash].bundle.js',
     sourceMapFilename: '[name].[chunkhash].bundle.map',
     chunkFilename: '[id].[chunkhash].chunk.js',
@@ -234,7 +230,7 @@ function customizeForProd(config) {
     test: /\.scss$/,
     loader: 'raw!postcss!sass',
     exclude: [
-      fullPathTo('../src/main/frontend/scss/main.scss')
+      helpers.absolutePath('../src/main/frontend/scss/main.scss')
     ]
   });
 
@@ -263,19 +259,6 @@ function customizeForProd(config) {
     inlineCss: '<style>'+inlinedCss+'</style>'
   }));
   config.plugins.push(new UglifyJsPlugin({
-    // beautify: true, //debug
-    // mangle: false, //debug
-    // dead_code: false, //debug
-    // unused: false, //debug
-    // deadCode: false, //debug
-    // compress: {
-    //   screw_ie8: true,
-    //   keep_fnames: true,
-    //   drop_debugger: false,
-    //   dead_code: false,
-    //   unused: false
-    // }, // debug
-    // comments: true, //debug
 
     beautify: false, //prod
 
@@ -328,7 +311,7 @@ function customizeForTest(config) {
     test: /\.scss$/,
     loader: 'raw!sass',
     exclude: [
-      fullPathTo('../src/main/frontend/scss/main.scss')
+      helpers.absolutePath('../src/main/frontend/scss/main.scss')
     ]
   });
 
@@ -336,7 +319,7 @@ function customizeForTest(config) {
     // instrument only testing sources with Istanbul
     {
       test: /\.(js|ts)$/,
-      include: fullPathTo('../src/main/frontend'),
+      include: helpers.absolutePath('../src/main/frontend'),
       loader: 'istanbul-instrumenter-loader',
       exclude: [
         /\.(e2e|spec)\.ts$/,
