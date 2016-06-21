@@ -120,6 +120,7 @@ npm run e2e
 * Updated Angular to rc.2
 * Migrate awesome-ts-loader to ts-loader due to problems with karma
 * Migrate to router 3
+* Lazy routes with modified version of AngularClass webpack resolver
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency

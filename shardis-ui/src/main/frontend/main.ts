@@ -4,7 +4,6 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {DIRECTIVES, PIPES, PROVIDERS, ENV_PROVIDERS} from './platform';
 import {App} from './app';
-import {APP_ROUTER_PROVIDERS} from './app/app.routes';
 
 /*
  * App Component
@@ -27,8 +26,7 @@ export function main() {
     ...PROVIDERS,
     ...ENV_PROVIDERS,
     ...DIRECTIVES,
-    ...PIPES,
-    ...APP_ROUTER_PROVIDERS
+    ...PIPES
   ])
     .catch(err => console.error(err));
 

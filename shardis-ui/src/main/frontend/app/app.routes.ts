@@ -1,10 +1,8 @@
-import {provideRouter, RouterConfig} from '@angular/router';
+import {RouterConfig} from '@angular/router';
 import {Home} from './home';
-import {About} from './about';
-import {Playground} from './playground';
 import {Login} from './login';
 
-const routes:RouterConfig = [
+export const routes:RouterConfig = [
   {
     path: '',
     redirectTo: 'home'
@@ -15,11 +13,11 @@ const routes:RouterConfig = [
   },
   {
     path: 'about',
-    component: About as any
+    component: 'About'
   },
   {
     path: 'playground',
-    component: Playground as any
+    component: 'Playground'
   },
   {
     path: 'login',
@@ -32,6 +30,10 @@ const routes:RouterConfig = [
   },
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
-];
+
+export const asyncRoutes = {
+  About: 'About',
+  Playground: 'Playground'
+};
+
+
