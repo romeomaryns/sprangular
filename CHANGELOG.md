@@ -1,4 +1,4 @@
-## Changelog
+## CHANGELOG:
 
 ### 1.8.0 (unreleased)
 * Better directory structure for angular components

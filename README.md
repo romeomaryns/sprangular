@@ -1,16 +1,22 @@
-# Spring Boot Angular 2 starter
+# SPRING BOOT ANGULAR 2 STARTER
 
-Originally based on great [AngularClass](https://github.com/AngularClass) webpack starter
+## PROJECT DESCRIPTION:
+
+This sample project demonstrates how to integrate Spring Boot application with Angular 2.
+It could be used as base for your future Angular2 Java projects.
+Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
+It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
+
 
 ## FEATURES:
 * Build and testing process integrated with maven
 * Spring cloud microservices with Zull and Eureka
 * Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
-* scss support
-* Angular material
-* font-awesome
-
+* Scss support
+* Angular material integration
+* Font-awesome integration
+* Lazy loaded routes
 
 ## PRODUCTION USAGE:
 
@@ -112,7 +118,7 @@ cd shardis-ui
 npm run e2e
 ```
 
-## Changelog
+## CHANGELOG:
 
 ### 1.8.0 (unreleased)
 * Better directory structure for angular components
