@@ -35,14 +35,13 @@ var baseWebpackConfig = {
 
   resolve: {
     extensions: ['', '.ts', '.js'],
-    cache: true
+    cache: true,
+    root: absolutePath('../src/main/frontend')
   },
 
   cache: true,
   debug: false,
-
-  devtool: 'source-map',
-
+  
   tslint: {
     emitErrors: false,
     failOnHint: false,

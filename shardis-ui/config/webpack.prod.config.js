@@ -21,6 +21,7 @@ var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding
 var extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
+  devtool: 'source-map',
   cache: false,
   metadata: {
     ENV: environment
@@ -56,7 +57,8 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     ]
   },
   tslint: {
-    emitErrors: true
+    emitErrors: true,
+    failOnHint: true
   },
   plugins: [
     new DefinePlugin({
@@ -68,7 +70,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     new DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new CommonsChunkPlugin({
-      name: ['main', 'vendor', 'polyfills'],
+      name: ['vendor', 'polyfills'],
       minChunks: Infinity
     }),
     new CopyWebpackPlugin([

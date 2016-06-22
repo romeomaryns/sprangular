@@ -3,8 +3,6 @@ const fs = require('fs');
 const webpackMerge = require('webpack-merge');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const webpack = require('webpack');
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,6 +15,7 @@ var environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
 var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
+  devtool: 'cheap-module-source-map',
   metadata: {
     ENV: environment,
     host: 'localhost',
@@ -68,6 +67,10 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       }
     ]
   },
+  tslint: {
+    emitErrors: false,
+    failOnHint: false
+  },
   plugins: [
     new DefinePlugin({
       'ENV': JSON.stringify(environment),
@@ -75,7 +78,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     }),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new CommonsChunkPlugin({
-      name: ['main', 'vendor', 'polyfills'],
+      name: ['vendor', 'polyfills'],
       minChunks: Infinity
     }),
     new CopyWebpackPlugin([
