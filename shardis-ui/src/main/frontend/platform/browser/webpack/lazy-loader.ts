@@ -1,3 +1,8 @@
+export const ASYNC_ROUTES = {
+  About: 'About',
+  Playground: 'Playground'
+};
+
 export class LazyLoader {
 
   static lazyLoad(lazymodule:string):Promise<any> {
@@ -5,16 +10,18 @@ export class LazyLoader {
     var resolver = (resolve, reject) => {
 
       switch (lazymodule) {
-        case 'About':
+        case ASYNC_ROUTES.About:
           require.ensure([], (require) => {
             resolve(require('../../../app/+about/index'));
           });
           break;
-        case 'Playground':
+        case ASYNC_ROUTES.Playground:
           require.ensure([], (require) => {
             resolve(require('../../../app/+playground/index'));
           });
           break;
+        default:
+          reject();
       }
     };
 

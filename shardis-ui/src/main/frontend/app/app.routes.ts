@@ -1,6 +1,7 @@
 import {RouterConfig} from '@angular/router';
 import {Home} from './home';
 import {Login} from './login';
+import {ASYNC_ROUTES} from '../platform/browser/webpack/lazy-loader';
 
 export const routes:RouterConfig = [
   {
@@ -30,10 +31,9 @@ export const routes:RouterConfig = [
   },
 ];
 
-
 export const asyncRoutes = {
-  About: 'About',
-  Playground: 'Playground'
+  About: ASYNC_ROUTES.About,
+  Playground: ASYNC_ROUTES.Playground
 };
 
 
