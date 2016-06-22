@@ -8,6 +8,7 @@
 * Migrate to router 3
 * Lazy routes with modified version of AngularClass webpack resolver
 * Updated Angular to rc.3
+* Added 404 page
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency

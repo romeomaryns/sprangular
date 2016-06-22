@@ -2,6 +2,7 @@ import {RouterConfig} from '@angular/router';
 import {Home} from './home';
 import {Login} from './login';
 import {ASYNC_ROUTES} from '../platform/browser/webpack/lazy-loader';
+import {NotFound} from './not-found';
 
 export const routes:RouterConfig = [
   {
@@ -10,7 +11,7 @@ export const routes:RouterConfig = [
   },
   {
     path: 'home',
-    component: Home as any,
+    component: Home
   },
   {
     path: 'about',
@@ -22,11 +23,15 @@ export const routes:RouterConfig = [
   },
   {
     path: 'login',
-    component: Login as any
+    component: Login
+  },
+  {
+    path: '404',
+    component: NotFound
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '404',
     terminal: true
   },
 ];

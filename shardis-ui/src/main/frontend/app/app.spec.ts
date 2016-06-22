@@ -3,7 +3,7 @@ import {App} from './app.component';
 import {AuthService} from './shared';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing/mock_backend';
-import {TEST_ROUTER_PROVIDERS} from './testing/router';
+import {TEST_ROUTER_PROVIDERS} from './shared/testing';
 
 // Load the implementations that should be tested
 
