@@ -129,6 +129,7 @@ npm run e2e
 * Lazy routes with modified version of AngularClass webpack resolver
 * Updated Angular to rc.3
 * Added 404 page
+* Much cleaner webpack configuration
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency
