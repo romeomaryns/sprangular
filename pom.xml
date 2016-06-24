@@ -12,9 +12,9 @@
     <description>shardis</description>
 
     <modules>
-	    <module>shardis-parent</module>
+        <module>shardis-parent</module>
         <module>shardis-common</module>
-		<module>shardis-discovery</module>
+        <module>shardis-discovery</module>
         <module>shardis-auth</module>
         <module>shardis-ui</module>
         <module>shardis-api</module>
