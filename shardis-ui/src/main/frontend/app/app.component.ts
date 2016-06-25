@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from './shared';
+import {APP_MENU, AppMenuItem} from './app.menu';
 
 @Component({
   selector: 'app',
@@ -15,27 +16,7 @@ export class App implements OnInit {
   url = 'https://github.com/kucharzyk';
   loading:boolean = false;
 
-  views:Object[] = [
-
-    {
-      name: 'Home',
-      description: 'Home page',
-      icon: 'public',
-      link: ['']
-    },
-    {
-      name: 'Playground',
-      description: 'Playground page',
-      icon: 'casino',
-      link: ['playground']
-    },
-    {
-      name: 'About',
-      description: 'About page',
-      icon: 'person',
-      link: ['about']
-    }
-  ];
+  views:AppMenuItem[] = APP_MENU;
 
   constructor(public authService:AuthService, public router:Router) {
   }

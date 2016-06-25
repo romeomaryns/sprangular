@@ -1,6 +1,7 @@
 export const ASYNC_ROUTES = {
   About: 'About',
-  Playground: 'Playground'
+  Playground: 'Playground',
+  Crud: 'Crud'
 };
 
 export class LazyLoader {
@@ -18,6 +19,11 @@ export class LazyLoader {
         case ASYNC_ROUTES.Playground:
           require.ensure([], (require) => {
             resolve(require('../../../app/+playground/index'));
+          });
+          break;
+        case ASYNC_ROUTES.Crud:
+          require.ensure([], (require) => {
+            resolve(require('../../../app/+crud/index'));
           });
           break;
         default:

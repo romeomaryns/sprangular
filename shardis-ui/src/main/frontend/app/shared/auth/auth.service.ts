@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import {LocalStorage} from 'ng2-webstorage/index';
+import {AppMenuItem} from '../../app.menu';
 
 @Injectable()
 export class AuthService {
@@ -12,10 +13,14 @@ export class AuthService {
   @LocalStorage()
   private tokenData:Oauth2TokenData;
 
+  public static decodeAccessToken(access_token:string) {
+    return JSON.parse(window.atob(access_token.split('.')[1]));
+  }
+
   constructor(public http:Http) {
     if (this.tokenData && this.tokenData.access_token) {
       this.authenticated = true;
-      this.userData = this.decodeAccessToken(this.tokenData.access_token);
+      this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
       this.tokenExpirationDate = new Date(this.userData.exp * 1000);
       if (this.tokenExpirationDate < new Date()) {
         console.log('Session timeout');
@@ -24,7 +29,7 @@ export class AuthService {
     }
   }
 
-  isAuthenticated():boolean {
+  public isAuthenticated():boolean {
     return this.authenticated;
   }
 
@@ -57,7 +62,7 @@ export class AuthService {
           data => {
             this.tokenData = data.json();
             this.authenticated = true;
-            this.userData = this.decodeAccessToken(this.tokenData.access_token);
+            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
             this.tokenExpirationDate = new Date(this.userData.exp * 1000);
             resolve('OK');
           },
@@ -84,6 +89,27 @@ export class AuthService {
     return this.tokenExpirationDate;
   }
 
+  public hasRole(role:string):boolean {
+    if (this.isAuthenticated()) {
+      return this.getUserData()['authorities'].indexOf(role) >= 0;
+    }
+    return false;
+  }
+
+  public canView(view:AppMenuItem):boolean {
+    var ok  = false;
+    if (!view.roles) {
+      ok = true;
+    } else {
+      view.roles.forEach(role => {
+        if (this.hasRole(role)) {
+          ok = true;
+        }
+      });
+    }
+    return ok;
+  }
+
   public getAuthorizationHeaders():Headers {
     var authorizationHeaders = new Headers();
     if (this.authenticated) {
@@ -91,6 +117,7 @@ export class AuthService {
     }
     return authorizationHeaders;
   }
+
 
   private fetchUserData() {
     this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})
@@ -102,9 +129,6 @@ export class AuthService {
       );
   }
 
-  private decodeAccessToken(access_token:string) {
-    return JSON.parse(window.atob(access_token.split('.')[1]));
-  }
 }
 
 class Oauth2TokenData {

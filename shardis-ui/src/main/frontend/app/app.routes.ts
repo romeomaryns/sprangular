@@ -18,6 +18,10 @@ export const routes:RouterConfig = [
     component: 'About'
   },
   {
+    path: 'crud',
+    component: 'Crud'
+  },
+  {
     path: 'playground',
     component: 'Playground'
   },
@@ -38,7 +42,8 @@ export const routes:RouterConfig = [
 
 export const asyncRoutes = {
   About: ASYNC_ROUTES.About,
-  Playground: ASYNC_ROUTES.Playground
+  Playground: ASYNC_ROUTES.Playground,
+  Crud: ASYNC_ROUTES.Crud
 };
 
 
