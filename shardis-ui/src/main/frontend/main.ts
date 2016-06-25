@@ -4,6 +4,7 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {DIRECTIVES, PIPES, PROVIDERS, ENV_PROVIDERS} from './platform';
 import {App} from './app';
+import {decorateComponentRef} from './platform/environment';
 
 /*
  * App Component
@@ -28,6 +29,7 @@ export function main() {
     ...DIRECTIVES,
     ...PIPES
   ])
+    .then(decorateComponentRef) //angular debug tools
     .catch(err => console.error(err));
 
 }
