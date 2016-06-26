@@ -1,6 +1,6 @@
-<md-card>
-  <md-card-title>Crud Page</md-card-title>
+<md-card *ngFor="let post of posts" class="postcard">
+  <md-card-title>{{post.title}} ({{post.createdDate | date}})</md-card-title>
   <md-card-content>
-    <span>Spring boot Angular 2 starter</span>
+    <span>{{post.content}}</span>
   </md-card-content>
 </md-card>
