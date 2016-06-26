@@ -1,5 +1,5 @@
 <md-card *ngFor="let post of posts" class="postcard">
-  <md-card-title>{{post.title}} ({{post.createdDate | date}})</md-card-title>
+  <md-card-title>{{post.title}} ({{post.createdDate | date:"dd.MM.yyyy HH:mm"}})</md-card-title>
   <md-card-content>
     <span>{{post.content}}</span>
   </md-card-content>
