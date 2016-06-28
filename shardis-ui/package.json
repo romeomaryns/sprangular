@@ -92,7 +92,7 @@
     "webpack-load-plugins": "0.1.2",
     "webpack-md5-hash": "0.0.5",
     "webpack-merge": "0.14.0",
-    "webpack-validator": "2.2.0"
+    "webpack-validator": "2.2.1"
   },
   "scripts": {
     "clean": "npm cache clean && rimraf node node_modules doc typings coverage ./src/main/resources/static/*",
