@@ -11,7 +11,10 @@ console.log('`Crud` component loaded asynchronously');
 })
 export class Crud implements OnInit {
 
-  posts:any[] = [];
+  posts:BlogPost[] = [];
+
+  editing:boolean = false;
+  editedPost:BlogPost = null;
 
   constructor(public http:Http, public authService:AuthService) {
   }
@@ -22,11 +25,63 @@ export class Crud implements OnInit {
     this.fetchPosts();
   }
 
+  public editPost(post:BlogPost) {
+    this.editing = true;
+    this.editedPost = JSON.parse(JSON.stringify(post));
+  }
+
+  public newPost() {
+    this.editing = true;
+    this.editedPost = {
+      id: null,
+      title: '',
+      content: '',
+      createdDate: null,
+      updatedDate: null,
+      version: null,
+      createdBy: null,
+      updatedBy: null,
+    };
+  }
+
+  public removePost(post:BlogPost) {
+    this.deletePost(post);
+  }
+
+  public cancelEdit() {
+    this.editing = false;
+    this.editedPost = null;
+  }
+
   private fetchPosts() {
     this.http.get('/api/posts/', {headers: this.authService.getAuthorizationHeaders()})
       .subscribe(
         data => {
           this.posts = data.json();
+        },
+        err => console.log('Something went wrong')
+      );
+  }
+
+  private savePost(post:BlogPost) {
+    this.http.post(`/api/posts/`, post, {headers: this.authService.getAuthorizationHeaders()})
+      .subscribe(
+        data => {
+          console.log('Saved', data.json());
+          this.cancelEdit();
+          this.fetchPosts();
+        },
+        err => console.log('Something went wrong')
+      );
+  }
+
+  private deletePost(post:BlogPost) {
+    this.http.delete(`/api/posts/${post.id}`, {headers: this.authService.getAuthorizationHeaders()})
+      .subscribe(
+        data => {
+          console.log('Removed', data.json());
+          this.cancelEdit();
+          this.fetchPosts();
         },
         err => console.log('Something went wrong')
       );

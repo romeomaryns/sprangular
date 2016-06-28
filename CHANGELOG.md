@@ -11,6 +11,7 @@
 * Added 404 page
 * Much cleaner webpack configuration
 * Role based visibility of menu items
+* CRUD example for authenticated users
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency
