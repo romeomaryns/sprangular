@@ -17,7 +17,7 @@ export const APP_MENU:AppMenuItem[] = [
     description: 'Simple crud',
     icon: 'edit',
     link: ['crud'],
-    roles: ['ROLE_USER']
+    roles: ['ROLE_ADMIN']
   },
   {
     name: 'About',

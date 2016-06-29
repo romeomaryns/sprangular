@@ -3,6 +3,9 @@ import {Home} from './home';
 import {Login} from './login';
 import {ASYNC_ROUTES} from '../platform/browser/webpack/lazy-loader';
 import {NotFound} from './not-found';
+import {AccessDenied} from './access-denied/access-denied.component';
+import {AuthenticatedGuard, AdminGuard, UnauthenticatedGuard} from './shared/guards';
+import {AuthService} from './shared/auth/auth.service';
 
 export const routes:RouterConfig = [
   {
@@ -19,7 +22,8 @@ export const routes:RouterConfig = [
   },
   {
     path: 'crud',
-    component: 'Crud'
+    component: 'Crud',
+    canActivate: [AuthenticatedGuard, AdminGuard]
   },
   {
     path: 'playground',
@@ -27,7 +31,12 @@ export const routes:RouterConfig = [
   },
   {
     path: 'login',
-    component: Login
+    component: Login,
+    canActivate: [UnauthenticatedGuard]
+  },
+  {
+    path: 'accessDenied',
+    component: AccessDenied
   },
   {
     path: '404',
@@ -45,5 +54,7 @@ export const asyncRoutes = {
   Playground: ASYNC_ROUTES.Playground,
   Crud: ASYNC_ROUTES.Crud
 };
+
+export const AUTH_PROVIDERS = [AuthService, AdminGuard, AuthenticatedGuard, UnauthenticatedGuard];
 
 

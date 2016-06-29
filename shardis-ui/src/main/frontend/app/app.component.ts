@@ -6,7 +6,7 @@ import {APP_MENU, AppMenuItem} from './app.menu';
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [AuthService],
+  providers: [],
   directives: [],
   styles: [require('./app.component.scss')],
   template: require('./app.component.html')

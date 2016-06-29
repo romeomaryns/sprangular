@@ -96,16 +96,22 @@ export class AuthService {
     return false;
   }
 
+  public hasAnyRole(roles:string[]):boolean {
+    var ok = false;
+    roles.forEach(role => {
+      if (this.hasRole(role)) {
+        ok = true;
+      }
+    });
+    return ok;
+  }
+
   public canView(view:AppMenuItem):boolean {
-    var ok  = false;
+    var ok = false;
     if (!view.roles) {
       ok = true;
     } else {
-      view.roles.forEach(role => {
-        if (this.hasRole(role)) {
-          ok = true;
-        }
-      });
+      ok = this.hasAnyRole(view.roles);
     }
     return ok;
   }
