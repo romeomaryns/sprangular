@@ -1,3 +1,7 @@
+<md-toolbar align="end">
+  <button md-raised-button color="primary" (click)="newPost()">new post</button>
+  <button md-raised-button color="secondary" (click)="refresh()">refresh</button>
+</md-toolbar>
 <md-card *ngIf="editing">
   <md-card-title>Editing post</md-card-title>
   <md-card-content>
@@ -15,9 +19,6 @@
     <button md-raised-button color="primary" (click)="cancelEdit()">cancel</button>
   </md-card-actions>
 </md-card>
-<md-toolbar align="end">
-  <button md-raised-button color="primary" (click)="newPost()">new post</button>
-</md-toolbar>
 <md-card *ngFor="let post of posts" class="postcard">
   <md-card-title>{{post.title}}</md-card-title>
   <md-card-content>

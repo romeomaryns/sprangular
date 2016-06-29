@@ -28,6 +28,7 @@ export class Crud implements OnInit {
   public editPost(post:BlogPost) {
     this.editing = true;
     this.editedPost = JSON.parse(JSON.stringify(post));
+    this.scrollToTop();
   }
 
   public newPost() {
@@ -51,6 +52,12 @@ export class Crud implements OnInit {
   public cancelEdit() {
     this.editing = false;
     this.editedPost = null;
+    this.scrollToTop();
+  }
+
+  public refresh() {
+    this.cancelEdit();
+    this.fetchPosts();
   }
 
   private fetchPosts() {
@@ -68,8 +75,7 @@ export class Crud implements OnInit {
       .subscribe(
         data => {
           console.log('Saved', data.json());
-          this.cancelEdit();
-          this.fetchPosts();
+          this.updateOrAddPostToList(data.json());
         },
         err => console.log('Something went wrong')
       );
@@ -80,11 +86,47 @@ export class Crud implements OnInit {
       .subscribe(
         data => {
           console.log('Removed', data.json());
-          this.cancelEdit();
-          this.fetchPosts();
+          this.removePostFromList(post);
         },
         err => console.log('Something went wrong')
       );
+  }
+
+  private removePostFromList(post:BlogPost) {
+    this.posts = this.posts.filter((x, idx, obs) => x.id !== post.id);
+    this.cancelEdit();
+  }
+
+  private updateOrAddPostToList(post:BlogPost) {
+    var changedList:BlogPost[] = this.posts.filter((x, idx, obs) => x.id === post.id);
+    if (changedList.length === 0) {
+      this.posts.push(post);
+    } else {
+      changedList.forEach((x) => {
+        var index = this.posts.indexOf(x);
+        this.posts[index] = post;
+      });
+    }
+    this.cancelEdit();
+  }
+
+  private scrollToTop() {
+    var elems = document.getElementsByTagName('md-sidenav-layout');
+    if (elems.length) {
+      this.scrollTo(elems[0], 0, 100);
+    }
+  }
+
+  private scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+
+    setTimeout(() => {
+      element.scrollTop = element.scrollTop + perTick;
+      if (element.scrollTop === to) return;
+      this.scrollTo(element, to, duration - 10);
+    }, 10);
   }
 
 }
