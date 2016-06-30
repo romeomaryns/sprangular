@@ -111,9 +111,9 @@ export class Crud implements OnInit {
   }
 
   private scrollToTop() {
-    var elems = document.getElementsByTagName('md-sidenav-layout');
-    if (elems.length) {
-      this.scrollTo(elems[0], 0, 100);
+    var contentEl = document.querySelector('md-sidenav-layout > md-content');
+    if (contentEl) {
+      this.scrollTo(contentEl, 0, 100);
     }
   }
 

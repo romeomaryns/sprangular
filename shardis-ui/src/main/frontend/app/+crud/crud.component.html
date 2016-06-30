@@ -5,11 +5,13 @@
 <md-card *ngIf="editing">
   <md-card-title>Editing post</md-card-title>
   <md-card-content>
-    <form>
-      <md-input placeholder="Title" [(ngModel)]="editedPost.title"  maxLength="100" required="required" #titleField>
+    <form #editPostForm="ngForm">
+      <md-input placeholder="Title" [(ngModel)]="editedPost.title" name="title" maxLength="100" required="required"
+                #titleField>
         <md-hint align="end">{{titleField.characterCount}} / 100</md-hint>
       </md-input>
-      <md-input rows="3" type="Content" placeholder="Content" [(ngModel)]="editedPost.content" maxLength="255" required="required" #contentField>
+      <md-input rows="3" type="Content" placeholder="Content" [(ngModel)]="editedPost.content" name="content"
+                maxLength="255" required="required" #contentField>
         <md-hint align="end">{{contentField.characterCount}} / 255</md-hint>
       </md-input>
     </form>

@@ -133,6 +133,8 @@ npm run e2e
 * Role based visibility of menu items
 * CRUD example for authenticated users
 * Route access for selected roles (guards)
+* Switched to new Angular Forms
+* Updated angular2-material to 2.0.0-alpha.6
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency

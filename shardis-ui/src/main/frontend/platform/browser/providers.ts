@@ -5,6 +5,7 @@ import {NG2_WEBSTORAGE} from 'ng2-webstorage';
 import {asyncRoutes, routes, AUTH_PROVIDERS} from '../../app/app.routes';
 import {provideWebpack} from './webpack/webpack-component-resolver';
 import {provideRouter} from '@angular/router';
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
 
 /*
  * Application Providers/Directives/Pipes
@@ -15,6 +16,8 @@ export const APPLICATION_PROVIDERS = [
   ...HTTP_PROVIDERS,
   ...MATERIAL_PROVIDERS,
   ...NG2_WEBSTORAGE,
+  disableDeprecatedForms(),
+  provideForms(),
   provideRouter(routes),
   ...AUTH_PROVIDERS,
   provideWebpack(asyncRoutes),
