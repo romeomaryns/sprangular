@@ -128,5 +128,9 @@
     "version": "npm run build",
     "postversion": "git push && git push --tags",
     "ncu": "ncu -a"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3"
   }
 }
