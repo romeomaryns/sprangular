@@ -27,6 +27,10 @@
          [hidden]="authService.isAuthenticated()">Login</a>
       <button md-raised-button color="primary" (click)="logMeOut()" [hidden]="!authService.isAuthenticated()">Logout
       </button>
+
+      <button md-raised-button color="primary" (click)="authService.refreshToken()" [hidden]="true">Refresh token
+      </button>
+
     </md-toolbar>
 
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>

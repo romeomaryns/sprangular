@@ -30,6 +30,10 @@ export class AuthService {
   }
 
   public isAuthenticated():boolean {
+    if (this.tokenExpirationDate < new Date()) {
+      console.log('Session timeout');
+      this.logout();
+    }
     return this.authenticated;
   }
 
@@ -73,6 +77,34 @@ export class AuthService {
         );
 
     });
+  }
+
+  public refreshToken() {
+    if (this.isAuthenticated()) {
+
+      var basicAuthHeader = btoa(`acme:acmesecret`);
+
+      var headers = new Headers();
+      headers.append('Authorization', `Basic  ${basicAuthHeader}`);
+      headers.append('Accept', `application/json`);
+      headers.append('Content-Type', `application/x-www-form-urlencoded`);
+
+      var data = 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(this.tokenData.refresh_token);
+
+      this.http
+        .post('/auth/oauth/token', data, {headers: headers})
+        .subscribe(
+          data => {
+            this.tokenData = data.json();
+            this.authenticated = true;
+            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
+            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+          },
+          err => {
+            console.log(err);
+          }
+        );
+    }
   }
 
   public logout():any {
