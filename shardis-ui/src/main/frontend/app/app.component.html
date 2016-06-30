@@ -2,11 +2,14 @@
 
   <md-sidenav #sidenav>
     <md-nav-list class="navigation">
-      <a md-list-item router-active [routerLink]="view.link" (click)="sidenav.close()" *ngFor="let view of views">
-        <md-icon md-list-icon>{{view.icon}}</md-icon>
-        <span md-line>{{view.name}}</span>
-        <span md-line>{{view.description}}</span>
-      </a>
+      <template ngFor let-view [ngForOf]="views">
+        <a md-list-item routerLinkActive="active" [routerLink]="view.link" (click)="sidenav.close()"
+           [hidden]="!authService.canView(view)">
+          <md-icon md-list-icon>{{view.icon}}</md-icon>
+          <span md-line>{{view.name}}</span>
+          <span md-line>{{view.description}}</span>
+        </a>
+      </template>
     </md-nav-list>
   </md-sidenav>
 
@@ -19,8 +22,15 @@
       </button>
       <span>{{ name }}</span>
       <span class="fill"></span>
-      <a md-raised-button color="primary" router-active [routerLink]="['/login']" *ngIf="!authService.isAuthenticated()">Login</a>
-      <button md-raised-button color="primary" (click)="logMeOut()" *ngIf="authService.isAuthenticated()">Logout</button>
+      <span class="user-info" *ngIf="authService.isAuthenticated()">Current user: {{ authService.getUserData().user_name }}</span>
+      <a md-raised-button color="primary" routerLinkActive="active" [routerLink]="['login']"
+         [hidden]="authService.isAuthenticated()">Login</a>
+      <button md-raised-button color="primary" (click)="logMeOut()" [hidden]="!authService.isAuthenticated()">Logout
+      </button>
+
+      <button md-raised-button color="primary" (click)="authService.refreshToken()" [hidden]="true">Refresh token
+      </button>
+
     </md-toolbar>
 
     <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>

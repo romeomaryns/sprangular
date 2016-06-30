@@ -10,6 +10,7 @@ shardis-api/target/
 shardis-ui/target/
 
 ### node
+npm-debug.log
 shardis-ui/etc/
 shardis-ui/node/
 shardis-ui/node_modules/

@@ -7,6 +7,9 @@ server:
 spring:
     application.name: shardis-api
     profiles.active: prod
+# jacksonm
+    jackson.serialization:
+        write_dates_as_timestamps: false
 # EUREKA
 eureka:
   instance:

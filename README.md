@@ -1,16 +1,22 @@
-# Spring Boot Angular 2 starter
+# SPRING BOOT ANGULAR 2 STARTER
 
-Originally based on great [AngularClass](https://github.com/AngularClass) webpack starter
+## PROJECT DESCRIPTION:
+
+This sample project demonstrates how to integrate Spring Boot application with Angular 2.
+It could be used as base for your future Angular2 Java projects.
+Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
+It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
+
 
 ## FEATURES:
 * Build and testing process integrated with maven
 * Spring cloud microservices with Zull and Eureka
 * Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
-* scss support
-* Angular material
-* font-awesome
-
+* Scss support
+* Angular material integration
+* Font-awesome integration
+* Lazy loaded routes
 
 ## PRODUCTION USAGE:
 
@@ -29,28 +35,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.7.0.jar
+java -jar ./target/shardis-discovery-1.8.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.7.0.jar
+java -jar ./target/shardis-api-1.8.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.7.0.jar
+java -jar ./target/shardis-auth-1.8.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.7.0.jar
+java -jar ./target/shardis-ui-1.8.0.jar
 ```
 
 
@@ -112,7 +118,23 @@ cd shardis-ui
 npm run e2e
 ```
 
-## Changelog
+## CHANGELOG:
+
+### 1.8.0 (30.06.2016)
+* Better directory structure for angular components
+* Dependency updates
+* Updated Angular to rc.2
+* Migrate awesome-ts-loader to ts-loader due to problems with karma
+* Migrate to router 3
+* Lazy routes with modified version of AngularClass webpack resolver
+* Updated Angular to rc.3
+* Added 404 page
+* Much cleaner webpack configuration
+* Role based visibility of menu items
+* CRUD example for authenticated users
+* Route access for selected roles (guards)
+* Switched to new Angular Forms
+* Updated angular2-material to 2.0.0-alpha.6
 
 ### 1.7.0 (08.06.2016)
 * Added npm-check-updates as dev dependency
@@ -140,11 +162,5 @@ npm run e2e
 * Fixed problem with nonexistent static directory
 * Fixed webpack validator custom schema config
 * Some fixes from AngularClass starter
-
-### 1.5.0 (13.05.2016)
-* Updated Spring Boot to 1.3.4
-* Updated Spring Boot to 1.3.5
-* Added Spring IO Platform dependency
-* Various bugfixes
 
 [show full changelog](CHANGELOG.md)
