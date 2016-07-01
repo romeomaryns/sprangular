@@ -10,40 +10,49 @@ import {AuthService} from './shared/auth/auth.service';
 export const routes:RouterConfig = [
   {
     path: '',
+    pathMatch: 'prefix',
     redirectTo: 'home'
   },
   {
     path: 'home',
+    pathMatch: 'prefix',
     component: Home
   },
   {
     path: 'about',
+    pathMatch: 'prefix',
     component: 'About'
   },
   {
     path: 'crud',
+    pathMatch: 'prefix',
     component: 'Crud',
     canActivate: [AuthenticatedGuard, AdminGuard]
   },
   {
     path: 'playground',
+    pathMatch: 'prefix',
     component: 'Playground'
   },
   {
     path: 'login',
+    pathMatch: 'prefix',
     component: Login,
     canActivate: [UnauthenticatedGuard]
   },
   {
     path: 'accessDenied',
+    pathMatch: 'prefix',
     component: AccessDenied
   },
   {
     path: '404',
+    pathMatch: 'prefix',
     component: NotFound
   },
   {
     path: '**',
+    pathMatch: 'prefix',
     redirectTo: '404',
     terminal: true
   },

@@ -22,7 +22,7 @@ export class AuthService {
       this.authenticated = true;
       this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
       this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-      if (this.tokenExpirationDate < new Date()) {
+      if (this.authenticated && this.tokenExpirationDate < new Date()) {
         console.log('Session timeout');
         this.logout();
       }

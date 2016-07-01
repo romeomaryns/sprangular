@@ -121,6 +121,8 @@ npm run e2e
 ## CHANGELOG:
 
 ### 1.9.0 (unreleased)
+* Updated dependencies
+* Updated Angular to rc.4
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
