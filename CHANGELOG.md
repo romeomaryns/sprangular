@@ -1,5 +1,7 @@
 ## CHANGELOG:
 
+### 1.9.0 (unreleased)
+
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
 * Dependency updates

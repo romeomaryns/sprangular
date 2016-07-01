@@ -35,28 +35,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.8.0.jar
+java -jar ./target/shardis-discovery-1.9.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.8.0.jar
+java -jar ./target/shardis-api-1.9.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.8.0.jar
+java -jar ./target/shardis-auth-1.9.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.8.0.jar
+java -jar ./target/shardis-ui-1.9.0.jar
 ```
 
 
@@ -120,6 +120,8 @@ npm run e2e
 
 ## CHANGELOG:
 
+### 1.9.0 (unreleased)
+
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
 * Dependency updates
@@ -152,15 +154,5 @@ npm run e2e
 * Added working login form
 * Added ng2-webstorage library
 * Inline base css from file and minify html
-
-### 1.6.0 (26.05.2016)
-* Updated node to 6.2.0
-* Updated npm to 3.9.2
-* Removed typings from git
-* Updated typings
-* Updated all node packages
-* Fixed problem with nonexistent static directory
-* Fixed webpack validator custom schema config
-* Some fixes from AngularClass starter
 
 [show full changelog](CHANGELOG.md)
