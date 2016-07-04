@@ -12,12 +12,6 @@ import {decorateComponentRef} from './platform/environment';
  */
 
 /*
- * Load styles
- */
-require('./scss/main.scss');
-
-
-/*
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
  */

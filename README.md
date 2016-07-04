@@ -127,6 +127,7 @@ npm run e2e
 * Updated Spring Cloud to Brixton.SR1
 * Removed lombok from project
 * Added UUID to all entities
+* Moved styles from main.scss to separate module
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components

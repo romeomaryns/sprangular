@@ -22,6 +22,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     port: 3000
   },
   entry: {
+    'styles': './src/main/frontend/scss/main.scss',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
     'main': './src/main/frontend/main.ts'
