@@ -1,14 +1,9 @@
 package com.shardis.cons;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * Created by Tomasz Kucharzyk
  */
 
-@Getter
-@AllArgsConstructor
 public enum Profiles {
 
     DEV("dev"),
@@ -16,5 +11,11 @@ public enum Profiles {
 
     private String profileName;
 
+    Profiles(String profileName) {
+        this.profileName = profileName;
+    }
 
+    public String getProfileName() {
+        return profileName;
+    }
 }

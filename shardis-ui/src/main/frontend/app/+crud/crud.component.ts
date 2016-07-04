@@ -133,6 +133,7 @@ export class Crud implements OnInit {
 
 interface BlogPost {
   id:number;
+  uuid?:string;
   title:string;
   content:string;
   createdDate:Date;

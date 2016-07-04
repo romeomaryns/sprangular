@@ -1,9 +1,6 @@
 package com.shardis.api.domain.blog;
 
 import com.shardis.api.domain.base.AuditedEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -14,17 +11,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "BLOG_POST")
-@Data
-@EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor
 public class BlogPost extends AuditedEntity {
-
 
     private String title;
     private String content;
 
+    public BlogPost() {
+    }
+
     public BlogPost(String title, String content) {
         this.title = title;
+        this.content = content;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
         this.content = content;
     }
 
