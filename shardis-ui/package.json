@@ -122,7 +122,7 @@
     "ci": "npm run test && npm run e2e",
     "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./src/main/frontend/\"",
     "start": "npm run server:dev",
-    "typings-install": "typings install",
+    "typings-install": "typings -- install",
     "postinstall": "npm run typings-install",
     "preversion": "npm test",
     "version": "npm run build",
