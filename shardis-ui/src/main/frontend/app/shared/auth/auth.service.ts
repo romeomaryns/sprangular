@@ -111,6 +111,7 @@ export class AuthService {
     this.tokenData = new Oauth2TokenData();
     this.userData = null;
     this.authenticated = false;
+    this.tokenExpirationDate = null;
   }
 
   public getUserData():any {
