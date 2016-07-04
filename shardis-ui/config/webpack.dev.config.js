@@ -15,7 +15,7 @@ const environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
 const inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   metadata: {
     ENV: environment,
     host: 'localhost',
