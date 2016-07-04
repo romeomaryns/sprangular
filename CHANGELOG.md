@@ -4,6 +4,7 @@
 * Updated dependencies
 * Updated Angular to rc.4
 * Switched back to awesome-ts-loader (faster)
+* Updated Spring Cloud to Brixton.SR1
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
