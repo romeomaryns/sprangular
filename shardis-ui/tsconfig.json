@@ -12,6 +12,11 @@
     "noEmitHelpers": true,
     "noImplicitAny": false
   },
+  "awesomeTypescriptLoaderOptions": {
+    "resolveGlobs": true,
+    "forkChecker": true,
+    "useWebpackText": true
+  },
   "exclude": [
     "node_modules"
   ]

@@ -10,9 +10,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {ENV, validateConfig, baseWebpackConfig, absolutePath} = require('./webpack.commons.js');
 
 
-var environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
+const environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
 
-var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+const inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   devtool: 'cheap-module-eval-source-map',

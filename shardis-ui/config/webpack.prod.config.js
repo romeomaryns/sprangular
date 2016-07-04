@@ -14,11 +14,11 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const {ENV, validateConfig, baseWebpackConfig, absolutePath} = require('./webpack.commons.js');
 
-var environment = process.env.NODE_ENV = process.env.ENV = ENV.PROD;
+const environment = process.env.NODE_ENV = process.env.ENV = ENV.PROD;
 
-var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+const inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
-var extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
+const extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   devtool: 'source-map',

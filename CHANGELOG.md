@@ -3,6 +3,7 @@
 ### 1.9.0 (unreleased)
 * Updated dependencies
 * Updated Angular to rc.4
+* Switched back to awesome-ts-loader (faster)
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components

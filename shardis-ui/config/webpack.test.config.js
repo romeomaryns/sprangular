@@ -3,7 +3,7 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const {ENV, validateConfig, baseWebpackConfig, absolutePath} = require('./webpack.commons.js');
 
-var environment = process.env.NODE_ENV = process.env.ENV = ENV.TEST;
+const environment = process.env.NODE_ENV = process.env.ENV = ENV.TEST;
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   devtool: 'inline-source-map',
