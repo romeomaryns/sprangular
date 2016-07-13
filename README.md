@@ -133,6 +133,7 @@ npm run e2e
 * Renamed java test classes to match surefire convention
 * Webpack 2 and Typescript 2
 * Reduced bundle size
+* Updated Spring Cloud to Brixton.SR3
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
