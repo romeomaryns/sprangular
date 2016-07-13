@@ -86,11 +86,14 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       minify: {minimize: true, removeComments: true, preserveLineBreaks: true, collapseWhitespace: true},
       inlineCss: '<style>' + inlinedCss + '</style>'
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
     new UglifyJsPlugin({
       beautify: false,
       mangle: {
-        screw_ie8: true,
-        keep_fnames: true
+        screw_ie8: true
       },
       compress: {
         screw_ie8: true

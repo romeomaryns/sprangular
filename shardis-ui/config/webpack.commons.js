@@ -87,7 +87,7 @@ var baseWebpackConfig = {
 
       {
         test: /\.html$/,
-        loader: 'raw',
+        loader: 'html',
         exclude: [
           absolutePath('../src/main/frontend/index.html')
         ]
