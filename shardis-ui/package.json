@@ -73,7 +73,7 @@
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "2.1.7",
     "postcss-loader": "0.9.1",
-    "protractor": "3.3.0",
+    "protractor": "4.0.0",
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.6.4",
     "rimraf": "2.5.3",
