@@ -30,10 +30,7 @@ export class AuthService {
   }
 
   public isAuthenticated():boolean {
-    if (this.tokenExpirationDate < new Date()) {
-      console.log('Session timeout');
-      this.logout();
-    }
+    this.checkTokenExpirationDate();
     return this.authenticated;
   }
 
@@ -157,6 +154,12 @@ export class AuthService {
     return authorizationHeaders;
   }
 
+  private checkTokenExpirationDate() {
+    if (this.authenticated && this.tokenExpirationDate < new Date()) {
+      console.log('Session timeout');
+      this.logout();
+    }
+  }
 
   private fetchUserData() {
     this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})
