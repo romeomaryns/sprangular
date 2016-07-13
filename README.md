@@ -131,6 +131,7 @@ npm run e2e
 * Updated Spring Cloud to Brixton.SR2
 * Updated Spring Platform to 2.0.6 and Spring Boot to 1.3.6
 * Renamed java test classes to match surefire convention
+* Webpack 2 and Typescript 2
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components

@@ -46,7 +46,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       poll: 1000
     },
     quiet: false,
-    noInfo: true,
+    noInfo: false,
     proxy: {
       '/api/*': 'http://localhost:8080',
       '/auth/*': 'http://localhost:8080'
@@ -77,7 +77,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       'ENV': JSON.stringify(environment),
       'HMR': (ENV.DEV === environment)
     }),
-    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     new CommonsChunkPlugin({
       name: ['vendor', 'polyfills'],
       minChunks: Infinity

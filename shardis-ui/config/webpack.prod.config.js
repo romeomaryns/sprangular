@@ -69,7 +69,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     extractCSS,
     new WebpackMd5Hash(),
     new DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     new CommonsChunkPlugin({
       name: ['vendor', 'polyfills'],
       minChunks: Infinity
