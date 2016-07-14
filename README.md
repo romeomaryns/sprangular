@@ -135,6 +135,7 @@ npm run e2e
 * Reduced bundle size
 * Updated Spring Cloud to Brixton.SR3
 * Enabled gzip compression
+* Removed typings in favor of types
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components

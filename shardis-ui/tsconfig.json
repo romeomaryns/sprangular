@@ -10,12 +10,27 @@
     "sourceMap": true,
     "removeComments": false,
     "noEmitHelpers": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "libs": [
+      "es6",
+      "dom"
+    ],
+    "strictNullChecks": false,
+    "types": [
+      "core-js",
+      "hammerjs",
+      "jasmine",
+      "node"
+//      "selenium-webdriver",
+//      "protractor",
+//      "source-map",
+//      "uglify-js",
+//      "webpack"
+    ]
   },
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,
-    "forkChecker": true,
-    "useWebpackText": true
+    "forkChecker": true
   },
   "exclude": [
     "node_modules"

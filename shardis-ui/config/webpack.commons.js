@@ -1,6 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 const validateWebpackConfig = require('webpack-validator');
 const Joi = require('joi');
 
@@ -119,7 +120,8 @@ var baseWebpackConfig = {
     autoprefixer({browsers: ['last 2 versions'], remove: false})
   ],
   plugins: [
-    new ForkCheckerPlugin()
+    new ForkCheckerPlugin(),
+    new TsConfigPathsPlugin()
   ]
 };
 
