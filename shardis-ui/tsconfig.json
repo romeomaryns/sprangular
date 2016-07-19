@@ -11,8 +11,8 @@
     "removeComments": false,
     "noEmitHelpers": false,
     "noImplicitAny": false,
-    "libs": [
-      "es6",
+    "lib": [
+      "es5",
       "dom"
     ],
     "strictNullChecks": false,
@@ -21,11 +21,11 @@
       "hammerjs",
       "jasmine",
       "node"
-//      "selenium-webdriver",
-//      "protractor",
-//      "source-map",
-//      "uglify-js",
-//      "webpack"
+      //"selenium-webdriver",
+      //"protractor",
+      //"source-map",
+      //"uglify-js",
+      //"webpack"
     ]
   },
   "awesomeTypescriptLoaderOptions": {
