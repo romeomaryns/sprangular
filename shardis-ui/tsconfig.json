@@ -20,12 +20,12 @@
       "core-js",
       "hammerjs",
       "jasmine",
-      "node"
-      //"selenium-webdriver",
-      //"protractor",
-      //"source-map",
-      //"uglify-js",
-      //"webpack"
+      "node",
+      "selenium-webdriver",
+      "protractor",
+      "source-map",
+      "uglify-js",
+      "webpack"
     ]
   },
   "awesomeTypescriptLoaderOptions": {
