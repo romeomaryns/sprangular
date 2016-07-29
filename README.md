@@ -120,7 +120,7 @@ npm run e2e
 
 ## CHANGELOG:
 
-### 1.9.0 (unreleased)
+### 1.9.0 (29.07.2016)
 * Updated dependencies
 * Updated Angular to rc.4
 * Switched back to awesome-ts-loader (faster)
