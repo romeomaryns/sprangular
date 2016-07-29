@@ -77,8 +77,8 @@
     "karma-phantomjs-launcher": "1.0.1",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.7.0",
-    "lodash": "^4.14.1",
-    "minimatch": "^3.0.2",
+    "lodash": "4.14.1",
+    "minimatch": "3.0.2",
     "node-sass": "3.8.0",
     "npm-check-updates": "2.7.2",
     "parse5": "2.1.5",
@@ -106,8 +106,8 @@
     "webpack-validator": "2.2.6"
   },
   "scripts": {
-    "clean": "npm cache clean && rimraf node_modules doc coverage ./src/main/resources/static/*",
-    "clean:dist": "rimraf ./src/main/resources/static/*",
+    "clean": "npm cache clean && rimraf doc typings coverage src/main/resources/static/*",
+    "clean:dist": "rimraf typings src/main/resources/static/*",
     "preclean:install": "npm run clean",
     "clean:install": "npm set progress=false && npm install",
     "preclean:start": "npm run clean",
