@@ -16,6 +16,7 @@
 * Updated Spring Cloud to Brixton.SR3
 * Enabled gzip compression
 * Removed typings in favor of types
+* Updated angular2-material to 2.0.0-alpha.6-2
 
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
