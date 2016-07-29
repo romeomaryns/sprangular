@@ -7,12 +7,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ShardisAuthApplication.class)
+@SpringApplicationConfiguration(classes = ShardisUiApplication.class)
 @WebAppConfiguration
-public class ShardisAuthTests {
+public class ShardisUiTest {
 
-    @Test
-    public void contextLoads() {
-    }
+  @Test
+  public void contextLoads() {
+  }
 
 }

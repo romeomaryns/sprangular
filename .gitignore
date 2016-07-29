@@ -14,9 +14,6 @@ npm-debug.log
 shardis-ui/etc/
 shardis-ui/node/
 shardis-ui/node_modules/
-shardis-ui/npm-debug.log
-### typings
-shardis-ui/typings/
 ### coverage
 shardis-ui/coverage/
 ### docs

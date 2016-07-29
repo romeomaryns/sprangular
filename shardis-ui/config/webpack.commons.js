@@ -1,7 +1,9 @@
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var validateWebpackConfig = require('webpack-validator');
-var Joi = require('joi');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+const validateWebpackConfig = require('webpack-validator');
+const Joi = require('joi');
 
 // Environments
 const ENV = {
@@ -41,7 +43,7 @@ var baseWebpackConfig = {
 
   cache: true,
   debug: false,
-  
+
   tslint: {
     emitErrors: false,
     failOnHint: false,
@@ -71,7 +73,7 @@ var baseWebpackConfig = {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'ts'
+        loader: 'awesome-typescript-loader'
       },
 
       {
@@ -86,7 +88,7 @@ var baseWebpackConfig = {
 
       {
         test: /\.html$/,
-        loader: 'raw',
+        loader: 'html',
         exclude: [
           absolutePath('../src/main/frontend/index.html')
         ]
@@ -117,7 +119,10 @@ var baseWebpackConfig = {
   postcss: [
     autoprefixer({browsers: ['last 2 versions'], remove: false})
   ],
-  plugins: []
+  plugins: [
+    new ForkCheckerPlugin(),
+    new TsConfigPathsPlugin()
+  ]
 };
 
 module.exports = {

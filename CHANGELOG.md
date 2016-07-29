@@ -1,5 +1,24 @@
 ## CHANGELOG:
 
+### 1.9.0 (29.07.2016)
+* Updated dependencies
+* Updated Angular to rc.4
+* Switched back to awesome-ts-loader (faster)
+* Updated Spring Cloud to Brixton.SR1
+* Removed lombok from project
+* Added UUID to all entities
+* Moved styles from main.scss to separate module
+* Updated Spring Cloud to Brixton.SR2
+* Updated Spring Platform to 2.0.6 and Spring Boot to 1.3.6
+* Renamed java test classes to match surefire convention
+* Webpack 2 and Typescript 2
+* Reduced bundle size
+* Updated Spring Cloud to Brixton.SR3
+* Enabled gzip compression
+* Removed typings in favor of types
+* Updated angular2-material to 2.0.0-alpha.6-2
+* Updated Spring Platform to 2.0.7 and Spring Boot to 1.3.7
+
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
 * Dependency updates

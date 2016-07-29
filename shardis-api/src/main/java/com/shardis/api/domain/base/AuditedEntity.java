@@ -1,8 +1,6 @@
 package com.shardis.api.domain.base;
 
 import com.shardis.api.domain.user.User;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -20,8 +18,6 @@ import java.time.LocalDateTime;
  * Created by Tomasz Kucharzyk
  */
 @Audited
-@Data
-@EqualsAndHashCode(callSuper = true)
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 public class AuditedEntity extends BaseEntity {
@@ -43,4 +39,23 @@ public class AuditedEntity extends BaseEntity {
     @Version
     protected Long version;
 
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public LocalDateTime getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public User getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
 }

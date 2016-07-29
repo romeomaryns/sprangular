@@ -14,11 +14,11 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const {ENV, validateConfig, baseWebpackConfig, absolutePath} = require('./webpack.commons.js');
 
-var environment = process.env.NODE_ENV = process.env.ENV = ENV.PROD;
+const environment = process.env.NODE_ENV = process.env.ENV = ENV.PROD;
 
-var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+const inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
-var extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
+const extractCSS = new ExtractTextPlugin('[name].[contenthash].css');
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   devtool: 'source-map',
@@ -30,6 +30,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     cache: false
   },
   entry: {
+    'styles': './src/main/frontend/scss/main.scss',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
     'main': './src/main/frontend/main.ts'
@@ -68,7 +69,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     extractCSS,
     new WebpackMd5Hash(),
     new DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     new CommonsChunkPlugin({
       name: ['vendor', 'polyfills'],
       minChunks: Infinity
@@ -85,11 +86,14 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       minify: {minimize: true, removeComments: true, preserveLineBreaks: true, collapseWhitespace: true},
       inlineCss: '<style>' + inlinedCss + '</style>'
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
     new UglifyJsPlugin({
       beautify: false,
       mangle: {
-        screw_ie8: true,
-        keep_fnames: true
+        screw_ie8: true
       },
       compress: {
         screw_ie8: true

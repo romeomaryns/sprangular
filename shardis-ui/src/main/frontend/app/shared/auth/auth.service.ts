@@ -22,7 +22,7 @@ export class AuthService {
       this.authenticated = true;
       this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
       this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-      if (this.tokenExpirationDate < new Date()) {
+      if (this.authenticated && this.tokenExpirationDate < new Date()) {
         console.log('Session timeout');
         this.logout();
       }
@@ -30,10 +30,7 @@ export class AuthService {
   }
 
   public isAuthenticated():boolean {
-    if (this.tokenExpirationDate < new Date()) {
-      console.log('Session timeout');
-      this.logout();
-    }
+    this.checkTokenExpirationDate();
     return this.authenticated;
   }
 
@@ -111,6 +108,7 @@ export class AuthService {
     this.tokenData = new Oauth2TokenData();
     this.userData = null;
     this.authenticated = false;
+    this.tokenExpirationDate = null;
   }
 
   public getUserData():any {
@@ -156,6 +154,12 @@ export class AuthService {
     return authorizationHeaders;
   }
 
+  private checkTokenExpirationDate() {
+    if (this.authenticated && this.tokenExpirationDate < new Date()) {
+      console.log('Session timeout');
+      this.logout();
+    }
+  }
 
   private fetchUserData() {
     this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})

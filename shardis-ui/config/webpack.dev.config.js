@@ -10,18 +10,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {ENV, validateConfig, baseWebpackConfig, absolutePath} = require('./webpack.commons.js');
 
 
-var environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
+const environment = process.env.NODE_ENV = process.env.ENV = ENV.DEV;
 
-var inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
+const inlinedCss = fs.readFileSync('./src/main/frontend/css/inline.css', {encoding: 'utf8'});
 
 module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   metadata: {
     ENV: environment,
     host: 'localhost',
     port: 3000
   },
   entry: {
+    'styles': './src/main/frontend/scss/main.scss',
     'polyfills': './src/main/frontend/polyfills.ts',
     'vendor': './src/main/frontend/vendor.ts',
     'main': './src/main/frontend/main.ts'
@@ -45,7 +46,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       poll: 1000
     },
     quiet: false,
-    noInfo: true,
+    noInfo: false,
     proxy: {
       '/api/*': 'http://localhost:8080',
       '/auth/*': 'http://localhost:8080'
@@ -76,7 +77,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       'ENV': JSON.stringify(environment),
       'HMR': (ENV.DEV === environment)
     }),
-    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     new CommonsChunkPlugin({
       name: ['vendor', 'polyfills'],
       minChunks: Infinity

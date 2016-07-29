@@ -5,7 +5,7 @@
 
     <groupId>com.shardis</groupId>
     <artifactId>shardis-ui</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <packaging>jar</packaging>
 
     <name>shardis-ui</name>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>com.shardis</groupId>
         <artifactId>shardis-parent</artifactId>
-        <version>1.8.0</version>
+        <version>1.9.0</version>
         <relativePath/>
     </parent>
 
@@ -55,10 +55,6 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>

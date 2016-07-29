@@ -35,28 +35,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.8.0.jar
+java -jar ./target/shardis-discovery-1.9.0.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.8.0.jar
+java -jar ./target/shardis-api-1.9.0.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.8.0.jar
+java -jar ./target/shardis-auth-1.9.0.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.8.0.jar
+java -jar ./target/shardis-ui-1.9.0.jar
 ```
 
 
@@ -120,6 +120,25 @@ npm run e2e
 
 ## CHANGELOG:
 
+### 1.9.0 (29.07.2016)
+* Updated dependencies
+* Updated Angular to rc.4
+* Switched back to awesome-ts-loader (faster)
+* Updated Spring Cloud to Brixton.SR1
+* Removed lombok from project
+* Added UUID to all entities
+* Moved styles from main.scss to separate module
+* Updated Spring Cloud to Brixton.SR2
+* Updated Spring Platform to 2.0.6 and Spring Boot to 1.3.6
+* Renamed java test classes to match surefire convention
+* Webpack 2 and Typescript 2
+* Reduced bundle size
+* Updated Spring Cloud to Brixton.SR3
+* Enabled gzip compression
+* Removed typings in favor of types
+* Updated angular2-material to 2.0.0-alpha.6-2
+* Updated Spring Platform to 2.0.7 and Spring Boot to 1.3.7
+
 ### 1.8.0 (30.06.2016)
 * Better directory structure for angular components
 * Dependency updates
@@ -152,15 +171,5 @@ npm run e2e
 * Added working login form
 * Added ng2-webstorage library
 * Inline base css from file and minify html
-
-### 1.6.0 (26.05.2016)
-* Updated node to 6.2.0
-* Updated npm to 3.9.2
-* Removed typings from git
-* Updated typings
-* Updated all node packages
-* Fixed problem with nonexistent static directory
-* Fixed webpack validator custom schema config
-* Some fixes from AngularClass starter
 
 [show full changelog](CHANGELOG.md)

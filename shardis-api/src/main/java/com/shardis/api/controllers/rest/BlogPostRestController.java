@@ -4,7 +4,8 @@ package com.shardis.api.controllers.rest;
 import com.google.common.collect.Lists;
 import com.shardis.api.domain.blog.BlogPost;
 import com.shardis.api.domain.blog.BlogPostRepository;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,8 +22,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/posts")
 @PreAuthorize(value = "hasRole('ROLE_USER')")
-@Slf4j
 public class BlogPostRestController {
+
+    private static final Logger log = LoggerFactory.getLogger(BlogPostRestController.class);
 
     @Autowired
     private BlogPostRepository blogPostRepository;
