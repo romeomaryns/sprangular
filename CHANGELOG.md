@@ -1,5 +1,7 @@
 ## CHANGELOG:
 
+### 2.0.0 (unreleased)
+
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
 * Updated Angular to rc.4

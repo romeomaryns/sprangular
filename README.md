@@ -35,28 +35,28 @@ Then build and run discovery server:
 ```
 cd shardis-discovery/
 mvn clean package
-java -jar ./target/shardis-discovery-1.9.0.jar
+java -jar ./target/shardis-discovery-2.0.0-SNAPSHOT.jar
 ```
 
 Then build and run api server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-api-1.9.0.jar
+java -jar ./target/shardis-api-2.0.0-SNAPSHOT.jar
 ```
 
 Then build and run auth server:
 ```
 cd shardis-auth/
 mvn clean package
-java -jar ./target/shardis-auth-1.9.0.jar
+java -jar ./target/shardis-auth-2.0.0-SNAPSHOT.jar
 ```
 
 Then build and run ui server:
 ```
 cd shardis-api/
 mvn clean package
-java -jar ./target/shardis-ui-1.9.0.jar
+java -jar ./target/shardis-ui-2.0.0-SNAPSHOT.jar
 ```
 
 
@@ -120,6 +120,8 @@ npm run e2e
 
 ## CHANGELOG:
 
+### 2.0.0 (unreleased)
+
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
 * Updated Angular to rc.4
@@ -155,21 +157,5 @@ npm run e2e
 * Switched to new Angular Forms
 * Updated angular2-material to 2.0.0-alpha.6
 
-### 1.7.0 (08.06.2016)
-* Added npm-check-updates as dev dependency
-* Removed kitchensink page
-* Updated dependencies
-* Removed foundation and motion-ui
-* Added angular2-material
-* Basic angular2-material styling
-* Added normalize.css
-* Added fancy loading screen
-* Removed development ribbon
-* Updated angular2-material to 2.0.0-alpha.5-2
-* Added angular2-material palette to main.scss
-* Added sidenav navigation
-* Added working login form
-* Added ng2-webstorage library
-* Inline base css from file and minify html
 
 [show full changelog](CHANGELOG.md)
