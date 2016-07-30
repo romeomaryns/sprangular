@@ -121,6 +121,7 @@ npm run e2e
 ## CHANGELOG:
 
 ### 2.0.0 (unreleased)
+* Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
