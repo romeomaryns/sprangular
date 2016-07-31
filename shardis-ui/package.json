@@ -4,12 +4,12 @@
   "description": "shardis-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kucharzyk/spring-angular2-starter.git"
+    "url": "git+https://github.com/shardis/spring-angular2-starter.git"
   },
   "author": "Tomasz Kucharzyk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kucharzyk/spring-angular2-starter/issues"
+    "url": "https://github.com/shardis/spring-angular2-starter/issues"
   },
   "private": true,
   "dependencies": {
