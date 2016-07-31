@@ -4,6 +4,7 @@
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
 * Updated Spring Cloud to Brixton.SR4
 * Updated Node to v6.3.1 and npm to 3.10.3
+* Updated dependencies
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
