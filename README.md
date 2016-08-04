@@ -22,40 +22,32 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 
 To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
 
-Install parent and common libraries:
+Compile and package project:
 ```
-cd shardis-parent/
-mvn install
-
-cd shardis-common/
-mvn install
+mvn clean package
 ```
 
-Then build and run discovery server:
+Then run discovery server:
 ```
 cd shardis-discovery/
-mvn clean package
 java -jar ./target/shardis-discovery-2.0.0-SNAPSHOT.jar
 ```
 
-Then build and run api server:
+Then run api server:
 ```
 cd shardis-api/
-mvn clean package
 java -jar ./target/shardis-api-2.0.0-SNAPSHOT.jar
 ```
 
-Then build and run auth server:
+Then run auth server:
 ```
 cd shardis-auth/
-mvn clean package
 java -jar ./target/shardis-auth-2.0.0-SNAPSHOT.jar
 ```
 
-Then build and run ui server:
+Then run ui server:
 ```
 cd shardis-api/
-mvn clean package
 java -jar ./target/shardis-ui-2.0.0-SNAPSHOT.jar
 ```
 
@@ -64,14 +56,9 @@ java -jar ./target/shardis-ui-2.0.0-SNAPSHOT.jar
 
 To use development mode you need also webpack development server running in background.
 
-Install all dependencies at first
-Install parent and common libraries:
+Install all dependencies at first:
 ```
-cd shardis-parent/
-mvn install
-
-cd shardis-common/
-mvn install
+mvn clean install
 ```
 
 Run discovery server in development mode:
@@ -104,7 +91,7 @@ cd shardis-ui
 npm run server
 ```
 
-## TESTING
+## TESTING ANGULAR
 
 Run unit tests:
 ```
@@ -125,6 +112,7 @@ npm run e2e
 * Updated Spring Cloud to Brixton.SR4
 * Updated Node to v6.3.1 and npm to 3.10.3
 * Updated dependencies
+* Removed shardis-parent project
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
