@@ -64,25 +64,25 @@ mvn clean install
 Run discovery server in development mode:
 ```
 cd shardis-discovery
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
 ```
 
 Run api server in development mode:
 ```
 cd shardis-api
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
 ```
 
 Run auth server in development mode:
 ```
 cd shardis-auth
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
 ```
 
 Run ui server in development mode:
 ```
 cd shardis-ui
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
 ```
 
 Run webpack development server:
@@ -105,36 +105,21 @@ cd shardis-ui
 npm run e2e
 ```
 
-## DOCKER BUILD:
+## DOCKER BUILD (PRODUCTION):
 
-Build the discovery service docker image
-
-```
-cd shardis-discovery
-mvn docker:build
-```
-
-Build the api service docker image
+Build the docker image for all services
 
 ```
-cd shardis-api
-mvn docker:build
+mvn install -P dev
 ```
 
-Build the auth service docker image
+## DOCKER BUILD (DEVELOPMENT):
+
+Build the docker image for all services
 
 ```
-cd shardis-auth
-mvn docker:build
+mvn install
 ```
-
-Build the ui service docker image
-
-```
-cd shardis-ui
-mvn docker:build
-```
-
 
 ## DOCKER USAGE:
 

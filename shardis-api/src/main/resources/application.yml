@@ -16,21 +16,15 @@ server:
 # PROFILES
 spring:
     application.name: api-service
-    profiles.active: prod
+    profiles.active: prod,docker
 # jacksonm
     jackson.serialization:
         write_dates_as_timestamps: false
 # EUREKA
 eureka:
-#  instance:
-#      hostname: localhost
-#      port: 8081
   client:
     registerWithEureka: true
     fetchRegistry: true
-    serviceUrl:
-#      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-      defaultZone: http://discovery-service:8081/eureka/
 # Disable spring basic authentication security
 security:
   basic:
@@ -46,3 +40,29 @@ security:
       serviceId: ${PREFIX:}resource
 # LOGGING
 logging.level.org.springframework.security: DEBUG
+
+---
+
+spring:
+  profiles: docker
+
+# EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8081/eureka/
+
+---
+
+spring:
+  profiles: standalone
+
+# EUREKA
+eureka:
+  instance:
+    hostname: localhost
+    port: 8081
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+
