@@ -6,6 +6,7 @@
 * Updated Node to v6.3.1 and npm to 3.10.3
 * Updated dependencies
 * Removed shardis-parent project
+* Added docker support (thanks to Tarun Sukhu)
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies

@@ -105,6 +105,52 @@ cd shardis-ui
 npm run e2e
 ```
 
+## DOCKER BUILD:
+
+Build the discovery service docker image
+
+```
+cd shardis-discovery
+mvn docker:build
+```
+
+Build the api service docker image
+
+```
+cd shardis-api
+mvn docker:build
+```
+
+Build the auth service docker image
+
+```
+cd shardis-auth
+mvn docker:build
+```
+
+Build the ui service docker image
+
+```
+cd shardis-ui
+mvn docker:build
+```
+
+
+## DOCKER USAGE:
+
+Start the discovery service first. This will start the discovery service
+```
+./run.sh
+```
+
+Start the result of the services
+
+```
+docker-compose up
+```
+
+
+
 ## CHANGELOG:
 
 ### 2.0.0 (unreleased)
@@ -113,6 +159,7 @@ npm run e2e
 * Updated Node to v6.3.1 and npm to 3.10.3
 * Updated dependencies
 * Removed shardis-parent project
+* Added docker support (thanks to Tarun Sukhu)
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
