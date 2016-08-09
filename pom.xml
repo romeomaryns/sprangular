@@ -33,6 +33,7 @@
         <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
         <docker.image.prefix>spring-ng2-starter</docker.image.prefix>
         <docker.plugin.version>0.3.258</docker.plugin.version>
+		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
     </properties>
 
     <profiles>
@@ -82,6 +83,12 @@
     </dependencyManagement>
 
     <build>
+	    <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -177,6 +184,17 @@
                         </resources>
                     </configuration>
                 </plugin>
+				<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                        <configuration>
+                            <delimiters>
+                                <delimiter>@</delimiter>
+                            </delimiters>
+                            <useDefaultDelimiters>false</useDefaultDelimiters>
+                        </configuration>
+                 </plugin>
             </plugins>
         </pluginManagement>
 
