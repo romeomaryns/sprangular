@@ -46,6 +46,25 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.spotify</groupId>
+                            <artifactId>docker-maven-plugin</artifactId>
+                            <version>${docker.plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>build</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
         <profile>
             <id>dev</id>
@@ -56,6 +75,25 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.spotify</groupId>
+                            <artifactId>docker-maven-plugin</artifactId>
+                            <version>${docker.plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>build</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
         <profile>
             <id>prod-standalone</id>
@@ -190,14 +228,6 @@
                     <groupId>com.spotify</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
