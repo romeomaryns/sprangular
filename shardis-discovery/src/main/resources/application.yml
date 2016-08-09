@@ -5,18 +5,38 @@ server:
 # PROFILES
 spring:
     application.name: discovery-service
-    profiles.active: prod
+    profiles.active: prod,docker
 # EUREKA
-#  instance:
-#      hostname: localhost
-#      port: ${port:8081}
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://discovery-service:8081/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
 # LOGGING
 logging.level.org.springframework.security: DEBUG
+
+---
+
+spring:
+  profiles: docker
+
+# EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8081/eureka/
+
+---
+
+spring:
+  profiles: standalone
+
+# EUREKA
+eureka:
+  instance:
+    hostname: localhost
+    port: 8081
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/

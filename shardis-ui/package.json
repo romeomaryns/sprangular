@@ -4,12 +4,12 @@
   "description": "shardis-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kucharzyk/spring-angular2-starter.git"
+    "url": "git+https://github.com/shardis/spring-angular2-starter.git"
   },
   "author": "Tomasz Kucharzyk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kucharzyk/spring-angular2-starter/issues"
+    "url": "https://github.com/shardis/spring-angular2-starter/issues"
   },
   "private": true,
   "dependencies": {
@@ -38,22 +38,22 @@
     "@angular2-material/toolbar": "2.0.0-alpha.6-2",
     "core-js": "2.4.1",
     "font-awesome": "4.6.3",
-    "ng2-webstorage": "1.0.3",
+    "ng2-webstorage": "1.1.0",
     "normalize.css": "4.2.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
-    "@types/core-js": "0.9.28",
-    "@types/hammerjs": "2.0.29",
-    "@types/jasmine": "2.2.30",
-    "@types/node": "4.0.30",
+    "@types/core-js": "0.9.29",
+    "@types/hammerjs": "2.0.30",
+    "@types/jasmine": "2.2.31",
+    "@types/node": "6.0.31",
     "@types/protractor": "1.5.16",
     "@types/selenium-webdriver": "2.44.26",
     "@types/source-map": "0.1.26",
     "@types/uglify-js": "2.0.27",
-    "@types/webpack": "1.12.30",
-    "autoprefixer": "6.3.7",
+    "@types/webpack": "1.12.31",
+    "autoprefixer": "6.4.0",
     "awesome-typescript-loader": "2.1.1",
     "copy-webpack-plugin": "3.0.1",
     "css-loader": "0.23.1",
@@ -73,17 +73,17 @@
     "karma-chrome-launcher": "1.0.1",
     "karma-coverage": "1.1.1",
     "karma-jasmine": "1.0.2",
-    "karma-mocha-reporter": "2.0.5",
+    "karma-mocha-reporter": "2.1.0",
     "karma-phantomjs-launcher": "1.0.1",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.7.0",
     "lodash": "4.14.1",
     "minimatch": "3.0.2",
     "node-sass": "3.8.0",
-    "npm-check-updates": "2.7.2",
+    "npm-check-updates": "2.8.0",
     "parse5": "2.1.5",
     "phantomjs-polyfill": "0.0.2",
-    "phantomjs-prebuilt": "2.1.8",
+    "phantomjs-prebuilt": "2.1.10",
     "postcss-loader": "0.9.1",
     "protractor": "4.0.2",
     "raw-loader": "0.5.1",
@@ -92,7 +92,7 @@
     "sass-loader": "4.0.0",
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.1",
-    "ts-node": "1.2.1",
+    "ts-node": "1.2.2",
     "tslint": "3.14.0",
     "tslint-loader": "2.1.5",
     "typedoc": "0.4.4",
@@ -103,7 +103,7 @@
     "webpack-load-plugins": "0.1.2",
     "webpack-md5-hash": "0.0.5",
     "webpack-merge": "0.14.1",
-    "webpack-validator": "2.2.6"
+    "webpack-validator": "2.2.7"
   },
   "scripts": {
     "clean": "npm cache clean && rimraf doc typings coverage src/main/resources/static/*",
