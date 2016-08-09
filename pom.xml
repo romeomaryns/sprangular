@@ -10,11 +10,7 @@
 
     <name>shardis</name>
     <description>shardis</description>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-    </properties>
-    
+
     <modules>
         <module>shardis-common</module>
         <module>shardis-discovery</module>
