@@ -145,6 +145,7 @@ docker-compose up
 * Updated dependencies
 * Removed shardis-parent project
 * Added docker support (thanks to Tarun Sukhu)
+* Disabled Eureka client in unit tests
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
