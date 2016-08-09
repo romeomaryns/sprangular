@@ -17,7 +17,7 @@ server:
 # PROFILES
 spring:
     application.name: auth-service
-    profiles.active: prod,docker
+    profiles.active: @default.spring.profiles@
 # EUREKA
 eureka:
   client:

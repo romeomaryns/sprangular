@@ -16,7 +16,7 @@ server:
 # PROFILES
 spring:
     application.name: api-service
-    profiles.active: prod,docker
+    profiles.active: @default.spring.profiles@
 # jacksonm
     jackson.serialization:
         write_dates_as_timestamps: false
