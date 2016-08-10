@@ -11,3 +11,6 @@ while [ -z ${DISCOVERY_SERVICE_READY} ]; do
   fi
   sleep 2
 done
+
+echo "Starting service"
+java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
