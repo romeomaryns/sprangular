@@ -6,6 +6,10 @@ set -e
 #mvn clean install
 #mvn install
 
+# clean unused containers and old images
+# docker rm $(docker ps -a -q)
+# docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
 # Export the active docker machine IP
 export DOCKER_IP=$(docker-machine ip $(docker-machine active))
 
