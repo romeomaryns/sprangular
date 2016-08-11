@@ -14,7 +14,7 @@ services:
     links:
      - discovery-service
      - auth-service
-    entrypoint: ./wait-for-service.sh discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   auth-service:
     image: spring-ng2-starter/shardis-auth
     ports:
@@ -23,7 +23,7 @@ services:
      - discovery-service
     links:
      - discovery-service
-    entrypoint: ./wait-for-service.sh discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   ui-service:
     image: spring-ng2-starter/shardis-ui
     ports:
@@ -36,4 +36,4 @@ services:
      - discovery-service
      - auth-service
      - api-service
-    entrypoint: ./wait-for-service.sh discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health

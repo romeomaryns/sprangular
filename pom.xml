@@ -33,7 +33,7 @@
         <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
         <docker.image.prefix>spring-ng2-starter</docker.image.prefix>
         <docker.plugin.version>0.3.258</docker.plugin.version>
-        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+        <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
     </properties>
 
     <profiles>
@@ -147,10 +147,6 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-                <includes>
-                    <include>**.yml</include>
-                    <include>**.properties</include>
-                </includes>
             </resource>
         </resources>
         <pluginManagement>
@@ -254,6 +250,10 @@
                             <delimiter>@</delimiter>
                         </delimiters>
                         <useDefaultDelimiters>false</useDefaultDelimiters>
+                        <nonFilteredFileExtensions>
+                            <nonFilteredFileExtension>p12</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
                     </configuration>
                 </plugin>
             </plugins>
