@@ -13,6 +13,7 @@ shardis-discovery/target/
 shardis-auth/target/
 shardis-api/target/
 shardis-ui/target/
+shardis-admin/target/
 
 ### node
 npm-debug.log
