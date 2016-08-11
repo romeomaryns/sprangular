@@ -2,7 +2,7 @@
 
 SERVICE_URL="$1"
 
-echo "Probing endpoint $1"
+echo "Waiting for endpoint $1"
 
 while [ -z ${DISCOVERY_SERVICE_READY} ]; do
   echo "Waiting for discovery service..."
