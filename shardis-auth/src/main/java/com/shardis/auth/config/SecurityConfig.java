@@ -26,7 +26,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
-            .authorizeRequests().anyRequest().authenticated();
+            .authorizeRequests()
+            .antMatchers("/actuator").permitAll()
+            .antMatchers("/autoconfig").permitAll()
+            .antMatchers("/beans").permitAll()
+            .antMatchers("/configprops").permitAll()
+            .antMatchers("/dump").permitAll()
+            .antMatchers("/env").permitAll()
+            .antMatchers("/flyway").permitAll()
+            .antMatchers("/health").permitAll()
+            .antMatchers("/info").permitAll()
+            .antMatchers("/liquibase").permitAll()
+            .antMatchers("/metrics").permitAll()
+            .antMatchers("/mappings").permitAll()
+            .antMatchers("/shutdown").denyAll()
+            .antMatchers("/trace").permitAll()
+            .antMatchers("/docs").permitAll()
+            .antMatchers("/heapdump").permitAll()
+            .antMatchers("/jolokia").permitAll()
+            .antMatchers("/logfile").permitAll()
+            .anyRequest().authenticated();
     }
 
     @Override

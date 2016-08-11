@@ -19,6 +19,7 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Angular material integration
 * Font-awesome integration
 * Lazy loaded routes
+* Spring Boot admin support
 
 ## USAGE WITH DOCKER (RECOMMENDED)
 
@@ -83,6 +84,13 @@ java -jar ./target/shardis-ui-2.0.0-SNAPSHOT.jar
 ```
 
 
+Then run admin server (optional):
+```
+cd shardis-admin/
+java -jar ./target/shardis-admin-2.0.0-SNAPSHOT.jar
+```
+
+
 ### RUNNING IN DEVELOPMENT MODE:
 
 If you want to work without docker you need to use dev-standalone maven profile
@@ -114,6 +122,12 @@ mvn spring-boot:run -P dev-standalone
 Run ui server in development mode:
 ```
 cd shardis-ui
+mvn spring-boot:run -P dev-standalone
+```
+
+Run admin server (optional) in development mode:
+```
+cd shardis-admin
 mvn spring-boot:run -P dev-standalone
 ```
 
@@ -151,6 +165,7 @@ npm run e2e
 * Added docker support (thanks to Tarun Sukhu)
 * Disabled Eureka client in unit tests
 * Docker and standalone profiles
+* Spring Boot admin support
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies

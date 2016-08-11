@@ -9,6 +9,7 @@
 * Added docker support (thanks to Tarun Sukhu)
 * Disabled Eureka client in unit tests
 * Docker and standalone profiles
+* Spring Boot admin support
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies

@@ -1,3 +1,7 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # EMBEDDED SERVER CONFIGURATION
 server:
     port: ${port:8080}
@@ -30,11 +34,11 @@ zuul:
      api-service:
           sensitiveHeaders:
           path: /api/**
-          stripPrefix: false
+          stripPrefix: true
      auth-service:
           sensitiveHeaders:
           path: /auth/**
-          stripPrefix: false
+          stripPrefix: true
   add-proxy-headers: true
 #SECURITY
 security:

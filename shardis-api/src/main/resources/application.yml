@@ -1,7 +1,11 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # EMBEDDED SERVER CONFIGURATION
 server:
     port: ${port:8082}
-    context-path: /api/
+    context-path: /
     error.whitelabel.enabled: false
     compression:
       enabled: true

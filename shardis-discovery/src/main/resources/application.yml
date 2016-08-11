@@ -1,3 +1,7 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # EMBEDDED SERVER CONFIGURATION
 server:
     port: ${port:8081}
