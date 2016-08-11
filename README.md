@@ -10,21 +10,52 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 
 ## FEATURES:
 * Build and testing process integrated with maven
-* Spring cloud microservices with Zull and Eureka
+* Spring cloud microservices with service discovery
 * Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
-* Scss support
+* Docker integration (optional)
+* Webpack2 integration
+* Scss support in angular components
 * Angular material integration
 * Font-awesome integration
 * Lazy loaded routes
 
-## PRODUCTION USAGE:
+## USAGE WITH DOCKER (RECOMMENDED)
 
-To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
+### DOCKER BUILD (PRODUCTION MODE):
+
+Build the docker image for all services with default maven profile
+
+```
+mvn install
+```
+
+### DOCKER BUILD (DEVELOPMENT MODE):
+
+Build the docker image for all services with dev maven profile
+To use development mode you need also webpack development server running in background
+
+```
+mvn install -P dev
+```
+
+### RUNNING CONTAINERS:
+
+After building applications run all containers with docker-compose
+
+```
+docker-compose up
+```
+
+## STANDALONE USAGE WITHOUT DOCKER (NO LONGER RECOMMENDED)
+
+### RUNNING IN PRODUCTION MODE:
+
+If you want to work without docker you need to use prod-standalone maven profile
 
 Compile and package project:
 ```
-mvn clean package
+mvn clean package -P prod-standalone
 ```
 
 Then run discovery server:
@@ -52,38 +83,41 @@ java -jar ./target/shardis-ui-2.0.0-SNAPSHOT.jar
 ```
 
 
-## DEVELOPMENT USAGE:
+### RUNNING IN DEVELOPMENT MODE:
 
-To use development mode you need also webpack development server running in background.
+If you want to work without docker you need to use dev-standalone maven profile
+To use development mode you need also webpack development server running in background
 
 Install all dependencies at first:
 ```
-mvn clean install
+mvn clean install -P dev-standalone
 ```
 
 Run discovery server in development mode:
 ```
 cd shardis-discovery
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run api server in development mode:
 ```
 cd shardis-api
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run auth server in development mode:
 ```
 cd shardis-auth
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run ui server in development mode:
 ```
 cd shardis-ui
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev,standalone
+mvn spring-boot:run -P dev-standalone
 ```
+
+## RUNNING WEBPACK DEV SERVER FOR DEVELOPMENT MODE:
 
 Run webpack development server:
 ```
@@ -91,15 +125,15 @@ cd shardis-ui
 npm run server
 ```
 
-## TESTING ANGULAR
+## TESTING ANGULAR FRONTEND
 
-Run unit tests:
+Running unit tests:
 ```
 cd shardis-ui
 npm run test
 ```
 
-Run e2e tests:
+Running e2e tests:
 ```
 cd shardis-ui
 npm run e2e
@@ -150,36 +184,6 @@ docker-compose up
 
 
 
-## DOCKER BUILD (PRODUCTION):
-
-Build the docker image for all services
-
-```
-mvn install -P dev
-```
-
-## DOCKER BUILD (DEVELOPMENT):
-
-Build the docker image for all services
-
-```
-mvn install
-```
-
-## DOCKER USAGE:
-
-Start the discovery service first. This will start the discovery service
-```
-./run.sh
-```
-
-Start the result of the services
-
-```
-docker-compose up
-```
-
-
 
 ## CHANGELOG:
 
@@ -190,6 +194,8 @@ docker-compose up
 * Updated dependencies
 * Removed shardis-parent project
 * Added docker support (thanks to Tarun Sukhu)
+* Disabled Eureka client in unit tests
+* Docker and standalone profiles
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies

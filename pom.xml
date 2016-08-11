@@ -33,6 +33,7 @@
         <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
         <docker.image.prefix>spring-ng2-starter</docker.image.prefix>
         <docker.plugin.version>0.3.258</docker.plugin.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
     </properties>
 
     <profiles>
@@ -40,15 +41,75 @@
             <id>prod</id>
             <properties>
                 <npm.build.command>run build:prod</npm.build.command>
+                <default.spring.profiles>prod,docker</default.spring.profiles>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.spotify</groupId>
+                            <artifactId>docker-maven-plugin</artifactId>
+                            <version>${docker.plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>build</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
         <profile>
             <id>dev</id>
             <properties>
                 <npm.build.command>run build:dev</npm.build.command>
+                <default.spring.profiles>prod,docker</default.spring.profiles>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.spotify</groupId>
+                            <artifactId>docker-maven-plugin</artifactId>
+                            <version>${docker.plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>build</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>prod-standalone</id>
+            <properties>
+                <npm.build.command>run build:prod</npm.build.command>
+                <default.spring.profiles>prod,standalone</default.spring.profiles>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev-standalone</id>
+            <properties>
+                <npm.build.command>run build:dev</npm.build.command>
+                <default.spring.profiles>dev,standalone</default.spring.profiles>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -82,6 +143,16 @@
     </dependencyManagement>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**.yml</include>
+                    <include>**.properties</include>
+                </includes>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -157,14 +228,6 @@
                     <groupId>com.spotify</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
@@ -174,7 +237,23 @@
                                 <directory>${project.build.directory}</directory>
                                 <include>${project.build.finalName}.jar</include>
                             </resource>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.basedir}/src/main/docker</directory>
+                                <include>wait-for-service.sh</include>
+                            </resource>
                         </resources>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <delimiters>
+                            <delimiter>@</delimiter>
+                        </delimiters>
+                        <useDefaultDelimiters>false</useDefaultDelimiters>
                     </configuration>
                 </plugin>
             </plugins>

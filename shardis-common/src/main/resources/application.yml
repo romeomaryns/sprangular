@@ -1,2 +1,2 @@
 # PROFILES
-spring.profiles.active: prod,docker
+spring.profiles.active: @default.spring.profiles@

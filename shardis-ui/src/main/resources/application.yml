@@ -18,7 +18,7 @@ spring:
     aop:
         proxyTargetClass: true
     application.name: ui-service
-    profiles.active: prod,docker
+    profiles.active: @default.spring.profiles@
 # EUREKA
 eureka:
   client:

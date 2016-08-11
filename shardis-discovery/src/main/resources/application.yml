@@ -5,7 +5,7 @@ server:
 # PROFILES
 spring:
     application.name: discovery-service
-    profiles.active: prod,docker
+    profiles.active: @default.spring.profiles@
 # EUREKA
 eureka:
   client:
