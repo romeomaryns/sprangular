@@ -65,38 +65,38 @@ mvn clean package -P prod-standalone
 Then run discovery server:
 ```
 cd shardis-discovery/
-java -jar ./target/shardis-discovery-2.0.0.jar
+java -jar ./target/shardis-discovery-2.1.0-SNAPSHOT.jar
 ```
 
 Then run gateway server:
 ```
 cd shardis-gateway/
-java -jar ./target/shardis-gateway-2.0.0.jar
+java -jar ./target/shardis-gateway-2.1.0-SNAPSHOT.jar
 ```
 
 Then run api server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-api-2.0.0.jar
+java -jar ./target/shardis-api-2.1.0-SNAPSHOT.jar
 ```
 
 Then run auth server:
 ```
 cd shardis-auth/
-java -jar ./target/shardis-auth-2.0.0.jar
+java -jar ./target/shardis-auth-2.1.0-SNAPSHOT.jar
 ```
 
 Then run ui server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-ui-2.0.0.jar
+java -jar ./target/shardis-ui-2.1.0-SNAPSHOT.jar
 ```
 
 
 Then run admin server (optional):
 ```
 cd shardis-admin/
-java -jar ./target/shardis-admin-2.0.0.jar
+java -jar ./target/shardis-admin-2.1.0-SNAPSHOT.jar
 ```
 
 
@@ -170,6 +170,8 @@ npm run e2e
 
 
 ## CHANGELOG:
+
+### 2.1.0 (unreleased)
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0

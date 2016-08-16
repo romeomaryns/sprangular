@@ -1,5 +1,7 @@
 ## CHANGELOG:
 
+### 2.1.0 (unreleased)
+
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
 * Updated Spring Cloud to Brixton.SR4
