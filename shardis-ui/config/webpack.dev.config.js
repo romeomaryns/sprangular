@@ -46,11 +46,7 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       poll: 1000
     },
     quiet: false,
-    noInfo: false,
-    proxy: {
-      '/api/*': 'http://localhost:8080',
-      '/auth/*': 'http://localhost:8080'
-    }
+    noInfo: false
   },
   module: {
     loaders: [

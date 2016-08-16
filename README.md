@@ -8,95 +8,145 @@ Node and npm are installed as part of maven build. Also webpack build and karma 
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
 
 
+### [LIVE DEMO: http://shardis.com/](http://shardis.com/)
+### [EUREKA: http://shardis.com:8081/](http://shardis.com:8081/)
+
 ## FEATURES:
 * Build and testing process integrated with maven
-* Spring cloud microservices with Zull and Eureka
+* Spring cloud microservices with service discovery
 * Spring security Oauth2 integration
 * Spring Boot application in development mode use resources from webpack dev server
-* Scss support
+* Docker integration (optional)
+* Webpack2 integration
+* Scss support in angular components
 * Angular material integration
 * Font-awesome integration
 * Lazy loaded routes
+* Spring Boot admin support
 
-## PRODUCTION USAGE:
+## USAGE WITH DOCKER (RECOMMENDED)
 
-To use production mode you need to use production maven profile as well as production spring profile (both activated as default)
+### DOCKER BUILD (PRODUCTION MODE):
 
-Install parent and common libraries:
+Build the docker image for all services with default maven profile
+
 ```
-cd shardis-parent/
-mvn install
-
-cd shardis-common/
 mvn install
 ```
 
-Then build and run discovery server:
+### DOCKER BUILD (DEVELOPMENT MODE):
+
+Build the docker image for all services with dev maven profile
+To use development mode you need also webpack development server running in background
+
+```
+mvn install -P dev
+```
+
+### RUNNING CONTAINERS:
+
+After building applications run all containers with docker-compose
+
+```
+docker-compose up
+```
+
+## STANDALONE USAGE WITHOUT DOCKER (NO LONGER RECOMMENDED)
+
+### RUNNING IN PRODUCTION MODE:
+
+If you want to work without docker you need to use prod-standalone maven profile
+
+Compile and package project:
+```
+mvn clean package -P prod-standalone
+```
+
+Then run discovery server:
 ```
 cd shardis-discovery/
-mvn clean package
-java -jar ./target/shardis-discovery-1.9.0.jar
+java -jar ./target/shardis-discovery-2.0.0.jar
 ```
 
-Then build and run api server:
+Then run gateway server:
+```
+cd shardis-gateway/
+java -jar ./target/shardis-gateway-2.0.0.jar
+```
+
+Then run api server:
 ```
 cd shardis-api/
-mvn clean package
-java -jar ./target/shardis-api-1.9.0.jar
+java -jar ./target/shardis-api-2.0.0.jar
 ```
 
-Then build and run auth server:
+Then run auth server:
 ```
 cd shardis-auth/
-mvn clean package
-java -jar ./target/shardis-auth-1.9.0.jar
+java -jar ./target/shardis-auth-2.0.0.jar
 ```
 
-Then build and run ui server:
+Then run ui server:
 ```
 cd shardis-api/
-mvn clean package
-java -jar ./target/shardis-ui-1.9.0.jar
+java -jar ./target/shardis-ui-2.0.0.jar
 ```
 
 
-## DEVELOPMENT USAGE:
-
-To use development mode you need also webpack development server running in background.
-
-Install all dependencies at first
-Install parent and common libraries:
+Then run admin server (optional):
 ```
-cd shardis-parent/
-mvn install
+cd shardis-admin/
+java -jar ./target/shardis-admin-2.0.0.jar
+```
 
-cd shardis-common/
-mvn install
+
+### RUNNING IN DEVELOPMENT MODE:
+
+If you want to work without docker you need to use dev-standalone maven profile
+To use development mode you need also webpack development server running in background
+
+Install all dependencies at first:
+```
+mvn clean install -P dev-standalone
 ```
 
 Run discovery server in development mode:
 ```
 cd shardis-discovery
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev-standalone
+```
+
+Run gateway server in development mode:
+```
+cd shardis-gateway
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run api server in development mode:
 ```
 cd shardis-api
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run auth server in development mode:
 ```
 cd shardis-auth
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run ui server in development mode:
 ```
 cd shardis-ui
-mvn spring-boot:run -P dev -Dspring.profiles.active=dev
+mvn spring-boot:run -P dev-standalone
 ```
+
+Run admin server (optional) in development mode:
+```
+cd shardis-admin
+mvn spring-boot:run -P dev-standalone
+```
+
+## RUNNING WEBPACK DEV SERVER FOR DEVELOPMENT MODE:
 
 Run webpack development server:
 ```
@@ -104,21 +154,37 @@ cd shardis-ui
 npm run server
 ```
 
-## TESTING
+## TESTING ANGULAR FRONTEND
 
-Run unit tests:
+Running unit tests:
 ```
 cd shardis-ui
 npm run test
 ```
 
-Run e2e tests:
+Running e2e tests:
 ```
 cd shardis-ui
 npm run e2e
 ```
 
+
 ## CHANGELOG:
+
+### 2.0.0 (16.08.2016)
+* Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
+* Updated Spring Cloud to Brixton.SR4
+* Updated Node to v6.3.1 and npm to 3.10.3
+* Updated dependencies
+* Removed shardis-parent project
+* Added docker support (thanks to Tarun Sukhu)
+* Disabled Eureka client in unit tests
+* Docker and standalone profiles
+* Spring Boot admin support
+* Added gateway service
+* Updated Angular to rc.5
+* Updated angular2-material to 2.0.0-alpha.7-2
+* Added live demo
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
@@ -155,21 +221,5 @@ npm run e2e
 * Switched to new Angular Forms
 * Updated angular2-material to 2.0.0-alpha.6
 
-### 1.7.0 (08.06.2016)
-* Added npm-check-updates as dev dependency
-* Removed kitchensink page
-* Updated dependencies
-* Removed foundation and motion-ui
-* Added angular2-material
-* Basic angular2-material styling
-* Added normalize.css
-* Added fancy loading screen
-* Removed development ribbon
-* Updated angular2-material to 2.0.0-alpha.5-2
-* Added angular2-material palette to main.scss
-* Added sidenav navigation
-* Added working login form
-* Added ng2-webstorage library
-* Inline base css from file and minify html
 
 [show full changelog](CHANGELOG.md)

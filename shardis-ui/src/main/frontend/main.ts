@@ -1,10 +1,8 @@
 /*
  * Providers provided by Angular
  */
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {DIRECTIVES, PIPES, PROVIDERS, ENV_PROVIDERS} from './platform';
-import {App} from './app';
-import {decorateComponentRef} from './platform/environment';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app/app.module';
 
 /*
  * App Component
@@ -17,14 +15,7 @@ import {decorateComponentRef} from './platform/environment';
  */
 export function main() {
 
-  return bootstrap(App as any, [
-    ...PROVIDERS,
-    ...ENV_PROVIDERS,
-    ...DIRECTIVES,
-    ...PIPES
-  ])
-    .then(decorateComponentRef) //angular debug tools
-    .catch(err => console.error(err));
+  platformBrowserDynamic().bootstrapModule(AppModule);
 
 }
 

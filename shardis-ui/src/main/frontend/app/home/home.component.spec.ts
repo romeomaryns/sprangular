@@ -1,4 +1,4 @@
-import {it, inject, describe, beforeEachProviders} from '@angular/core/testing';
+import {async, inject, addProviders} from '@angular/core/testing';
 import {BaseRequestOptions, Http, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {Home} from './home.component';
@@ -10,7 +10,7 @@ import {AuthService} from '../shared';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     BaseRequestOptions,
     MockBackend,
     {
@@ -23,7 +23,7 @@ describe('Home', () => {
     Title,
     Home,
     AuthService
-  ]);
+  ]));
 
   it('should have default data', inject([Home], (home) => {
     expect(home.data).toEqual({value: ''});

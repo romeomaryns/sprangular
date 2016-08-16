@@ -1,7 +1,11 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # EMBEDDED SERVER CONFIGURATION
 server:
     port: ${port:8082}
-    context-path: /api/
+    context-path: /
     error.whitelabel.enabled: false
     compression:
       enabled: true
@@ -15,19 +19,16 @@ server:
           - application/javascript
 # PROFILES
 spring:
-    application.name: shardis-api
-    profiles.active: prod
+    application.name: api-service
+    profiles.active: @default.spring.profiles@
 # jacksonm
     jackson.serialization:
         write_dates_as_timestamps: false
 # EUREKA
 eureka:
-  instance:
-      hostname: localhost
-      port: 8081
   client:
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
 # Disable spring basic authentication security
 security:
   basic:
@@ -42,4 +43,29 @@ security:
       id: openid
       serviceId: ${PREFIX:}resource
 # LOGGING
-logging.level.org.springframework.security: DEBUG
+#logging.level.org.springframework.security: DEBUG
+
+---
+
+spring:
+  profiles: docker
+
+# EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8081/eureka/
+
+---
+
+spring:
+  profiles: standalone
+
+# EUREKA
+eureka:
+  instance:
+    hostname: localhost
+    port: 8081
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/

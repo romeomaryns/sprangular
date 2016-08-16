@@ -1,4 +1,4 @@
-import {it, inject, beforeEachProviders} from '@angular/core/testing';
+import {async, inject, addProviders} from '@angular/core/testing';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {AuthService} from '../shared';
@@ -8,7 +8,7 @@ import {Crud} from './crud.component';
 
 describe('Crud', () => {
   // provide our implementations or mocks to the dependency injector
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     BaseRequestOptions,
     MockBackend,
     {
@@ -20,7 +20,7 @@ describe('Crud', () => {
     },
     AuthService,
     Crud
-  ]);
+  ]));
 
   it('should log ngOnInit', inject([Crud], (crud) => {
     spyOn(console, 'log');

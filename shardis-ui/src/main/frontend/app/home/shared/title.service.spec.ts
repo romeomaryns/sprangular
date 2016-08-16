@@ -1,11 +1,11 @@
-import {it, inject, async, beforeEachProviders} from '@angular/core/testing';
+import {async, inject, addProviders} from '@angular/core/testing';
 import {BaseRequestOptions, Http, ResponseOptions, Response} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {Title} from './title.service';
 import {AuthService} from '../../shared';
 
 describe('Title', () => {
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     BaseRequestOptions,
     MockBackend,
     {
@@ -17,7 +17,7 @@ describe('Title', () => {
     },
     Title,
     AuthService
-  ]);
+  ]));
 
 
   it('should have http', inject([Title], (title) => {
