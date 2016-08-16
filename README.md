@@ -8,6 +8,9 @@ Node and npm are installed as part of maven build. Also webpack build and karma 
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
 
 
+### [LIVE DEMO: http://shardis.com/](http://shardis.com/)
+### [EUREKA: http://shardis.com:8081/](http://shardis.com:8081/)
+
 ## FEATURES:
 * Build and testing process integrated with maven
 * Spring cloud microservices with service discovery
@@ -181,6 +184,7 @@ npm run e2e
 * Added gateway service
 * Updated Angular to rc.5
 * Updated angular2-material to 2.0.0-alpha.7-2
+* Added live demo
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies

@@ -13,6 +13,7 @@
 * Added gateway service
 * Updated Angular to rc.5
 * Updated angular2-material to 2.0.0-alpha.7-2
+* Added live demo
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
