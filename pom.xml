@@ -15,9 +15,10 @@
         <module>shardis-common</module>
         <module>shardis-discovery</module>
         <module>shardis-auth</module>
+        <module>shardis-gateway</module>
         <module>shardis-ui</module>
         <module>shardis-api</module>
-        <module>shardis-admin</module>
+        <module>shardis-admin</module> 
     </modules>
 
     <properties>
