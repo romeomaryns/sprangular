@@ -1,4 +1,4 @@
-import {it, inject, beforeEachProviders} from '@angular/core/testing';
+import {async, inject, addProviders} from '@angular/core/testing';
 import {App} from './app.component';
 import {AuthService} from './shared';
 import {BaseRequestOptions, Http} from '@angular/http';
@@ -9,7 +9,7 @@ import {TEST_ROUTER_PROVIDERS} from './shared/testing';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     App,
     BaseRequestOptions,
     MockBackend,
@@ -22,7 +22,7 @@ describe('App', () => {
       deps: [MockBackend, BaseRequestOptions]
     },
     AuthService,
-  ]);
+  ]));
 
   it('should have a url', inject([App], (app) => {
     expect(app.url).toEqual('https://github.com/kucharzyk');

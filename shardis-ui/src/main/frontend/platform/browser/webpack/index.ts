@@ -1,1 +1,1 @@
-export * from './webpack-component-resolver';
+export * from './async.ng.module.loader'

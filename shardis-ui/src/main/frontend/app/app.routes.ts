@@ -1,13 +1,13 @@
-import {RouterConfig} from '@angular/router';
+import {Routes} from '@angular/router';
 import {Home} from './home';
 import {Login} from './login';
-import {ASYNC_ROUTES} from '../platform/browser/webpack/lazy-loader';
 import {NotFound} from './not-found';
 import {AccessDenied} from './access-denied/access-denied.component';
 import {AuthenticatedGuard, AdminGuard, UnauthenticatedGuard} from './shared/guards';
 import {AuthService} from './shared/auth/auth.service';
+import {load} from '../platform/browser/webpack/async.ng.module.loader';
 
-export const routes:RouterConfig = [
+export const routes: Routes = [
   {
     path: '',
     pathMatch: 'prefix',
@@ -21,18 +21,30 @@ export const routes:RouterConfig = [
   {
     path: 'about',
     pathMatch: 'prefix',
-    component: 'About'
+    loadChildren: load(() => new Promise(resolve => {
+      (require as any).ensure([], (require: any) => {
+        resolve(require('./+about/about.module').AboutModule);
+      });
+    }))
   },
   {
     path: 'crud',
     pathMatch: 'prefix',
-    component: 'Crud',
+    loadChildren: load(() => new Promise(resolve => {
+      (require as any).ensure([], (require: any) => {
+        resolve(require('./+crud/crud.module').CrudModule);
+      });
+    })),
     canActivate: [AuthenticatedGuard, AdminGuard]
   },
   {
     path: 'playground',
     pathMatch: 'prefix',
-    component: 'Playground'
+    loadChildren: load(() => new Promise(resolve => {
+      (require as any).ensure([], (require: any) => {
+        resolve(require('./+playground/playground.module').PlaygroundModule);
+      });
+    })),
   },
   {
     path: 'login',
@@ -57,12 +69,6 @@ export const routes:RouterConfig = [
     terminal: true
   },
 ];
-
-export const asyncRoutes = {
-  About: ASYNC_ROUTES.About,
-  Playground: ASYNC_ROUTES.Playground,
-  Crud: ASYNC_ROUTES.Crud
-};
 
 export const AUTH_PROVIDERS = [AuthService, AdminGuard, AuthenticatedGuard, UnauthenticatedGuard];
 
