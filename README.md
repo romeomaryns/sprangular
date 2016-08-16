@@ -65,6 +65,12 @@ cd shardis-discovery/
 java -jar ./target/shardis-discovery-2.0.0-SNAPSHOT.jar
 ```
 
+Then run gateway server:
+```
+cd shardis-gateway/
+java -jar ./target/shardis-gateway-2.0.0-SNAPSHOT.jar
+```
+
 Then run api server:
 ```
 cd shardis-api/
@@ -104,6 +110,12 @@ mvn clean install -P dev-standalone
 Run discovery server in development mode:
 ```
 cd shardis-discovery
+mvn spring-boot:run -P dev-standalone
+```
+
+Run gateway server in development mode:
+```
+cd shardis-gateway
 mvn spring-boot:run -P dev-standalone
 ```
 
@@ -166,6 +178,7 @@ npm run e2e
 * Disabled Eureka client in unit tests
 * Docker and standalone profiles
 * Spring Boot admin support
+* Added gateway service
 
 ### 1.9.0 (29.07.2016)
 * Updated dependencies
