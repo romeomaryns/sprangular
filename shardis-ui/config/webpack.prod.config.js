@@ -90,14 +90,18 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       minimize: true,
       debug: false
     }),
+    // [RC5]: Minified bundle breaks #10618
+    //https://github.com/angular/angular/issues/10618
     new UglifyJsPlugin({
       beautify: false,
-      mangle: {
-        screw_ie8: true
-      },
-      compress: {
-        screw_ie8: true
-      },
+      minify: true,
+      mangle: false,
+      // mangle: {
+      //   screw_ie8: true
+      // },
+      // compress: {
+      //   screw_ie8: true
+      // },
       comments: false
     })
   ],
