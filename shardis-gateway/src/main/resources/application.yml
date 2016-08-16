@@ -42,7 +42,7 @@ security:
       serviceId: ${PREFIX:}resource
 
 # LOGGING
-logging.level.org.springframework.security: DEBUG
+#logging.level.org.springframework.security: DEBUG
 
 ---
 
