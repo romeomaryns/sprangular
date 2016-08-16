@@ -32,10 +32,22 @@ services:
      - discovery-service
      - auth-service
      - api-service
+     - gateway-service
     links:
      - discovery-service
      - auth-service
      - api-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  gateway-service:
+    image: spring-ng2-starter/shardis-gateway
+    ports:
+      - 8888:8888
+    depends_on:
+      - discovery-service
+    links:
+      - discovery-service
+      - auth-service
+      - api-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   admin-service:
     image: spring-ng2-starter/shardis-admin
