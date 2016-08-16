@@ -1,4 +1,4 @@
-package com.shardis.ui.config;
+package com.shardis.gateway.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
