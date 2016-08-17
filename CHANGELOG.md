@@ -1,6 +1,7 @@
 ## CHANGELOG:
 
 ### 2.1.0 (unreleased)
+* Added Spring Cloud Config server for centralized configuration
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0

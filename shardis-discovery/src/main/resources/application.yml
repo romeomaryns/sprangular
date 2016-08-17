@@ -6,10 +6,7 @@ info:
 server:
     port: ${port:8081}
     error.whitelabel.enabled: false
-# PROFILES
-spring:
-    application.name: discovery-service
-    profiles.active: @default.spring.profiles@
+
 # EUREKA
 eureka:
   client:

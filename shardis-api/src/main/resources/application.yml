@@ -17,11 +17,8 @@ server:
           - text/xml
           - application/json
           - application/javascript
-# PROFILES
+# JACKSON
 spring:
-    application.name: api-service
-    profiles.active: @default.spring.profiles@
-# jacksonm
     jackson.serialization:
         write_dates_as_timestamps: false
 # EUREKA

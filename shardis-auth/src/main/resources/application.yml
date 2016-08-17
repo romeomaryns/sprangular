@@ -18,10 +18,7 @@ server:
           - text/xml
           - application/json
           - application/javascript
-# PROFILES
-spring:
-    application.name: auth-service
-    profiles.active: @default.spring.profiles@
+
 # EUREKA
 eureka:
   client:

@@ -62,6 +62,12 @@ Compile and package project:
 mvn clean package -P prod-standalone
 ```
 
+Then run config server:
+```
+cd shardis-config/
+java -jar ./target/shardis-config-2.1.0-SNAPSHOT.jar
+```
+
 Then run discovery server:
 ```
 cd shardis-discovery/
@@ -108,6 +114,12 @@ To use development mode you need also webpack development server running in back
 Install all dependencies at first:
 ```
 mvn clean install -P dev-standalone
+```
+
+Run config server in development mode:
+```
+cd shardis-config
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run discovery server in development mode:
@@ -172,6 +184,7 @@ npm run e2e
 ## CHANGELOG:
 
 ### 2.1.0 (unreleased)
+* Added Spring Cloud Config server for centralized configuration
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0

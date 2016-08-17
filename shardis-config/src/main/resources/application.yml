@@ -1,0 +1,32 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
+# EMBEDDED SERVER CONFIGURATION
+server:
+    port: ${port:8888}
+
+
+spring:
+    aop:
+        proxyTargetClass: true
+
+# CONFIGURATION REPO
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/shardis/spring-angular2-starter-configuration.git
+
+
+---
+
+spring:
+  profiles: docker
+
+
+---
+
+spring:
+  profiles: standalone
+

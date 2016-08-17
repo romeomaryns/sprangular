@@ -1,9 +1,18 @@
 version: '2'
 services:
+  config-service:
+    image: spring-ng2-starter/shardis-config
+    ports:
+     - 8888:8888
   discovery-service:
     image: spring-ng2-starter/shardis-discovery
     ports:
      - 8081:8081
+    depends_on:
+     - config-service
+    links:
+     - config-service
+    entrypoint: ./wait-for-service.sh http://config-service:8888/health
   api-service:
     image: spring-ng2-starter/shardis-api
     ports:
@@ -14,6 +23,7 @@ services:
     links:
      - discovery-service
      - auth-service
+     - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   auth-service:
     image: spring-ng2-starter/shardis-auth
@@ -23,6 +33,7 @@ services:
      - discovery-service
     links:
      - discovery-service
+     - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   ui-service:
     image: spring-ng2-starter/shardis-ui
@@ -37,17 +48,19 @@ services:
      - discovery-service
      - auth-service
      - api-service
+     - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   gateway-service:
     image: spring-ng2-starter/shardis-gateway
     ports:
-      - 8888:8888
+      - 8090:8090
     depends_on:
       - discovery-service
     links:
       - discovery-service
       - auth-service
       - api-service
+      - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   admin-service:
     image: spring-ng2-starter/shardis-admin
@@ -60,4 +73,5 @@ services:
       - auth-service
       - api-service
       - ui-service
+      - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health

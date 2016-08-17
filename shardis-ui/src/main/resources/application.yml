@@ -17,12 +17,11 @@ server:
           - text/xml
           - application/json
           - application/javascript
-# PROFILES
+
 spring:
     aop:
         proxyTargetClass: true
-    application.name: ui-service
-    profiles.active: @default.spring.profiles@
+
 # EUREKA
 eureka:
   client:
@@ -74,7 +73,7 @@ eureka:
 zuul:
   routes:
      gateway-service:
-          url: http://gateway-service:8888
+          url: http://gateway-service:8090
      auth-service:
           url: http://auth-service:8083
 
@@ -96,6 +95,6 @@ eureka:
 zuul:
   routes:
      gateway-service:
-          url: http://${eureka.instance.hostname}:8888
+          url: http://${eureka.instance.hostname}:8090
      auth-service:
           url: http://${eureka.instance.hostname}:8883

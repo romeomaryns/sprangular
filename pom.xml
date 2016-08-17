@@ -18,6 +18,7 @@
         <module>shardis-gateway</module>
         <module>shardis-ui</module>
         <module>shardis-api</module>
+        <module>shardis-config</module>
         <module>shardis-admin</module>
     </modules>
 

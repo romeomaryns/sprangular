@@ -1,4 +1,4 @@
 # PROFILES
 spring:
+    application.name: config-service
     profiles.active: @default.spring.profiles@
-
