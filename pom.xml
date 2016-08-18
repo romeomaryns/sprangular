@@ -257,6 +257,11 @@
                         <nonFilteredFileExtensions>
                             <nonFilteredFileExtension>p12</nonFilteredFileExtension>
 							<nonFilteredFileExtension>jks</nonFilteredFileExtension>
+							<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+							<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+							<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+							<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+							<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
                         </nonFilteredFileExtensions>
                     </configuration>
                 </plugin>
