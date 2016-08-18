@@ -2,6 +2,14 @@
 spring:
     application.name: config-service
     profiles.active: @default.spring.profiles@
+    aop:
+        proxyTargetClass: true
+# CONFIGURATION REPO
+    cloud:
+        config:
+            server:
+                git:
+                    uri: ${CONFIGURATION_REPOSITORY:https://github.com/shardis/spring-angular2-starter-configuration.git}
 
 # SERVICE VERSION
 info:
@@ -10,19 +18,6 @@ info:
 # EMBEDDED SERVER CONFIGURATION
 server:
     port: ${port:8888}
-
-
-spring:
-    aop:
-        proxyTargetClass: true
-
-# CONFIGURATION REPO
-    cloud:
-        config:
-            server:
-                git:
-                    uri: ${CONFIGURATION_REPOSITORY:https://github.com/shardis/spring-angular2-starter-configuration.git}
-
 
 ---
 

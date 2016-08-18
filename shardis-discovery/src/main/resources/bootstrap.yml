@@ -1,6 +1,10 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # PROFILES
 spring:
-    application.name: discovert-service
+    application.name: discovery-service
     profiles.active: @default.spring.profiles@
 ---
 

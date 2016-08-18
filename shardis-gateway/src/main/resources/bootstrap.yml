@@ -1,3 +1,7 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
 # PROFILES
 spring:
     application.name: gateway-service
