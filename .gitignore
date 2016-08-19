@@ -15,6 +15,7 @@ shardis-api/target/
 shardis-ui/target/
 shardis-admin/target/
 shardis-gateway/target/
+shardis-config/target/
 
 ### node
 npm-debug.log
