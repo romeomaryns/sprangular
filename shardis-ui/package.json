@@ -79,6 +79,7 @@
     "lodash": "4.15.0",
     "minimatch": "3.0.3",
     "node-sass": "3.8.0",
+    "node-ts": "2.0.0",
     "npm-check-updates": "2.8.0",
     "parse5": "2.2.0",
     "phantomjs-polyfill": "0.0.2",
