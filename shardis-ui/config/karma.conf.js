@@ -14,12 +14,12 @@ module.exports = function(config) {
     exclude: [ ],
 
     // list of files / patterns to load in the browser
-    // we are building the test environment in ./spec-bundle.js
-    files: [ { pattern: 'spec-bundle.js', watched: false } ],
+    // we are building the test environment in ./spec-bundle.ts
+    files: [ { pattern: 'spec-bundle.ts', watched: false } ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
+    preprocessors: { 'spec-bundle.ts': ['webpack'] },
 
     // Webpack Config at ./webpack.test.config.js
     webpack: testWebpackConfig,
@@ -37,7 +37,6 @@ module.exports = function(config) {
     webpackServer: { noInfo: true },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: [ 'mocha', 'coverage' ],
 
