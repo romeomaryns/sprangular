@@ -55,6 +55,10 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   },
   module: {
     loaders: [
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      },
       // Saas config
       {
         test: /main\.scss$/,

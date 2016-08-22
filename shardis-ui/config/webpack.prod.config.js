@@ -45,6 +45,10 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   module: {
     loaders: [
       {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
         test: /main\.scss$/,
         loader: extractCSS.extract(['css?sourceMap', 'postcss', 'sass?sourceMap'])
       },

@@ -17,6 +17,14 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   module: {
     loaders: [
       {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader',
+        query: {
+          sourceMap: false,
+          inlineSourceMap: true
+        }
+      },
+      {
         test: /main\.scss$/,
         loader: 'style!css!sass'
       },
