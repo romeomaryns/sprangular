@@ -41,13 +41,13 @@
     "ng2-webstorage": "1.1.0",
     "normalize.css": "4.2.0",
     "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.13"
+    "zone.js": "0.6.17"
   },
   "devDependencies": {
     "@types/core-js": "0.9.31",
     "@types/hammerjs": "2.0.31",
     "@types/jasmine": "2.2.32",
-    "@types/node": "6.0.36",
+    "@types/node": "6.0.37",
     "@types/protractor": "1.5.17",
     "@types/selenium-webdriver": "2.44.27",
     "@types/source-map": "0.1.26",
@@ -93,7 +93,7 @@
     "sass-loader": "4.0.0",
     "source-map-loader": "0.1.5",
     "style-loader": "0.13.1",
-    "tslint": "3.14.0",
+    "tslint": "3.15.1",
     "tslint-loader": "2.1.5",
     "typescript": "2.0.0",
     "url-loader": "0.5.7",
