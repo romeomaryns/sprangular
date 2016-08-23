@@ -129,7 +129,7 @@
     "pree2e": "npm run webdriver:update -- --standalone",
     "e2e": "protractor ./config/protractor.conf.js",
     "e2e:live": "protractor --elementExplorer ./config/protractor.conf.js",
-    "pretest": "npm run lint",
+    "pretest": "rimraf coverage && npm run lint",
     "test": "karma start ./config/karma.conf.js",
     "posttest": "npm run coverage",
     "coverage": "npm run coverage:remap && npm run coverage:report",

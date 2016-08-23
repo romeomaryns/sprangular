@@ -4,6 +4,7 @@
 * Added Spring Cloud Config server for centralized configuration
 * Updated angular2-material to 2.0.0-alpha.7-4
 * Updated dependencies
+* Remapped coverage reports to typescript
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
