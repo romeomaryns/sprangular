@@ -1,39 +1,66 @@
-import {async, inject, addProviders} from '@angular/core/testing';
+import {inject} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing/test_bed';
 import {BaseRequestOptions, Http, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {Home} from './home.component';
 import {Title} from './shared';
 import {AuthService} from '../shared';
+import {MdInputModule} from '@angular2-material/input';
+import {FormsModule} from '@angular/forms';
 
 
 // Load the implementations that should be tested
 
 describe('Home', () => {
-  // provide our implementations or mocks to the dependency injector
-  beforeEach(() => addProviders([
-    BaseRequestOptions,
-    MockBackend,
-    {
-      provide: Http,
-      useFactory: function (backend, defaultOptions) {
-        return new Http(backend, defaultOptions);
-      },
-      deps: [MockBackend, BaseRequestOptions]
-    },
-    Title,
-    Home,
-    AuthService
-  ]));
 
-  it('should have default data', inject([Home], (home) => {
-    expect(home.data).toEqual({value: ''});
-  }));
+  let component: any;
 
-  it('should have a title', inject([Home], (home) => {
-    expect(!!home.title).toEqual(true);
-  }));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        BaseRequestOptions,
+        MockBackend,
+        {
+          provide: Http,
+          useFactory: function (backend, defaultOptions) {
+            return new Http(backend, defaultOptions);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        },
+        Title,
+        AuthService
+      ],
+      imports: [
+        FormsModule,
+        MdInputModule
+      ],
+      declarations: [Home]
+    });
 
-  it('should log ngOnInit', inject([Home, MockBackend], (home, backend) => {
+    TestBed.overrideComponent(Home, {
+      set: {
+        // you can override values here
+      }
+    });
+  });
+
+  beforeEach(() => {
+    let fixture = TestBed.createComponent(Home);
+    fixture.detectChanges();
+
+    component = fixture.componentInstance;
+  });
+
+
+  it('should have default data', () => {
+    expect(component.data).toEqual({value: ''});
+  });
+
+  it('should have a title', () => {
+    expect(!!component.title).toEqual(true);
+  });
+
+  it('should log ngOnInit', inject([MockBackend], (backend) => {
 
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
@@ -48,8 +75,7 @@ describe('Home', () => {
       connection.mockRespond(mockedResponse);
     });
 
-    home.ngOnInit();
-
+    component.ngOnInit();
 
     expect(console.log).toHaveBeenCalled();
   }));

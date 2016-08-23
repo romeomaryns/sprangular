@@ -60,7 +60,7 @@ var baseWebpackConfig = {
         ]
       },
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         loader: "source-map-loader",
         exclude: [
           absolutePath('../node_modules/rxjs'),

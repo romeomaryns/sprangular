@@ -1,30 +1,43 @@
-import {async, inject, addProviders} from '@angular/core/testing';
+import {async, inject} from '@angular/core/testing';
 import {BaseRequestOptions, Http, ResponseOptions, Response} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {Title} from './title.service';
 import {AuthService} from '../../shared';
+import {TestBed} from '@angular/core/testing/test_bed';
 
 describe('Title', () => {
-  beforeEach(() => addProviders([
-    BaseRequestOptions,
-    MockBackend,
-    {
-      provide: Http,
-      useFactory: function (backend, defaultOptions) {
-        return new Http(backend, defaultOptions);
-      },
-      deps: [MockBackend, BaseRequestOptions]
-    },
-    Title,
-    AuthService
-  ]));
+
+  let title: Title;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        BaseRequestOptions,
+        MockBackend,
+        {
+          provide: Http,
+          useFactory: function (backend, defaultOptions) {
+            return new Http(backend, defaultOptions);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        },
+        AuthService,
+        Title
+      ],
+      declarations: []
+    });
+  });
 
 
-  it('should have http', inject([Title], (title) => {
-    expect(!!title.http).toEqual(true);
+  beforeEach(inject([Title], (t) => {
+    title = t;
   }));
 
-  it('should get data from the server', async(inject([Title, MockBackend], (title, backend) => {
+  it('should have http', () => {
+    expect(!!title.http).toEqual(true);
+  });
+
+  it('should get data from the server', async(inject([MockBackend], (backend) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 

@@ -27,6 +27,7 @@ module.exports = function (config) {
     coverageReporter: {
       dir: '../coverage/',
       reporters: [
+        { type: 'text-summary' },
         {
           type: 'json',
           subdir: '.',
@@ -37,6 +38,15 @@ module.exports = function (config) {
 
     // Webpack please don't spam the console when running in karma!
     webpackServer: {noInfo: true},
+
+    // block tests until webpack finish compiling
+    beforeMiddleware: [
+      'webpackBlocker'
+    ],
+
+    webpackMiddleware: {
+      stats: 'errors-only'
+    },
 
     // test results reporter to use
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter

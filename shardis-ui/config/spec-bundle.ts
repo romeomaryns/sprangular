@@ -7,17 +7,14 @@ import 'zone.js/dist/async-test';
 import 'zone.js/dist/fake-async-test';
 import 'zone.js/dist/sync-test';
 import 'rxjs/Rx';
-import {setBaseTestProviders} from '@angular/core/testing';
-import {
-  TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-  TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
-} from '@angular/platform-browser-dynamic/testing';
+import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
+import {TestBed} from '@angular/core/testing/test_bed';
 
 Error.stackTraceLimit = Infinity;
 
-setBaseTestProviders(
-  TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-  TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
+TestBed.initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting()
 );
 
 let testContext = (<{ context?: Function }>require).context('../src/main/frontend/', true, /\.spec.ts$/);
