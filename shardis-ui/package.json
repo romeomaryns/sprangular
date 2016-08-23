@@ -95,7 +95,6 @@
     "style-loader": "0.13.1",
     "tslint": "3.14.0",
     "tslint-loader": "2.1.5",
-    "typedoc": "0.4.5",
     "typescript": "2.0.0",
     "url-loader": "0.5.7",
     "webpack": "2.1.0-beta.20",
@@ -106,7 +105,7 @@
     "webpack-validator": "2.2.7"
   },
   "scripts": {
-    "clean": "npm cache clean && rimraf doc typings coverage src/main/resources/static/*",
+    "clean": "npm cache clean && rimraf coverage src/main/resources/static/*",
     "clean:dist": "rimraf typings src/main/resources/static/*",
     "preclean:install": "npm run clean",
     "clean:install": "npm set progress=false && npm install",
@@ -136,11 +135,7 @@
     "coverage:remap": "remap-istanbul -i coverage/coverage.json -o coverage/coverage.json -t json -e node_modules",
     "coverage:report": "istanbul report",
     "ci": "npm run test && npm run e2e",
-    "docs": "typedoc --options typedoc.json --exclude \"**/*.spec.ts\" \"./src/main/frontend/\"",
     "start": "npm run server:dev",
-    "preversion": "npm test",
-    "version": "npm run build",
-    "postversion": "git push && git push --tags",
     "ncu": "ncu -a"
   },
   "engines": {

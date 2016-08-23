@@ -24,7 +24,5 @@ shardis-ui/node/
 shardis-ui/node_modules/
 ### coverage
 shardis-ui/coverage/
-### docs
-shardis-ui/doc/
 ### dist
 shardis-ui/src/main/resources/static/
