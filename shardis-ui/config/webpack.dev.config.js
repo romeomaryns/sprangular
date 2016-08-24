@@ -45,11 +45,20 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       aggregateTimeout: 300,
       poll: 1000
     },
+    //Enable if you want
+    proxy: {
+      // '/api/*': 'http://localhost:8080',
+      // '/auth/*': 'http://localhost:8080'
+    },
     quiet: false,
     noInfo: false
   },
   module: {
     loaders: [
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      },
       // Saas config
       {
         test: /main\.scss$/,

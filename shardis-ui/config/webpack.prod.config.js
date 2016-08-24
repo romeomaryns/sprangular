@@ -45,6 +45,10 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
   module: {
     loaders: [
       {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
         test: /main\.scss$/,
         loader: extractCSS.extract(['css?sourceMap', 'postcss', 'sass?sourceMap'])
       },
@@ -90,18 +94,18 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
       minimize: true,
       debug: false
     }),
-    // [RC5]: Minified bundle breaks #10618
-    //https://github.com/angular/angular/issues/10618
     new UglifyJsPlugin({
       beautify: false,
       minify: true,
-      mangle: false,
-      // mangle: {
-      //   screw_ie8: true
-      // },
-      // compress: {
-      //   screw_ie8: true
-      // },
+      mangle: {
+        screw_ie8: true,
+        // [RC5]: Minified bundle breaks #10618
+        //https://github.com/angular/angular/issues/10618
+        keep_fnames: true
+      },
+      compress: {
+        screw_ie8: true
+      },
       comments: false
     })
   ],

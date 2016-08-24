@@ -6,6 +6,9 @@ info:
 spring:
     application.name: ui-service
     profiles.active: @default.spring.profiles@
+    cloud:
+        config:
+            failFast: true
 ---
 
 spring:
