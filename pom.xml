@@ -31,7 +31,7 @@
         <frontend-maven-plugin.npm.version>3.10.3</frontend-maven-plugin.npm.version>
         <maven.version>3.3.3</maven.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <spring-cloud-starter-parent.version>Brixton.SR4</spring-cloud-starter-parent.version>
+        <spring-cloud-starter-parent.version>Brixton.SR5</spring-cloud-starter-parent.version>
         <platform-bom.version>Athens-RC1</platform-bom.version>
         <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
         <spring-boot-admin.version>1.4.1</spring-boot-admin.version>

@@ -7,6 +7,7 @@
 * Remapped coverage reports to typescript
 * Removed typedoc (it doesn't support typescript2)
 * Rewritten angular tests using testbed
+* Updated Spring Cloud to Brixton.SR5
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
