@@ -191,6 +191,7 @@ npm run e2e
 * Removed typedoc (it doesn't support typescript2)
 * Rewritten angular tests using testbed
 * Updated Spring Cloud to Brixton.SR5
+* Added Spring REST Docs support for API microservices
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
