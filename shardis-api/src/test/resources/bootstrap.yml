@@ -4,4 +4,5 @@ eureka:
 spring:
     config:
         enabled: false
-
+    jackson.serialization:
+        write_dates_as_timestamps: false
