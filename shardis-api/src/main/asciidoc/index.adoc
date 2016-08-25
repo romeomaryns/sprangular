@@ -7,8 +7,8 @@ include::intro.adoc[]
 == Posts
 The Post resource is used to create, modify and list posts.
 
-=== Listing people
-A `GET` request lists all of the service's people.
+=== Listing posts
+A `GET` request lists all of the service's posts.
 
 include::{snippets}/list-posts/response-fields.adoc[]
 
