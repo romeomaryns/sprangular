@@ -23,24 +23,25 @@
 		<module>shardis-admin</module>
 	</modules>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<maven-compiler-plugin-version>3.5.1</maven-compiler-plugin-version>
-		<frontend-maven-plugin.version>1.0</frontend-maven-plugin.version>
-		<frontend-maven-plugin.node.version>v6.3.1</frontend-maven-plugin.node.version>
-		<frontend-maven-plugin.npm.version>3.10.3</frontend-maven-plugin.npm.version>
-		<maven.version>3.3.3</maven.version>
-		<maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-		<spring-cloud-starter-parent.version>Brixton.SR4</spring-cloud-starter-parent.version>
-		<platform-bom.version>Athens-RC1</platform-bom.version>
-		<spring-boot.version>1.4.0.RELEASE</spring-boot.version>
-		<spring-boot-admin.version>1.4.1</spring-boot-admin.version>
-		<docker.image.prefix>spring-ng2-starter</docker.image.prefix>
-		<docker.plugin.version>0.3.258</docker.plugin.version>
-		<maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin-version>3.5.1</maven-compiler-plugin-version>
+        <frontend-maven-plugin.version>1.0</frontend-maven-plugin.version>
+        <frontend-maven-plugin.node.version>v6.3.1</frontend-maven-plugin.node.version>
+        <frontend-maven-plugin.npm.version>3.10.3</frontend-maven-plugin.npm.version>
+        <maven.version>3.3.3</maven.version>
+        <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
+        <spring-cloud-starter-parent.version>Brixton.SR5</spring-cloud-starter-parent.version>
+        <platform-bom.version>Athens-RC1</platform-bom.version>
+        <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>1.4.1</spring-boot-admin.version>
+        <docker.image.prefix>spring-ng2-starter</docker.image.prefix>
+        <docker.plugin.version>0.3.258</docker.plugin.version>
+        <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
 		<asciidoctor-maven-plugin.version>1.5.3</asciidoctor-maven-plugin.version>
-	</properties>
+    </properties>
+
 
 	<profiles>
 		<profile>

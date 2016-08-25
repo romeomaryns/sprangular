@@ -23,7 +23,7 @@ export class App implements OnInit {
     this.router.navigate(['']);
   }
 
-  ngOnInit():void {
+  ngOnInit():any {
     console.log('app on init');
   }
 
