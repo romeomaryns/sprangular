@@ -16,7 +16,7 @@ Shardis API - service is a RESTful microservice for ...
 
 [[overview-http-verbs]]
 == HTTP verbs
-Person-service tries to adhere as closely as possible to standard HTTP and REST conventions in its
+Shardis API service tries to adhere as closely as possible to standard HTTP and REST conventions in its
 use of HTTP verbs.
 |===
 | Verb | Usage
