@@ -2,6 +2,7 @@ eureka:
     client:
         enabled: false
 spring:
-    config:
-        enabled: false
+    cloud:
+        config:
+            enabled: false
 

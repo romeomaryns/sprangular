@@ -32,21 +32,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shardis.api.domain.blog.BlogPost;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest //(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @WebAppConfiguration
 public class ShardisApiTest {
 
 	@Rule
 	public JUnitRestDocumentation  restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
-	
+
 	@Autowired
 	private WebApplicationContext context;
-	
+
 	private MockMvc mockMvc;
-	
+
 	@Autowired
     private ObjectMapper objectMapper;
-	
+
 	@Before
 	public void setup() {
 		this.mockMvc =   MockMvcBuilders
@@ -55,7 +55,7 @@ public class ShardisApiTest {
 	            .alwaysDo(print())
 	            .build();
 	}
-	
+
 	@Test
 	@WithMockUser(username="admin",roles={"USER"})
 	public void postsWithUser() throws Exception {
@@ -64,7 +64,7 @@ public class ShardisApiTest {
 			.andExpect(status().isOk())
 			.andDo(document("list-posts",
 					preprocessRequest(
-							prettyPrint()), 
+							prettyPrint()),
 							preprocessResponse(prettyPrint()),
 					responseFields(
                     fieldWithPath("[].id").description("The post' ID"),
@@ -76,14 +76,14 @@ public class ShardisApiTest {
                     fieldWithPath("[].updatedDate").description("The posts' update data"),
                     fieldWithPath("[].updatedBy").description("The posts' updated by"),
                     fieldWithPath("[].version").description("The posts' version")
-                    
+
             )));
 	}
-	
+
 	@Test
 	@WithMockUser(username="admin",roles={"USER"})
     public void createPost() throws Exception {
-		
+
 		BlogPost newPost = new BlogPost("Sample blog post title for testing", "Sample blog post content");
 
 		this.mockMvc.perform(
@@ -93,7 +93,7 @@ public class ShardisApiTest {
         ).andExpect(status().isOk())
 		.andDo(document("add-post",
 					preprocessRequest(
-							prettyPrint()), 
+							prettyPrint()),
 							preprocessResponse(prettyPrint()),
 					requestFields(
 							fieldWithPath("title").description("The posts' title"),
@@ -105,11 +105,11 @@ public class ShardisApiTest {
 		                    fieldWithPath("updatedDate").description("The posts' update data"),
 		                    fieldWithPath("updatedBy").description("The posts' updated by"),
 		                    fieldWithPath("version").description("The posts' version")
-							
+
 						)
 					));
     }
-	
+
 	@Test
 	@WithMockUser(username="admin",roles={"USER"})
     public void deletePost() throws Exception {
@@ -118,5 +118,5 @@ public class ShardisApiTest {
         ).andExpect(status().isOk())
 		.andDo(document("delete-post"));
 	}
-	
+
 }
