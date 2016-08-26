@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
-public class MainPageController {
+public class MainPageController  {
 
   @Autowired
   EnvironmentProvider environmentProvider;
