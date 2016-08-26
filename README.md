@@ -23,6 +23,7 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Font-awesome integration
 * Lazy loaded routes
 * Spring Boot admin support
+* Spring REST Docs support 
 
 ## USAGE WITH DOCKER (RECOMMENDED)
 
