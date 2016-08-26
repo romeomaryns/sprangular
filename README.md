@@ -1,5 +1,7 @@
 # SPRING BOOT ANGULAR 2 STARTER
 
+[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=dev)](https://travis-ci.org/shardis/spring-angular2-starter)
+
 ## PROJECT DESCRIPTION:
 
 This sample project demonstrates how to integrate Spring Boot application with Angular 2.
