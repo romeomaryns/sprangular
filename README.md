@@ -9,7 +9,6 @@ It could be used as base for your future Angular2 Java projects.
 Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
 
-
 ### [LIVE DEMO: http://shardis.com/](http://shardis.com/)
 ### [EUREKA: http://shardis.com:8081/](http://shardis.com:8081/)
 
@@ -25,7 +24,11 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Font-awesome integration
 * Lazy loaded routes
 * Spring Boot admin support
-* Spring REST Docs support 
+* Spring REST Docs support
+
+## MICROSERVICES:
+
+![docs/diagram.png](docs/diagram.png)
 
 ## USAGE WITH DOCKER (RECOMMENDED)
 
@@ -247,4 +250,4 @@ npm run e2e
 * Updated angular2-material to 2.0.0-alpha.6
 
 
-[show full changelog](CHANGELOG.md)
+[show full changelog](docs/CHANGELOG.md)
