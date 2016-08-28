@@ -5,9 +5,6 @@ import {APP_MENU, AppMenuItem} from './app.menu';
 
 @Component({
   selector: 'app',
-  pipes: [],
-  providers: [],
-  directives: [],
   styles: [require('./app.component.scss')],
   template: require('./app.component.html')
 })
@@ -26,7 +23,7 @@ export class App implements OnInit {
     this.router.navigate(['']);
   }
 
-  ngOnInit():void {
+  ngOnInit():any {
     console.log('app on init');
   }
 

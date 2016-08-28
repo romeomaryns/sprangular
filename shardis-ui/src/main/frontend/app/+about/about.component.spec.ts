@@ -1,20 +1,36 @@
-import {async, inject, addProviders} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing/test_bed';
 import {About} from './about.component';
 
-// Load the implementations that should be tested
-
 describe('About', () => {
-  // provide our implementations or mocks to the dependency injector
-  beforeEach(() => addProviders([
-    About
-  ]));
 
-  it('should log ngOnInit', inject([About], (about) => {
+  let component: any;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [],
+      declarations: [About]
+    });
+
+    TestBed.overrideComponent(About, {
+      set: {
+        // you can override values here
+      }
+    });
+  });
+
+  beforeEach(() => {
+    let fixture = TestBed.createComponent(About);
+    fixture.detectChanges();
+
+    component = fixture.componentInstance;
+  });
+
+  it('should log ngOnInit', () => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
-    about.ngOnInit();
+    component.ngOnInit();
     expect(console.log).toHaveBeenCalled();
-  }));
+  });
 
 });

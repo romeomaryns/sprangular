@@ -1,6 +1,0 @@
-# SERVICE VERSION
-info:
-    version: @project.version@
-
-# PROFILES
-spring.profiles.active: @default.spring.profiles@

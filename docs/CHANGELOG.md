@@ -1,5 +1,15 @@
 ## CHANGELOG:
 
+### 2.1.0 (28.08.2016)
+* Added Spring Cloud Config server for centralized configuration
+* Added Spring REST Docs support for API microservices
+* Remapped coverage reports to typescript
+* Rewritten angular tests using Testbed
+* Updated Spring Cloud to Brixton.SR5
+* Updated angular2-material to 2.0.0-alpha.7-4
+* Updated dependencies
+* Removed typedoc (it doesn't support typescript2)
+
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
 * Updated Spring Cloud to Brixton.SR4

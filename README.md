@@ -1,12 +1,13 @@
 # SPRING BOOT ANGULAR 2 STARTER
 
+[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=dev)](https://travis-ci.org/shardis/spring-angular2-starter)
+
 ## PROJECT DESCRIPTION:
 
 This sample project demonstrates how to integrate Spring Boot application with Angular 2.
 It could be used as base for your future Angular2 Java projects.
 Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
-
 
 ### [LIVE DEMO: http://shardis.com/](http://shardis.com/)
 ### [EUREKA: http://shardis.com:8081/](http://shardis.com:8081/)
@@ -23,6 +24,11 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Font-awesome integration
 * Lazy loaded routes
 * Spring Boot admin support
+* Spring REST Docs support
+
+## MICROSERVICES:
+
+![docs/diagram.png](docs/diagram.png)
 
 ## USAGE WITH DOCKER (RECOMMENDED)
 
@@ -62,41 +68,47 @@ Compile and package project:
 mvn clean package -P prod-standalone
 ```
 
+Then run config server:
+```
+cd shardis-config/
+java -jar ./target/shardis-config-2.1.0.jar
+```
+
 Then run discovery server:
 ```
 cd shardis-discovery/
-java -jar ./target/shardis-discovery-2.0.0.jar
+java -jar ./target/shardis-discovery-2.1.0.jar
 ```
 
 Then run gateway server:
 ```
 cd shardis-gateway/
-java -jar ./target/shardis-gateway-2.0.0.jar
+java -jar ./target/shardis-gateway-2.1.0.jar
 ```
 
 Then run api server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-api-2.0.0.jar
+java -jar ./target/shardis-api-2.1.0.jar
 ```
 
 Then run auth server:
 ```
 cd shardis-auth/
-java -jar ./target/shardis-auth-2.0.0.jar
+java -jar ./target/shardis-auth-2.1.0.jar
 ```
 
 Then run ui server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-ui-2.0.0.jar
+java -jar ./target/shardis-ui-2.1.0.jar
 ```
 
 
 Then run admin server (optional):
 ```
 cd shardis-admin/
-java -jar ./target/shardis-admin-2.0.0.jar
+java -jar ./target/shardis-admin-2.1.0.jar
 ```
 
 
@@ -108,6 +120,12 @@ To use development mode you need also webpack development server running in back
 Install all dependencies at first:
 ```
 mvn clean install -P dev-standalone
+```
+
+Run config server in development mode:
+```
+cd shardis-config
+mvn spring-boot:run -P dev-standalone
 ```
 
 Run discovery server in development mode:
@@ -171,6 +189,16 @@ npm run e2e
 
 ## CHANGELOG:
 
+### 2.1.0 (28.08.2016)
+* Added Spring Cloud Config server for centralized configuration
+* Added Spring REST Docs support for API microservices
+* Remapped coverage reports to typescript
+* Rewritten angular tests using Testbed
+* Updated Spring Cloud to Brixton.SR5
+* Updated angular2-material to 2.0.0-alpha.7-4
+* Updated dependencies
+* Removed typedoc (it doesn't support typescript2)
+
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
 * Updated Spring Cloud to Brixton.SR4
@@ -222,4 +250,4 @@ npm run e2e
 * Updated angular2-material to 2.0.0-alpha.6
 
 
-[show full changelog](CHANGELOG.md)
+[show full changelog](docs/CHANGELOG.md)
