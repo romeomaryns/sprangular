@@ -71,44 +71,44 @@ mvn clean package -P prod-standalone
 Then run config server:
 ```
 cd shardis-config/
-java -jar ./target/shardis-config-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-config-2.1.0.jar
 ```
 
 Then run discovery server:
 ```
 cd shardis-discovery/
-java -jar ./target/shardis-discovery-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-discovery-2.1.0.jar
 ```
 
 Then run gateway server:
 ```
 cd shardis-gateway/
-java -jar ./target/shardis-gateway-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-gateway-2.1.0.jar
 ```
 
 Then run api server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-api-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-api-2.1.0.jar
 ```
 
 Then run auth server:
 ```
 cd shardis-auth/
-java -jar ./target/shardis-auth-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-auth-2.1.0.jar
 ```
 
 Then run ui server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-ui-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-ui-2.1.0.jar
 ```
 
 
 Then run admin server (optional):
 ```
 cd shardis-admin/
-java -jar ./target/shardis-admin-2.1.0-SNAPSHOT.jar
+java -jar ./target/shardis-admin-2.1.0.jar
 ```
 
 
@@ -189,15 +189,15 @@ npm run e2e
 
 ## CHANGELOG:
 
-### 2.1.0 (unreleased)
+### 2.1.0 (28.08.2016)
 * Added Spring Cloud Config server for centralized configuration
+* Added Spring REST Docs support for API microservices
+* Remapped coverage reports to typescript
+* Rewritten angular tests using Testbed
+* Updated Spring Cloud to Brixton.SR5
 * Updated angular2-material to 2.0.0-alpha.7-4
 * Updated dependencies
-* Remapped coverage reports to typescript
 * Removed typedoc (it doesn't support typescript2)
-* Rewritten angular tests using testbed
-* Updated Spring Cloud to Brixton.SR5
-* Added Spring REST Docs support for API microservices
 
 ### 2.0.0 (16.08.2016)
 * Updated Spring Platform to Athens-RC1 and Spring Boot to 1.4.0
