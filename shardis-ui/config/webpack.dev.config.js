@@ -48,7 +48,6 @@ module.exports = validateConfig(webpackMerge(baseWebpackConfig, {
     //Enable if you want
     proxy: {
       // '/api/*': 'http://localhost:8080',
-      // '/auth/*': 'http://localhost:8080'
     },
     quiet: false,
     noInfo: false
