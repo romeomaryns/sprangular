@@ -6,6 +6,7 @@ services:
      - 8888:8888
     environment:
      - CONFIGURATION_REPOSITORY=https://github.com/shardis/spring-angular2-starter-configuration.git
+     - CONFIGURATION_BRANCH=dev
   discovery-service:
     image: spring-ng2-starter/shardis-discovery
     ports:

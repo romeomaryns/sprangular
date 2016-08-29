@@ -10,6 +10,7 @@ spring:
             server:
                 git:
                     uri: ${CONFIGURATION_REPOSITORY:https://github.com/shardis/spring-angular2-starter-configuration.git}
+                default-label: ${CONFIGURATION_BRANCH:master}
 
 # SERVICE VERSION
 info:
