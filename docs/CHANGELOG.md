@@ -1,7 +1,15 @@
 ## CHANGELOG:
 
 ### 2.2.0 (unreleased)
-
+* Introduced Angular-Cli as angular build tool
+* Updated Angular to 2.0.1
+* Updated Angular Material to 2.0.0-alpha.9-3
+* Updated Node to v6.7.0
+* Updated Spring Platform to Athens-RELEASE
+* Updated Spring Boot to 1.4.1.RELEASE
+* Updated Spring Cloud to Camden.RELEASE
+* Updated Spring Boot Admin to 1.4.2
+* Updated Docker Maven Plugin to 0.4.13
 
 ### 2.1.0 (28.08.2016)
 * Added Spring Cloud Config server for centralized configuration

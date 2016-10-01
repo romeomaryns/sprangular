@@ -1,19 +1,36 @@
-import {inject} from '@angular/core/testing';
-import {TestBed} from '@angular/core/testing/test_bed';
-import {BaseRequestOptions, Http, Response, ResponseOptions} from '@angular/http';
+/* tslint:disable:no-unused-variable */
+
+import {TestBed} from '@angular/core/testing';
+import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
-import {Home} from './home.component';
-import {Title} from './shared';
-import {AuthService} from '../shared';
-import {MdInputModule} from '@angular2-material/input';
+import {AuthService} from '../shared/auth/auth.service';
+import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import {
+  MdInputModule,
+  MdIconModule,
+  MdSidenavModule,
+  MdCardModule,
+  MdButtonModule,
+  MdCheckboxModule,
+  MdCoreModule,
+  MdGridListModule,
+  MdListModule,
+  MdMenuModule,
+  MdProgressBarModule,
+  MdProgressCircleModule,
+  MdRadioModule,
+  MdSlideToggleModule,
+  MdSliderModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule
+} from '@angular/material';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HomeComponent} from './home.component';
+import {TitleService} from './shared/title.service';
 
-
-// Load the implementations that should be tested
-
-describe('Home', () => {
-
-  let component: any;
+describe('Component: Home', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -27,57 +44,59 @@ describe('Home', () => {
           },
           deps: [MockBackend, BaseRequestOptions]
         },
-        Title,
-        AuthService
+        AuthService,
+        TitleService
       ],
       imports: [
+        BrowserModule,
         FormsModule,
-        MdInputModule
+        MdButtonModule.forRoot(),
+        MdCardModule.forRoot(),
+        MdCheckboxModule.forRoot(),
+        MdCoreModule.forRoot(),
+        MdGridListModule.forRoot(),
+        MdIconModule.forRoot(),
+        MdInputModule.forRoot(),
+        MdListModule.forRoot(),
+        MdMenuModule.forRoot(),
+        MdProgressBarModule.forRoot(),
+        MdProgressCircleModule.forRoot(),
+        MdRadioModule.forRoot(),
+        MdSidenavModule.forRoot(),
+        MdSlideToggleModule.forRoot(),
+        MdSliderModule.forRoot(),
+        MdTabsModule.forRoot(),
+        MdToolbarModule.forRoot(),
+        MdTooltipModule.forRoot(),
+        RouterTestingModule.withRoutes([{
+          path: '',
+          pathMatch: 'prefix',
+          component: HomeComponent
+        }]),
       ],
-      declarations: [Home]
-    });
-
-    TestBed.overrideComponent(Home, {
-      set: {
-        // you can override values here
-      }
+      declarations: [
+        HomeComponent
+      ],
     });
   });
 
-  beforeEach(() => {
-    let fixture = TestBed.createComponent(Home);
-    fixture.detectChanges();
 
-    component = fixture.componentInstance;
+  it('should create an instance', () => {
+    let fixture = TestBed.createComponent(HomeComponent);
+    expect(fixture).toBeTruthy();
   });
 
+  it('should log ngOnInit', () => {
 
-  it('should have default data', () => {
-    expect(component.data).toEqual({value: ''});
-  });
-
-  it('should have a title', () => {
-    expect(!!component.title).toEqual(true);
-  });
-
-  it('should log ngOnInit', inject([MockBackend], (backend) => {
+    let fixture = TestBed.createComponent(HomeComponent);
+    let crud = fixture.debugElement.componentInstance;
+    expect(crud).toBeTruthy();
 
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
-    var mockedResponse = new Response(
-      new ResponseOptions({
-          body: '{"value":"API SERVER IS ALIVE"}'
-        }
-      ));
-
-    backend.connections.subscribe(connection => {
-      connection.mockRespond(mockedResponse);
-    });
-
-    component.ngOnInit();
+    crud.ngOnInit();
 
     expect(console.log).toHaveBeenCalled();
-  }));
-
+  });
 });

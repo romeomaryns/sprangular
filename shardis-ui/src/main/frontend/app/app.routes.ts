@@ -1,11 +1,12 @@
 import {Routes} from '@angular/router';
-import {Home} from './home';
-import {Login} from './login';
-import {NotFound} from './not-found';
-import {AccessDenied} from './access-denied/access-denied.component';
-import {AuthenticatedGuard, AdminGuard, UnauthenticatedGuard} from './shared/guards';
-import {AuthService} from './shared/auth/auth.service';
-import {load} from '../platform/browser/webpack/async.ng.module.loader';
+import {CrudComponent} from './crud/crud.component';
+import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
+import {AccessDeniedComponent} from './access-denied/access-denied.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {UnauthenticatedGuard} from './shared/guards/unauthenticated.guard';
+import {AuthenticatedGuard} from './shared/guards/authenticated.guard';
+import {AdminGuard} from './shared/guards/admin.guard';
 
 export const routes: Routes = [
   {
@@ -16,60 +17,46 @@ export const routes: Routes = [
   {
     path: 'home',
     pathMatch: 'prefix',
-    component: Home
+    component: HomeComponent
   },
   {
     path: 'about',
     pathMatch: 'prefix',
-    loadChildren: load(() => new Promise(resolve => {
-      (require as any).ensure([], (require: any) => {
-        resolve(require('./+about/about.module').AboutModule);
-      });
-    }))
+    loadChildren: 'app/about/about.module#AboutModule'
   },
   {
     path: 'crud',
     pathMatch: 'prefix',
-    loadChildren: load(() => new Promise(resolve => {
-      (require as any).ensure([], (require: any) => {
-        resolve(require('./+crud/crud.module').CrudModule);
-      });
-    })),
+    loadChildren: 'app/crud/crud.module#CrudModule',
     canActivate: [AuthenticatedGuard, AdminGuard]
   },
   {
     path: 'playground',
     pathMatch: 'prefix',
-    loadChildren: load(() => new Promise(resolve => {
-      (require as any).ensure([], (require: any) => {
-        resolve(require('./+playground/playground.module').PlaygroundModule);
-      });
-    })),
+    loadChildren: 'app/playground/playground.module#PlaygroundModule'
   },
   {
     path: 'login',
     pathMatch: 'prefix',
-    component: Login,
+    component: LoginComponent,
     canActivate: [UnauthenticatedGuard]
   },
   {
     path: 'accessDenied',
     pathMatch: 'prefix',
-    component: AccessDenied
+    component: AccessDeniedComponent
   },
   {
     path: '404',
     pathMatch: 'prefix',
-    component: NotFound
+    component: NotFoundComponent
   },
   {
     path: '**',
     pathMatch: 'prefix',
-    redirectTo: '404',
-    terminal: true
+    redirectTo: '404'
   },
 ];
 
-export const AUTH_PROVIDERS = [AuthService, AdminGuard, AuthenticatedGuard, UnauthenticatedGuard];
 
 

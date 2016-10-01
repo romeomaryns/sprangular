@@ -16,10 +16,9 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Build and testing process integrated with maven
 * Spring cloud microservices with service discovery
 * Spring security Oauth2 integration
-* Spring Boot application in development mode use resources from webpack dev server
 * Docker integration (optional)
-* Webpack2 integration
-* Scss support in angular components
+* Angular Cli integration
+* Scss support
 * Angular material integration
 * Font-awesome integration
 * Lazy loaded routes
@@ -164,13 +163,17 @@ cd shardis-admin
 mvn spring-boot:run -P dev-standalone
 ```
 
-## RUNNING WEBPACK DEV SERVER FOR DEVELOPMENT MODE:
+## RUNNING DEV SERVER FOR DEVELOPMENT MODE:
 
-Run webpack development server:
+Run development server:
 ```
 cd shardis-ui
 npm run server
 ```
+
+Visit your app at http://localhost:4200/
+
+proxies for api calls can be configured in proxy.json file.
 
 ## TESTING ANGULAR FRONTEND
 
@@ -190,6 +193,15 @@ npm run e2e
 ## CHANGELOG:
 
 ### 2.2.0 (unreleased)
+* Introduced Angular-Cli as angular build tool
+* Updated Angular to 2.0.1
+* Updated Angular Material to 2.0.0-alpha.9-3
+* Updated Node to v6.7.0
+* Updated Spring Platform to Athens-RELEASE
+* Updated Spring Boot to 1.4.1.RELEASE
+* Updated Spring Cloud to Camden.RELEASE
+* Updated Spring Boot Admin to 1.4.2
+* Updated Docker Maven Plugin to 0.4.13
 
 
 ### 2.1.0 (28.08.2016)

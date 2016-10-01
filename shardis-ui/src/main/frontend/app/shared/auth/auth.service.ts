@@ -1,23 +1,23 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {LocalStorage} from 'ng2-webstorage/index';
 import {AppMenuItem} from '../../app.menu';
 
 @Injectable()
 export class AuthService {
 
-  private authenticated:boolean = false;
-  private tokenExpirationDate:Date = null;
-  private userData:any = null;
+  private authenticated: boolean = false;
+  private tokenExpirationDate: Date = null;
+  private userData: any = null;
 
-  @LocalStorage()
-  private tokenData:Oauth2TokenData;
+  // @LocalStorage()
+  private tokenData: Oauth2TokenData;
 
-  public static decodeAccessToken(access_token:string) {
+  public static decodeAccessToken(access_token: string) {
     return JSON.parse(window.atob(access_token.split('.')[1]));
   }
 
-  constructor(public http:Http) {
+  constructor(public http: Http) {
+    this.tokenData = JSON.parse(localStorage.getItem("tokenData"));
     if (this.tokenData && this.tokenData.access_token) {
       this.authenticated = true;
       this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
@@ -29,12 +29,12 @@ export class AuthService {
     }
   }
 
-  public isAuthenticated():boolean {
+  public isAuthenticated(): boolean {
     this.checkTokenExpirationDate();
     return this.authenticated;
   }
 
-  public authenticate(username:string, password:string):Promise<string> {
+  public authenticate(username: string, password: string): Promise<string> {
 
     console.log('Authentication pending...');
 
@@ -47,31 +47,32 @@ export class AuthService {
         reject('Password cannot be blank');
       }
 
-      var basicAuthHeader = btoa(`acme:acmesecret`);
+      let basicAuthHeader = btoa(`acme:acmesecret`);
 
-      var headers = new Headers();
+      let headers = new Headers();
       headers.append('Authorization', `Basic  ${basicAuthHeader}`);
       headers.append('Accept', `application/json`);
       headers.append('Content-Type', `application/x-www-form-urlencoded`);
 
-      var data = 'username=' + encodeURIComponent(username) + '&password='
-        + encodeURIComponent(password) + '&grant_type=password';
+      let payload = 'username=' + encodeURIComponent(username) + '&password='
+          + encodeURIComponent(password) + '&grant_type=password';
 
       this.http
-        .post('/api/oauth/token', data, {headers: headers})
-        .subscribe(
-          data => {
-            this.tokenData = data.json();
-            this.authenticated = true;
-            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
-            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-            resolve('OK');
-          },
-          err => {
-            console.log(err);
-            reject('Username and password doesn\'t match');
-          }
-        );
+          .post('/api/oauth/token', payload, {headers: headers})
+          .subscribe(
+              data => {
+                this.tokenData = data.json();
+                this.authenticated = true;
+                this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
+                this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+                resolve('OK');
+                localStorage.setItem("tokenData",JSON.stringify(this.tokenData));
+              },
+              err => {
+                console.log(err);
+                reject('Username and password doesn\'t match');
+              }
+          );
 
     });
   }
@@ -79,55 +80,55 @@ export class AuthService {
   public refreshToken() {
     if (this.isAuthenticated()) {
 
-      var basicAuthHeader = btoa(`acme:acmesecret`);
+      let basicAuthHeader = btoa(`acme:acmesecret`);
 
-      var headers = new Headers();
+      let headers = new Headers();
       headers.append('Authorization', `Basic  ${basicAuthHeader}`);
       headers.append('Accept', `application/json`);
       headers.append('Content-Type', `application/x-www-form-urlencoded`);
 
-      var data = 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(this.tokenData.refresh_token);
+      let data = 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(this.tokenData.refresh_token);
 
       this.http
-        .post('/api/oauth/token', data, {headers: headers})
-        .subscribe(
-          data => {
-            this.tokenData = data.json();
-            this.authenticated = true;
-            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
-            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-          },
-          err => {
-            console.log(err);
-          }
-        );
+          .post('/api/oauth/token', data, {headers: headers})
+          .subscribe(
+              data => {
+                this.tokenData = data.json();
+                this.authenticated = true;
+                this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
+                this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+              },
+              err => {
+                console.log(err);
+              }
+          );
     }
   }
 
-  public logout():any {
+  public logout(): any {
     this.tokenData = new Oauth2TokenData();
     this.userData = null;
     this.authenticated = false;
     this.tokenExpirationDate = null;
   }
 
-  public getUserData():any {
+  public getUserData(): any {
     return this.userData;
   }
 
-  public getTokenExpirationDate():Date {
+  public getTokenExpirationDate(): Date {
     return this.tokenExpirationDate;
   }
 
-  public hasRole(role:string):boolean {
+  public hasRole(role: string): boolean {
     if (this.isAuthenticated()) {
       return this.getUserData()['authorities'].indexOf(role) >= 0;
     }
     return false;
   }
 
-  public hasAnyRole(roles:string[]):boolean {
-    var ok = false;
+  public hasAnyRole(roles: string[]): boolean {
+    let ok = false;
     roles.forEach(role => {
       if (this.hasRole(role)) {
         ok = true;
@@ -136,8 +137,8 @@ export class AuthService {
     return ok;
   }
 
-  public canView(view:AppMenuItem):boolean {
-    var ok = false;
+  public canView(view: AppMenuItem): boolean {
+    let ok = false;
     if (!view.roles) {
       ok = true;
     } else {
@@ -146,8 +147,8 @@ export class AuthService {
     return ok;
   }
 
-  public getAuthorizationHeaders():Headers {
-    var authorizationHeaders = new Headers();
+  public getAuthorizationHeaders(): Headers {
+    let authorizationHeaders = new Headers();
     if (this.authenticated) {
       authorizationHeaders.append('Authorization', `Bearer ${this.tokenData.access_token}`);
     }
@@ -161,25 +162,25 @@ export class AuthService {
     }
   }
 
-  private fetchUserData() {
-    this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})
-      .subscribe(
-        data => {
-          this.userData = data.json();
-        },
-        err => this.authenticated = false
-      );
-  }
+  // private fetchUserData() {
+  //   this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})
+  //       .subscribe(
+  //           data => {
+  //             this.userData = data.json();
+  //           },
+  //           err => this.authenticated = false
+  //       );
+  // }
 
 }
 
 class Oauth2TokenData {
-  access_token:string = null;
-  token_type:string = null;
-  expires_in:number = null;
-  scope:string = null;
-  jti:string = null;
-  refresh_token:string = null;
+  access_token: string = null;
+  token_type: string = null;
+  expires_in: number = null;
+  scope: string = null;
+  jti: string = null;
+  refresh_token: string = null;
 
   constructor() {
   }
