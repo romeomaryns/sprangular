@@ -99,7 +99,7 @@ java -jar ./target/shardis-auth-2.2.0.jar
 
 Then run ui server:
 ```
-cd shardis-api/
+cd shardis-ui/
 java -jar ./target/shardis-ui-2.2.0.jar
 ```
 
