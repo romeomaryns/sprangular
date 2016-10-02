@@ -1,4 +1,4 @@
-/* tslint:disable:no-unused-variable */
+/* tslint:disable:no-unused-expression */
 
 import {TestBed} from '@angular/core/testing';
 import {CrudComponent} from './crud.component';

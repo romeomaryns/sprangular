@@ -1,3 +1,4 @@
+/* tslint:disable:no-unused-variable */
 import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
 import {AuthService} from '../shared/auth/auth.service';

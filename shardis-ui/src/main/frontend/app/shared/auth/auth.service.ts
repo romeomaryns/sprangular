@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   constructor(public http: Http) {
-    this.tokenData = JSON.parse(localStorage.getItem("tokenData"));
+    this.tokenData = JSON.parse(localStorage.getItem('tokenData'));
     if (this.tokenData && this.tokenData.access_token) {
       this.authenticated = true;
       this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
@@ -55,24 +55,24 @@ export class AuthService {
       headers.append('Content-Type', `application/x-www-form-urlencoded`);
 
       let payload = 'username=' + encodeURIComponent(username) + '&password='
-          + encodeURIComponent(password) + '&grant_type=password';
+        + encodeURIComponent(password) + '&grant_type=password';
 
       this.http
-          .post('/api/oauth/token', payload, {headers: headers})
-          .subscribe(
-              data => {
-                this.tokenData = data.json();
-                this.authenticated = true;
-                this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
-                this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-                resolve('OK');
-                localStorage.setItem("tokenData",JSON.stringify(this.tokenData));
-              },
-              err => {
-                console.log(err);
-                reject('Username and password doesn\'t match');
-              }
-          );
+        .post('/api/oauth/token', payload, {headers: headers})
+        .subscribe(
+          data => {
+            this.tokenData = data.json();
+            this.authenticated = true;
+            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
+            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+            resolve('OK');
+            localStorage.setItem('tokenData', JSON.stringify(this.tokenData));
+          },
+          err => {
+            console.log(err);
+            reject('Username and password doesn\'t match');
+          }
+        );
 
     });
   }
@@ -90,18 +90,18 @@ export class AuthService {
       let data = 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(this.tokenData.refresh_token);
 
       this.http
-          .post('/api/oauth/token', data, {headers: headers})
-          .subscribe(
-              data => {
-                this.tokenData = data.json();
-                this.authenticated = true;
-                this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
-                this.tokenExpirationDate = new Date(this.userData.exp * 1000);
-              },
-              err => {
-                console.log(err);
-              }
-          );
+        .post('/api/oauth/token', data, {headers: headers})
+        .subscribe(
+          data => {
+            this.tokenData = data.json();
+            this.authenticated = true;
+            this.userData = AuthService.decodeAccessToken(this.tokenData.access_token);
+            this.tokenExpirationDate = new Date(this.userData.exp * 1000);
+          },
+          err => {
+            console.log(err);
+          }
+        );
     }
   }
 

@@ -23,8 +23,6 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import {RouterModule} from '@angular/router';
-import {routes} from './app.routes';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AccessDeniedComponent} from './access-denied/access-denied.component';
@@ -34,6 +32,7 @@ import {AdminGuard} from './shared/guards/admin.guard';
 import {AuthenticatedGuard} from './shared/guards/authenticated.guard';
 import {UnauthenticatedGuard} from './shared/guards/unauthenticated.guard';
 import {TitleService} from './home/shared/title.service';
+import {ShardisUiRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -65,7 +64,7 @@ import {TitleService} from './home/shared/title.service';
     MdTabsModule.forRoot(),
     MdToolbarModule.forRoot(),
     MdTooltipModule.forRoot(),
-    RouterModule.forRoot(routes)
+    ShardisUiRoutingModule
   ],
   providers: [
     AuthService,
