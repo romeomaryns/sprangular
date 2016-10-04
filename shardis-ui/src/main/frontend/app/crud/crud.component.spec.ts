@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-expression */
 
 import {TestBed} from '@angular/core/testing';
-import {CrudComponent} from './crud.component';
+import {CrudComponent, BlogPost} from './crud.component';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {AuthService} from '../shared/auth/auth.service';
@@ -96,6 +96,40 @@ describe('Component: Crud', () => {
     crud.ngOnInit();
 
     expect(console.log).toHaveBeenCalled();
+  });
+
+  it('should allow to edit and create posts', () => {
+
+    let fixture = TestBed.createComponent(CrudComponent);
+    let crud: CrudComponent = fixture.debugElement.componentInstance;
+
+    let post: BlogPost = {
+      id: 127,
+      uuid: null,
+      title: 'title',
+      content: 'content',
+      createdDate: new Date(),
+      updatedDate: new Date(),
+      version: 1,
+      createdBy: null,
+      updatedBy: null
+    };
+
+    crud.editing = false;
+    crud.editPost(post);
+
+    expect(crud.editing).toBeTruthy();
+
+    crud.editing = false;
+
+    expect(crud.editing).toBeFalsy();
+    expect(crud.editedPost.id).toBe(127);
+
+    crud.newPost();
+
+    expect(crud.editing).toBeTruthy();
+    expect(crud.editedPost.id).toBeNull();
+
   });
 
 });

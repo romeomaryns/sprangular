@@ -134,7 +134,7 @@ export class CrudComponent implements OnInit {
 
 }
 
-interface BlogPost {
+export interface BlogPost {
   id: number;
   uuid?: string;
   title: string;
