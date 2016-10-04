@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AuthenticatedGuard} from './shared/guards/authenticated.guard';
 import {AdminGuard} from './shared/guards/admin.guard';
-import {LoginComponent} from './login/login.component';
 import {UnauthenticatedGuard} from './shared/guards/unauthenticated.guard';
 import {AccessDeniedComponent} from './access-denied/access-denied.component';
 import {NotFoundComponent} from './not-found/not-found.component';
@@ -38,7 +37,7 @@ export const routes: Routes = [
   {
     path: 'login',
     pathMatch: 'prefix',
-    component: LoginComponent,
+    loadChildren: 'app/login/login.module#LoginModule',
     canActivate: [UnauthenticatedGuard]
   },
   {
@@ -63,4 +62,5 @@ export const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class ShardisUiRoutingModule { }
+export class AppRoutingModule {
+}

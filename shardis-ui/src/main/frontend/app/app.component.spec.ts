@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import {TestBed, async} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
@@ -31,7 +31,6 @@ import {RouterTestingModule} from '@angular/router/testing';
 
 describe('App: ShardisUi', () => {
   beforeEach(() => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
     TestBed.configureTestingModule({
       providers: [
         BaseRequestOptions,

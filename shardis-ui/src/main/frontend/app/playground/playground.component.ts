@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'shardis-playground',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     console.log('hello `Playground` component');

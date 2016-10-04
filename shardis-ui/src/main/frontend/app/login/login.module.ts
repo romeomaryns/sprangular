@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {AboutComponent} from './about.component';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 import {
   MdInputModule,
   MdIconModule,
@@ -21,11 +22,14 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import {AboutRoutingModule} from './about-routing.module';
+import {LoginComponent} from './login.component';
+import {LoginRoutingModule} from './login-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    HttpModule,
     MdButtonModule,
     MdCardModule,
     MdCheckboxModule,
@@ -44,9 +48,9 @@ import {AboutRoutingModule} from './about-routing.module';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    AboutRoutingModule
+    LoginRoutingModule
   ],
-  declarations: [AboutComponent]
+  declarations: [LoginComponent]
 })
-export class AboutModule {
+export class LoginModule {
 }

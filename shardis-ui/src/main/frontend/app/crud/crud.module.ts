@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CrudComponent } from './crud.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {CrudComponent} from './crud.component';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {
@@ -23,8 +23,7 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import {RouterModule} from '@angular/router';
-import {routes} from './crud.routes';
+import {CrudRoutingModule} from './crud-routing.module';
 
 @NgModule({
   imports: [
@@ -49,8 +48,9 @@ import {routes} from './crud.routes';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    RouterModule.forChild(routes),
+    CrudRoutingModule
   ],
   declarations: [CrudComponent]
 })
-export class CrudModule { }
+export class CrudModule {
+}

@@ -204,6 +204,7 @@ npm run e2e
 * Updated Docker Maven Plugin to 0.4.13
 * Added docker cleanup script for Windows
 * Added tags for generated docker images
+* Added separate routing modules to all lazy loaded Angular modules
 
 
 ### 2.1.0 (28.08.2016)

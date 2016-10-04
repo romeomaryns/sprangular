@@ -1,7 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
-import { AccessDeniedComponent } from './access-denied.component';
+import {AccessDeniedComponent} from './access-denied.component';
 
 describe('Component: AccessDenied', () => {
   it('should create an instance', () => {

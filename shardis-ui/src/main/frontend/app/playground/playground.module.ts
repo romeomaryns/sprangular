@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PlaygroundComponent } from './playground.component';
-import { HeroAppComponent } from './shared/hero-app/hero-app.component';
-import { HeroDetailComponent } from './shared/hero-detail/hero-detail.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PlaygroundComponent} from './playground.component';
+import {HeroAppComponent} from './shared/hero-app/hero-app.component';
+import {HeroDetailComponent} from './shared/hero-detail/hero-detail.component';
 import {
   MdInputModule,
   MdIconModule,
@@ -23,11 +23,10 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import {RouterModule} from '@angular/router';
-import {routes} from './playground.routes';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {HeroService} from './shared/hero.service';
+import {PlaygroundRoutingModule} from './playground-routing.module';
 
 
 @NgModule({
@@ -53,11 +52,12 @@ import {HeroService} from './shared/hero.service';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    RouterModule.forChild(routes),
+    PlaygroundRoutingModule
   ],
   providers: [
     HeroService
   ],
   declarations: [PlaygroundComponent, HeroAppComponent, HeroDetailComponent]
 })
-export class PlaygroundModule { }
+export class PlaygroundModule {
+}
