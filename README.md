@@ -203,6 +203,7 @@ npm run e2e
 * Updated Spring Boot Admin to 1.4.2
 * Updated Docker Maven Plugin to 0.4.13
 * Added docker cleanup script for Windows
+* Added tags for generated docker images
 
 
 ### 2.1.0 (28.08.2016)
