@@ -1,57 +1,15 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {PlaygroundComponent} from './playground.component';
 import {HeroAppComponent} from './shared/hero-app/hero-app.component';
 import {HeroDetailComponent} from './shared/hero-detail/hero-detail.component';
-import {
-  MdInputModule,
-  MdIconModule,
-  MdSidenavModule,
-  MdCardModule,
-  MdButtonModule,
-  MdCheckboxModule,
-  MdCoreModule,
-  MdGridListModule,
-  MdListModule,
-  MdMenuModule,
-  MdProgressBarModule,
-  MdProgressCircleModule,
-  MdRadioModule,
-  MdSlideToggleModule,
-  MdSliderModule,
-  MdTabsModule,
-  MdToolbarModule,
-  MdTooltipModule
-} from '@angular/material';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 import {HeroService} from './shared/hero.service';
 import {PlaygroundRoutingModule} from './playground-routing.module';
+import {COMMON_CHILD_MODULES} from '../shared/common/common.modules';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    HttpModule,
-    MdButtonModule,
-    MdCardModule,
-    MdCheckboxModule,
-    MdCoreModule,
-    MdGridListModule,
-    MdIconModule,
-    MdInputModule,
-    MdListModule,
-    MdMenuModule,
-    MdProgressBarModule,
-    MdProgressCircleModule,
-    MdRadioModule,
-    MdSidenavModule,
-    MdSlideToggleModule,
-    MdSliderModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdTooltipModule,
+    ...COMMON_CHILD_MODULES,
     PlaygroundRoutingModule
   ],
   providers: [

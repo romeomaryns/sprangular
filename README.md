@@ -205,6 +205,7 @@ npm run e2e
 * Added docker cleanup script for Windows
 * Added tags for generated docker images
 * Added separate routing modules to all lazy loaded Angular modules
+* Extracted common modules and providers to one place
 
 
 ### 2.1.0 (28.08.2016)

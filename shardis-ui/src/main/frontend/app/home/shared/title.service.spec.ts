@@ -2,31 +2,19 @@
 
 import {TestBed, inject} from '@angular/core/testing';
 import {TitleService} from './title.service';
-import {BaseRequestOptions, Http} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
 import {AuthService} from '../../shared/auth/auth.service';
+import {COMMON_TESING_PROVIDERS, COMMON_TESTING_MODULES} from '../../testing/testing.modules';
 
 describe('Service: Title', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        BaseRequestOptions,
-        MockBackend,
-        {
-          provide: Http,
-          useFactory: function (backend, defaultOptions) {
-            return new Http(backend, defaultOptions);
-          },
-          deps: [MockBackend, BaseRequestOptions]
-        },
+        ...COMMON_TESING_PROVIDERS,
         TitleService,
         AuthService
       ],
       imports: [
-        BrowserModule,
-        FormsModule
+        ...COMMON_TESTING_MODULES,
       ]
     });
   });

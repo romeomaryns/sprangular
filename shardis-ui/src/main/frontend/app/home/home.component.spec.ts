@@ -1,73 +1,23 @@
 /* tslint:disable:no-unused-variable */
 
 import {TestBed} from '@angular/core/testing';
-import {BaseRequestOptions, Http} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
 import {AuthService} from '../shared/auth/auth.service';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {
-  MdInputModule,
-  MdIconModule,
-  MdSidenavModule,
-  MdCardModule,
-  MdButtonModule,
-  MdCheckboxModule,
-  MdCoreModule,
-  MdGridListModule,
-  MdListModule,
-  MdMenuModule,
-  MdProgressBarModule,
-  MdProgressCircleModule,
-  MdRadioModule,
-  MdSlideToggleModule,
-  MdSliderModule,
-  MdTabsModule,
-  MdToolbarModule,
-  MdTooltipModule
-} from '@angular/material';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HomeComponent} from './home.component';
 import {TitleService} from './shared/title.service';
+import {COMMON_TESTING_MODULES, COMMON_TESING_PROVIDERS} from '../testing/testing.modules';
 
 describe('Component: Home', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        BaseRequestOptions,
-        MockBackend,
-        {
-          provide: Http,
-          useFactory: function (backend, defaultOptions) {
-            return new Http(backend, defaultOptions);
-          },
-          deps: [MockBackend, BaseRequestOptions]
-        },
+        ...COMMON_TESING_PROVIDERS,
         AuthService,
         TitleService
       ],
       imports: [
-        BrowserModule,
-        FormsModule,
-        MdButtonModule.forRoot(),
-        MdCardModule.forRoot(),
-        MdCheckboxModule.forRoot(),
-        MdCoreModule.forRoot(),
-        MdGridListModule.forRoot(),
-        MdIconModule.forRoot(),
-        MdInputModule.forRoot(),
-        MdListModule.forRoot(),
-        MdMenuModule.forRoot(),
-        MdProgressBarModule.forRoot(),
-        MdProgressCircleModule.forRoot(),
-        MdRadioModule.forRoot(),
-        MdSidenavModule.forRoot(),
-        MdSlideToggleModule.forRoot(),
-        MdSliderModule.forRoot(),
-        MdTabsModule.forRoot(),
-        MdToolbarModule.forRoot(),
-        MdTooltipModule.forRoot(),
+        ...COMMON_TESTING_MODULES,
         RouterTestingModule.withRoutes([{
           path: '',
           pathMatch: 'prefix',
