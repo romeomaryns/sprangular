@@ -18,7 +18,11 @@ import {
   MdSliderModule,
   MdTabsModule,
   MdToolbarModule,
-  MdTooltipModule
+  MdTooltipModule,
+  MdButtonToggleModule,
+  MdDialogModule,
+  MdSelectModule,
+  MdSnackBarModule
 } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
@@ -28,9 +32,11 @@ export const COMMON_ROOT_MODULES = [
   FormsModule,
   HttpModule,
   MdButtonModule.forRoot(),
+  MdButtonToggleModule.forRoot(),
   MdCardModule.forRoot(),
   MdCheckboxModule.forRoot(),
   MdCoreModule.forRoot(),
+  MdDialogModule.forRoot(),
   MdGridListModule.forRoot(),
   MdIconModule.forRoot(),
   MdInputModule.forRoot(),
@@ -39,9 +45,11 @@ export const COMMON_ROOT_MODULES = [
   MdProgressBarModule.forRoot(),
   MdProgressCircleModule.forRoot(),
   MdRadioModule.forRoot(),
+  MdSelectModule.forRoot(),
   MdSidenavModule.forRoot(),
   MdSlideToggleModule.forRoot(),
   MdSliderModule.forRoot(),
+  MdSnackBarModule.forRoot(),
   MdTabsModule.forRoot(),
   MdToolbarModule.forRoot(),
   MdTooltipModule.forRoot()
@@ -52,9 +60,11 @@ export const COMMON_CHILD_MODULES = [
   FormsModule,
   HttpModule,
   MdButtonModule,
+  MdButtonToggleModule,
   MdCardModule,
   MdCheckboxModule,
   MdCoreModule,
+  MdDialogModule,
   MdGridListModule,
   MdIconModule,
   MdInputModule,
@@ -63,9 +73,11 @@ export const COMMON_CHILD_MODULES = [
   MdProgressBarModule,
   MdProgressCircleModule,
   MdRadioModule,
+  MdSelectModule,
   MdSidenavModule,
   MdSlideToggleModule,
   MdSliderModule,
+  MdSnackBarModule,
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule

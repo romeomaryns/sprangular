@@ -18,7 +18,11 @@ import {
   MdSliderModule,
   MdTabsModule,
   MdToolbarModule,
-  MdTooltipModule
+  MdTooltipModule,
+  MdButtonToggleModule,
+  MdDialogModule,
+  MdSelectModule,
+  MdSnackBarModule
 } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {MockBackend} from '@angular/http/testing';
@@ -27,9 +31,11 @@ export const COMMON_TESTING_MODULES = [
   BrowserModule,
   FormsModule,
   MdButtonModule.forRoot(),
+  MdButtonToggleModule.forRoot(),
   MdCardModule.forRoot(),
   MdCheckboxModule.forRoot(),
   MdCoreModule.forRoot(),
+  MdDialogModule.forRoot(),
   MdGridListModule.forRoot(),
   MdIconModule.forRoot(),
   MdInputModule.forRoot(),
@@ -38,9 +44,11 @@ export const COMMON_TESTING_MODULES = [
   MdProgressBarModule.forRoot(),
   MdProgressCircleModule.forRoot(),
   MdRadioModule.forRoot(),
+  MdSelectModule.forRoot(),
   MdSidenavModule.forRoot(),
   MdSlideToggleModule.forRoot(),
   MdSliderModule.forRoot(),
+  MdSnackBarModule.forRoot(),
   MdTabsModule.forRoot(),
   MdToolbarModule.forRoot(),
   MdTooltipModule.forRoot()
