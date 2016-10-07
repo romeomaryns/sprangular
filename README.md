@@ -194,7 +194,7 @@ npm run e2e
 
 ### 2.2.0 (unreleased)
 * Introduced Angular-Cli as angular build tool
-* Updated Angular to 2.0.1
+* Updated Angular to 2.0.2
 * Updated Angular Material to 2.0.0-alpha.9-3
 * Updated Node to v6.7.0
 * Updated Spring Platform to Athens-RELEASE
