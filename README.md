@@ -194,6 +194,8 @@ npm run e2e
 ## CHANGELOG:
 
 ### 2.3.0 (unreleased)
+* Dependency updates
+* Updated Codelyzer to 1.0.0-beta.1 and re-enabled rules broken by Angular 2.0.2
 
 ### 2.2.0 (09.10.2016)
 * Introduced Angular-Cli as angular build tool
