@@ -70,44 +70,44 @@ mvn clean package -P prod-standalone
 Then run config server:
 ```
 cd shardis-config/
-java -jar ./target/shardis-config-2.2.0.jar
+java -jar ./target/shardis-config-2.3.0.jar
 ```
 
 Then run discovery server:
 ```
 cd shardis-discovery/
-java -jar ./target/shardis-discovery-2.2.0.jar
+java -jar ./target/shardis-discovery-2.3.0.jar
 ```
 
 Then run gateway server:
 ```
 cd shardis-gateway/
-java -jar ./target/shardis-gateway-2.2.0.jar
+java -jar ./target/shardis-gateway-2.3.0.jar
 ```
 
 Then run api server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-api-2.2.0.jar
+java -jar ./target/shardis-api-2.3.0.jar
 ```
 
 Then run auth server:
 ```
 cd shardis-auth/
-java -jar ./target/shardis-auth-2.2.0.jar
+java -jar ./target/shardis-auth-2.3.0.jar
 ```
 
 Then run ui server:
 ```
 cd shardis-ui/
-java -jar ./target/shardis-ui-2.2.0.jar
+java -jar ./target/shardis-ui-2.3.0.jar
 ```
 
 
 Then run admin server (optional):
 ```
 cd shardis-admin/
-java -jar ./target/shardis-admin-2.2.0.jar
+java -jar ./target/shardis-admin-2.3.0.jar
 ```
 
 
