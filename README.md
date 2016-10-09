@@ -1,6 +1,6 @@
 # SPRING BOOT ANGULAR 2 STARTER
 
-[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=dev)](https://travis-ci.org/shardis/spring-angular2-starter)
+[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=master)](https://travis-ci.org/shardis/spring-angular2-starter)
 
 ## PROJECT DESCRIPTION:
 
@@ -173,7 +173,8 @@ npm run server
 
 Visit your app at http://localhost:4200/
 
-proxies for api calls can be configured in proxy.json file.
+Proxies for api calls can be configured in proxy.json file.
+Default configuration assumes that your api is running at localhost:8080
 
 ## TESTING ANGULAR FRONTEND
 
@@ -207,6 +208,7 @@ npm run e2e
 * Added separate routing modules to all lazy loaded Angular modules
 * Extracted common modules and providers to one place
 * Updated Angular-Cli to 1.0.0-beta.17
+* Rewritten all Angular tests
 
 
 ### 2.1.0 (28.08.2016)
