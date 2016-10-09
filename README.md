@@ -16,10 +16,9 @@ It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT toke
 * Build and testing process integrated with maven
 * Spring cloud microservices with service discovery
 * Spring security Oauth2 integration
-* Spring Boot application in development mode use resources from webpack dev server
 * Docker integration (optional)
-* Webpack2 integration
-* Scss support in angular components
+* Angular Cli integration
+* Scss support
 * Angular material integration
 * Font-awesome integration
 * Lazy loaded routes
@@ -71,44 +70,44 @@ mvn clean package -P prod-standalone
 Then run config server:
 ```
 cd shardis-config/
-java -jar ./target/shardis-config-2.1.0.jar
+java -jar ./target/shardis-config-2.2.0.jar
 ```
 
 Then run discovery server:
 ```
 cd shardis-discovery/
-java -jar ./target/shardis-discovery-2.1.0.jar
+java -jar ./target/shardis-discovery-2.2.0.jar
 ```
 
 Then run gateway server:
 ```
 cd shardis-gateway/
-java -jar ./target/shardis-gateway-2.1.0.jar
+java -jar ./target/shardis-gateway-2.2.0.jar
 ```
 
 Then run api server:
 ```
 cd shardis-api/
-java -jar ./target/shardis-api-2.1.0.jar
+java -jar ./target/shardis-api-2.2.0.jar
 ```
 
 Then run auth server:
 ```
 cd shardis-auth/
-java -jar ./target/shardis-auth-2.1.0.jar
+java -jar ./target/shardis-auth-2.2.0.jar
 ```
 
 Then run ui server:
 ```
 cd shardis-ui/
-java -jar ./target/shardis-ui-2.1.0.jar
+java -jar ./target/shardis-ui-2.2.0.jar
 ```
 
 
 Then run admin server (optional):
 ```
 cd shardis-admin/
-java -jar ./target/shardis-admin-2.1.0.jar
+java -jar ./target/shardis-admin-2.2.0.jar
 ```
 
 
@@ -164,13 +163,18 @@ cd shardis-admin
 mvn spring-boot:run -P dev-standalone
 ```
 
-## RUNNING WEBPACK DEV SERVER FOR DEVELOPMENT MODE:
+## RUNNING DEV SERVER FOR DEVELOPMENT MODE:
 
-Run webpack development server:
+Run development server:
 ```
 cd shardis-ui
 npm run server
 ```
+
+Visit your app at http://localhost:4200/
+
+Proxies for api calls can be configured in proxy.json file.
+Default configuration assumes that your api is running at localhost:8080
 
 ## TESTING ANGULAR FRONTEND
 
@@ -188,6 +192,24 @@ npm run e2e
 
 
 ## CHANGELOG:
+
+### 2.2.0 (unreleased)
+* Introduced Angular-Cli as angular build tool
+* Updated Angular to 2.0.2
+* Updated Angular Material to 2.0.0-alpha.9-3
+* Updated Node to v6.7.0
+* Updated Spring Platform to Athens-RELEASE
+* Updated Spring Boot to 1.4.1.RELEASE
+* Updated Spring Cloud to Camden.RELEASE
+* Updated Spring Boot Admin to 1.4.2
+* Updated Docker Maven Plugin to 0.4.13
+* Added docker cleanup script for Windows
+* Added tags for generated docker images
+* Added separate routing modules to all lazy loaded Angular modules
+* Extracted common modules and providers to one place
+* Updated Angular-Cli to 1.0.0-beta.17
+* Rewritten all Angular tests
+
 
 ### 2.1.0 (28.08.2016)
 * Added Spring Cloud Config server for centralized configuration
@@ -213,41 +235,6 @@ npm run e2e
 * Updated Angular to rc.5
 * Updated angular2-material to 2.0.0-alpha.7-2
 * Added live demo
-
-### 1.9.0 (29.07.2016)
-* Updated dependencies
-* Updated Angular to rc.4
-* Switched back to awesome-ts-loader (faster)
-* Updated Spring Cloud to Brixton.SR1
-* Removed lombok from project
-* Added UUID to all entities
-* Moved styles from main.scss to separate module
-* Updated Spring Cloud to Brixton.SR2
-* Updated Spring Platform to 2.0.6 and Spring Boot to 1.3.6
-* Renamed java test classes to match surefire convention
-* Webpack 2 and Typescript 2
-* Reduced bundle size
-* Updated Spring Cloud to Brixton.SR3
-* Enabled gzip compression
-* Removed typings in favor of types
-* Updated angular2-material to 2.0.0-alpha.6-2
-* Updated Spring Platform to 2.0.7 and Spring Boot to 1.3.7
-
-### 1.8.0 (30.06.2016)
-* Better directory structure for angular components
-* Dependency updates
-* Updated Angular to rc.2
-* Migrate awesome-ts-loader to ts-loader due to problems with karma
-* Migrate to router 3
-* Lazy routes with modified version of AngularClass webpack resolver
-* Updated Angular to rc.3
-* Added 404 page
-* Much cleaner webpack configuration
-* Role based visibility of menu items
-* CRUD example for authenticated users
-* Route access for selected roles (guards)
-* Switched to new Angular Forms
-* Updated angular2-material to 2.0.0-alpha.6
 
 
 [show full changelog](docs/CHANGELOG.md)

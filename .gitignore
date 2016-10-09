@@ -19,6 +19,7 @@ shardis-config/target/
 
 ### node
 npm-debug.log
+npm-debug.log*
 shardis-ui/etc/
 shardis-ui/node/
 shardis-ui/node_modules/
