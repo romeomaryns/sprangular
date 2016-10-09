@@ -1,5 +1,7 @@
 ## CHANGELOG:
 
+### 2.3.0 (unreleased)
+
 ### 2.2.0 (09.10.2016)
 * Introduced Angular-Cli as angular build tool
 * Updated Angular to 2.0.2

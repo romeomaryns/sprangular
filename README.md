@@ -1,6 +1,6 @@
 # SPRING BOOT ANGULAR 2 STARTER
 
-[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=master)](https://travis-ci.org/shardis/spring-angular2-starter)
+[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=dev)](https://travis-ci.org/shardis/spring-angular2-starter)
 
 ## PROJECT DESCRIPTION:
 
@@ -192,6 +192,8 @@ npm run e2e
 
 
 ## CHANGELOG:
+
+### 2.3.0 (unreleased)
 
 ### 2.2.0 (09.10.2016)
 * Introduced Angular-Cli as angular build tool
