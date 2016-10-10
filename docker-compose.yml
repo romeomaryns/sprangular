@@ -15,7 +15,7 @@ services:
      - config-service
     links:
      - config-service
-    entrypoint: ./wait-for-service.sh http://config-service:8888/health
+    entrypoint: ./wait-for-service.sh http://config-service:8888/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   api-service:
     image: spring-ng2-starter/shardis-api
     ports:
@@ -27,7 +27,7 @@ services:
      - discovery-service
      - auth-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   auth-service:
     image: spring-ng2-starter/shardis-auth
     ports:
@@ -37,7 +37,7 @@ services:
     links:
      - discovery-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   ui-service:
     image: spring-ng2-starter/shardis-ui
     ports:
@@ -53,7 +53,7 @@ services:
      - auth-service
      - api-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   gateway-service:
     image: spring-ng2-starter/shardis-gateway
     ports:
@@ -65,7 +65,7 @@ services:
       - auth-service
       - api-service
       - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   admin-service:
     image: spring-ng2-starter/shardis-admin
     ports:
@@ -78,4 +78,4 @@ services:
       - api-service
       - ui-service
       - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar

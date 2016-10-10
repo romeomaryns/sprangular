@@ -197,6 +197,8 @@ npm run e2e
 * Dependency updates
 * Updated Codelyzer to 1.0.0-beta.1 and re-enabled rules broken by Angular 2.0.2
 * Fixed scrollToTop method in crud form
+* Added wait-for-it script for docker (will wait on the availability of a host and TCP port)
+* Improved wait-for-service script (now can call optional command after service is ready)
 
 ### 2.2.0 (09.10.2016)
 * Introduced Angular-Cli as angular build tool

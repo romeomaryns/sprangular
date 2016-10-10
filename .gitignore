@@ -8,6 +8,7 @@
 .project
 
 ### maven
+target/
 shardis-common/target/
 shardis-discovery/target/
 shardis-auth/target/
