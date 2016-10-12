@@ -63,12 +63,13 @@ services:
      - 8101:8101
     depends_on:
      - discovery-service
-     - auth-service
+     - db-users
     links:
      - discovery-service
      - auth-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+     - db-users
+    entrypoint: ./wait-for-it.sh db-users:5432 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   blog-api-service:
     image: shardis/shardis-blog-api
     ports:
@@ -76,11 +77,13 @@ services:
     depends_on:
      - discovery-service
      - auth-service
+     - db-blog
     links:
      - discovery-service
      - auth-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+     - db-blog
+    entrypoint: ./wait-for-it.sh db-blog:5432 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   admin-service:
     image: shardis/shardis-admin
     ports:
@@ -95,3 +98,22 @@ services:
       - ui-service
       - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  db-users:
+    image: postgres:9.6.0
+    ports:
+      - 6001:5432
+    environment:
+     - POSTGRES_DB=db_users
+     - POSTGRES_USER=db_users_user
+     - POSTGRES_PASSWORD=db_users_password
+     - PGDATA=/var/lib/postgresql/data/pgdata
+  db-blog:
+    image: postgres:9.6.0
+    ports:
+      - 6002:5432
+    environment:
+     - POSTGRES_DB=db_blog
+     - POSTGRES_USER=db_blog_user
+     - POSTGRES_PASSWORD=db_blog_password
+     - PGDATA=/var/lib/postgresql/data/pgdata
+
