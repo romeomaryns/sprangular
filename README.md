@@ -145,9 +145,15 @@ cd shardis-gateway
 mvn spring-boot:run -P dev-standalone
 ```
 
-Run api server in development mode:
+Run user api server in development mode:
 ```
-cd shardis-api
+cd shardis-user-api
+mvn spring-boot:run -P dev-standalone
+```
+
+Run blog api server in development mode:
+```
+cd shardis-blog-api
 mvn spring-boot:run -P dev-standalone
 ```
 
