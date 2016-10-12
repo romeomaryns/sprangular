@@ -12,7 +12,8 @@ target/
 shardis-common/target/
 shardis-discovery/target/
 shardis-auth/target/
-shardis-api/target/
+shardis-user-api/target/
+shardis-blog-api/target/
 shardis-ui/target/
 shardis-admin/target/
 shardis-gateway/target/

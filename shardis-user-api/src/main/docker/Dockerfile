@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java:8
 VOLUME /tmp
-ADD shardis-api-2.3.0.jar /app.jar
+ADD shardis-user-api-2.3.0.jar /app.jar
 ADD wait-for-service.sh /wait-for-service.sh
 ADD wait-for-it.sh /wait-for-it.sh
 RUN bash -c 'touch /app.jar'

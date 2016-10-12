@@ -1,6 +1,6 @@
 # SPRING BOOT ANGULAR 2 STARTER
 
-[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=dev)](https://travis-ci.org/shardis/spring-angular2-starter)
+[![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=db_integration)](https://travis-ci.org/shardis/spring-angular2-starter)
 
 ## PROJECT DESCRIPTION:
 
@@ -85,10 +85,16 @@ cd shardis-gateway/
 java -jar ./target/shardis-gateway-2.3.0.jar
 ```
 
-Then run api server:
+Then run user api server:
 ```
-cd shardis-api/
-java -jar ./target/shardis-api-2.3.0.jar
+cd shardis-user-api/
+java -jar ./target/shardis-user-api-2.3.0.jar
+```
+
+Then run blog api server:
+```
+cd shardis-blog-api/
+java -jar ./target/shardis-blog-api-2.3.0.jar
 ```
 
 Then run auth server:

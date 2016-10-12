@@ -1,14 +1,32 @@
 version: '2'
 services:
   config-service:
-    image: spring-ng2-starter/shardis-config
+    image: shardis/shardis-config
     ports:
      - 8888:8888
     environment:
      - CONFIGURATION_REPOSITORY=https://github.com/shardis/spring-angular2-starter-configuration.git
-     - CONFIGURATION_BRANCH=dev
+     - CONFIGURATION_BRANCH=db_integration
+  ui-service:
+    image: shardis/shardis-ui
+    ports:
+     - 8080:8080
+    depends_on:
+     - discovery-service
+     - auth-service
+     - user-api-service
+     - blog-api-service
+     - gateway-service
+    links:
+     - discovery-service
+     - gateway-service
+     - auth-service
+     - user-api-service
+     - blog-api-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   discovery-service:
-    image: spring-ng2-starter/shardis-discovery
+    image: shardis/shardis-discovery
     ports:
      - 8081:8081
     depends_on:
@@ -16,66 +34,64 @@ services:
     links:
      - config-service
     entrypoint: ./wait-for-service.sh http://config-service:8888/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-  api-service:
-    image: spring-ng2-starter/shardis-api
+  auth-service:
+    image: shardis/shardis-auth
     ports:
      - 8082:8082
     depends_on:
      - discovery-service
-     - auth-service
     links:
      - discovery-service
-     - auth-service
-     - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-  auth-service:
-    image: spring-ng2-starter/shardis-auth
-    ports:
-     - 8083:8083
-    depends_on:
-     - discovery-service
-    links:
-     - discovery-service
-     - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-  ui-service:
-    image: spring-ng2-starter/shardis-ui
-    ports:
-     - 8080:8080
-    depends_on:
-     - discovery-service
-     - auth-service
-     - api-service
-     - gateway-service
-    links:
-     - discovery-service
-     - gateway-service
-     - auth-service
-     - api-service
      - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   gateway-service:
-    image: spring-ng2-starter/shardis-gateway
+    image: shardis/shardis-gateway
     ports:
-      - 8090:8090
+      - 8100:8100
     depends_on:
       - discovery-service
     links:
       - discovery-service
       - auth-service
-      - api-service
+      - user-api-service
+      - blog-api-service
       - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-  admin-service:
-    image: spring-ng2-starter/shardis-admin
+  user-api-service:
+    image: shardis/shardis-user-api
     ports:
-      - 8084:8084
+     - 8101:8101
+    depends_on:
+     - discovery-service
+     - auth-service
+    links:
+     - discovery-service
+     - auth-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  blog-api-service:
+    image: shardis/shardis-blog-api
+    ports:
+     - 8102:8102
+    depends_on:
+     - discovery-service
+     - auth-service
+    links:
+     - discovery-service
+     - auth-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  admin-service:
+    image: shardis/shardis-admin
+    ports:
+      - 8777:8777
     depends_on:
       - discovery-service
     links:
       - discovery-service
       - auth-service
-      - api-service
+      - user-api-service
+      - blog-api-service
       - ui-service
       - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
