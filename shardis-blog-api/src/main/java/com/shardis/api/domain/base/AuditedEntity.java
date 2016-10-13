@@ -8,7 +8,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.EntityListeners;
-import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 import java.time.LocalDateTime;
@@ -25,14 +24,12 @@ public class AuditedEntity extends BaseEntity {
     protected LocalDateTime createdDate;
 
     @CreatedBy
-    @ManyToOne
     protected Long createdBy;
 
     @LastModifiedDate
     protected LocalDateTime updatedDate;
 
     @LastModifiedBy
-    @ManyToOne
     protected Long updatedBy;
 
     @Version
