@@ -20,7 +20,7 @@ import java.util.List;
 
 @Transactional
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/blog/posts/")
 @PreAuthorize(value = "hasRole('ROLE_USER')")
 public class BlogPostRestController {
 

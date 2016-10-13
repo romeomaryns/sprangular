@@ -12,8 +12,8 @@ import java.security.Principal;
  */
 
 @RestController
-@RequestMapping("/")
-public class TestRestController {
+@RequestMapping("/user/")
+public class UserRestController {
 
     @RequestMapping("/title")
     public ValueObject getTitle(Principal user) {

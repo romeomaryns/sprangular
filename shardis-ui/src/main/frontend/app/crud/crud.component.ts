@@ -60,7 +60,7 @@ export class CrudComponent implements OnInit {
   }
 
   private fetchPosts() {
-    this.http.get('/api/posts/', {headers: this.authService.getAuthorizationHeaders()})
+    this.http.get('/api/blog/posts/', {headers: this.authService.getAuthorizationHeaders()})
       .subscribe(
         data => {
           this.posts = data.json();
@@ -70,7 +70,7 @@ export class CrudComponent implements OnInit {
   }
 
   private savePost(post: BlogPost) {
-    this.http.post(`/api/posts/`, post, {headers: this.authService.getAuthorizationHeaders()})
+    this.http.post(`/api/blog/posts/`, post, {headers: this.authService.getAuthorizationHeaders()})
       .subscribe(
         data => {
           console.log('Saved', data.json());
@@ -81,7 +81,7 @@ export class CrudComponent implements OnInit {
   }
 
   private deletePost(post: BlogPost) {
-    this.http.delete(`/api/posts/${post.id}`, {headers: this.authService.getAuthorizationHeaders()})
+    this.http.delete(`/api/blog/posts/${post.id}`, {headers: this.authService.getAuthorizationHeaders()})
       .subscribe(
         data => {
           console.log('Removed', data.json());

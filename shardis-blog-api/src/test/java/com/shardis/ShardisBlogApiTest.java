@@ -34,7 +34,7 @@ import com.shardis.api.domain.blog.BlogPost;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @WebAppConfiguration
-public class ShardisApiTest {
+public class ShardisBlogApiTest {
 
 	@Rule
 	public JUnitRestDocumentation  restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
@@ -60,7 +60,7 @@ public class ShardisApiTest {
 	@WithMockUser(username="admin",roles={"USER"})
 	public void postsWithUser() throws Exception {
 
-		this.mockMvc.perform(get("/posts/"))
+		this.mockMvc.perform(get("/blog/posts/"))
 			.andExpect(status().isOk())
 			.andDo(document("list-posts",
 					preprocessRequest(
@@ -87,7 +87,7 @@ public class ShardisApiTest {
 		BlogPost newPost = new BlogPost("Sample blog post title for testing", "Sample blog post content");
 
 		this.mockMvc.perform(
-                post("/posts/").contentType(MediaType.APPLICATION_JSON).content(
+                post("/blog/posts/").contentType(MediaType.APPLICATION_JSON).content(
                         this.objectMapper.writeValueAsString(newPost)
                 )
         ).andExpect(status().isOk())
@@ -114,7 +114,7 @@ public class ShardisApiTest {
 	@WithMockUser(username="admin",roles={"USER"})
     public void deletePost() throws Exception {
 		this.mockMvc.perform(
-                delete("/posts/1")
+                delete("/blog/posts/1")
         ).andExpect(status().isOk())
 		.andDo(document("delete-post"));
 	}
