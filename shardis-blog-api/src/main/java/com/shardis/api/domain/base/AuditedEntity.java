@@ -1,6 +1,5 @@
 package com.shardis.api.domain.base;
 
-import com.shardis.api.domain.user.User;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -27,14 +26,14 @@ public class AuditedEntity extends BaseEntity {
 
     @CreatedBy
     @ManyToOne
-    protected User createdBy;
+    protected Long createdBy;
 
     @LastModifiedDate
     protected LocalDateTime updatedDate;
 
     @LastModifiedBy
     @ManyToOne
-    protected User updatedBy;
+    protected Long updatedBy;
 
     @Version
     protected Long version;
@@ -43,7 +42,7 @@ public class AuditedEntity extends BaseEntity {
         return createdDate;
     }
 
-    public User getCreatedBy() {
+    public Long getCreatedBy() {
         return createdBy;
     }
 
@@ -51,7 +50,7 @@ public class AuditedEntity extends BaseEntity {
         return updatedDate;
     }
 
-    public User getUpdatedBy() {
+    public Long getUpdatedBy() {
         return updatedBy;
     }
 
