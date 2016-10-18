@@ -275,6 +275,11 @@
                                 <directory>${project.basedir}/../scripts</directory>
                                 <include>wait-for-it.sh</include>
                             </resource>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.basedir}/../scripts</directory>
+                                <include>sync-time.sh</include>
+                            </resource>
                         </resources>
                     </configuration>
                 </plugin>

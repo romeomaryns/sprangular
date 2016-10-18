@@ -6,6 +6,7 @@
 * Fixed scrollToTop method in crud form
 * Added wait-for-it script for docker (will wait on the availability of a host and TCP port)
 * Improved wait-for-service script (now can call optional command after service is ready)
+* Added clock synchronization to docker containers
 
 ### 2.2.0 (09.10.2016)
 * Introduced Angular-Cli as angular build tool

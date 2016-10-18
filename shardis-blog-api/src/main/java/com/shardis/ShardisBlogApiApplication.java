@@ -13,10 +13,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableResourceServer
 @EnableDiscoveryClient
 @EnableCaching
-public class ShardisNlogApiApplication {
+public class ShardisBlogApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShardisNlogApiApplication.class, args);
+        SpringApplication.run(ShardisBlogApiApplication.class, args);
     }
 
 }
