@@ -1,4 +1,7 @@
-# SPRING BOOT ANGULAR 2 STARTER
+## SPRING BOOT ANGULAR 2 STARTER
+---
+# PROJECT DISCONTINUED
+---
 
 [![Build Status](https://travis-ci.org/shardis/spring-angular2-starter.svg?branch=master)](https://travis-ci.org/shardis/spring-angular2-starter)
 
