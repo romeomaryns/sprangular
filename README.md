@@ -12,9 +12,6 @@ It could be used as base for your future Angular2 Java projects.
 Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
 
-### [LIVE DEMO: http://shardis.com/](http://shardis.com/)
-### [EUREKA: http://shardis.com:8081/](http://shardis.com:8081/)
-
 ## FEATURES:
 * Build and testing process integrated with maven
 * Spring cloud microservices with service discovery
