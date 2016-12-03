@@ -1,5 +1,5 @@
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\test.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\test.ts
 FN:15,(anonymous_1)
 FN:23,(anonymous_2)
 FN:30,(anonymous_3)
@@ -28,7 +28,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\polyfills.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\polyfills.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -53,7 +53,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\about\about.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\about\about.component.ts
 FN:8,(anonymous_3)
 FN:10,AboutComponent
 FN:13,(anonymous_5)
@@ -75,7 +75,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\access-denied\access-denied.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\access-denied\access-denied.component.ts
 FN:8,(anonymous_3)
 FN:10,AccessDeniedComponent
 FN:13,(anonymous_5)
@@ -97,7 +97,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\app.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\app.component.ts
 FN:11,(anonymous_3)
 FN:18,AppComponent
 FN:21,(anonymous_5)
@@ -131,7 +131,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\shared\auth\auth.service.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\shared\auth\auth.service.ts
 FN:6,(anonymous_3)
 FN:19,AuthService
 FN:15,(anonymous_5)
@@ -311,7 +311,7 @@ BRF:26
 BRH:9
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\app.menu.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\app.menu.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -321,7 +321,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\testing\testing.modules.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\testing\testing.modules.ts
 FN:62,(anonymous_1)
 FNF:1
 FNH:1
@@ -340,7 +340,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\crud\crud.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\crud\crud.component.ts
 FN:11,(anonymous_3)
 FN:18,CrudComponent
 FN:22,(anonymous_5)
@@ -475,7 +475,7 @@ BRF:8
 BRH:1
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\home\home.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\home\home.component.ts
 FN:10,(anonymous_3)
 FN:16,HomeComponent
 FN:20,(anonymous_5)
@@ -504,7 +504,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\home\shared\title.service.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\home\shared\title.service.ts
 FN:7,(anonymous_3)
 FN:10,TitleService
 FN:13,(anonymous_5)
@@ -533,7 +533,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\login\login.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\login\login.component.ts
 FN:10,(anonymous_3)
 FN:17,LoginComponent
 FN:20,(anonymous_5)
@@ -574,7 +574,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\not-found\not-found.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\not-found\not-found.component.ts
 FN:8,(anonymous_3)
 FN:10,NotFoundComponent
 FN:13,(anonymous_5)
@@ -596,7 +596,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\playground.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\playground.component.ts
 FN:8,(anonymous_3)
 FN:10,PlaygroundComponent
 FN:13,(anonymous_5)
@@ -618,7 +618,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\shared\hero-app\hero-app.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\shared\hero-app\hero-app.component.ts
 FN:10,(anonymous_3)
 FN:16,HeroAppComponent
 FN:19,(anonymous_5)
@@ -652,7 +652,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\shared\hero.service.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\shared\hero.service.ts
 FN:7,(anonymous_3)
 FN:9,HeroService
 FN:12,(anonymous_5)
@@ -684,7 +684,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\shared\mock-heroes.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\shared\mock-heroes.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -694,7 +694,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\shared\hero-detail\hero-detail.component.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\shared\hero-detail\hero-detail.component.ts
 FN:9,(anonymous_3)
 FN:14,HeroDetailComponent
 FN:17,(anonymous_5)
@@ -717,7 +717,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\playground\shared\hero.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\playground\shared\hero.ts
 FNF:0
 FNH:0
 LF:0
@@ -726,7 +726,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\shared\guards\admin.guard.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\shared\guards\admin.guard.ts
 FN:7,(anonymous_3)
 FN:8,AdminGuard
 FN:11,(anonymous_5)
@@ -755,7 +755,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\shared\guards\authenticated.guard.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\shared\guards\authenticated.guard.ts
 FN:7,(anonymous_3)
 FN:8,AuthenticatedGuard
 FN:11,(anonymous_5)
@@ -784,7 +784,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\shared\guards\unauthenticated.guard.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\shared\guards\unauthenticated.guard.ts
 FN:6,(anonymous_3)
 FN:7,UnauthenticatedGuard
 FN:10,(anonymous_5)
@@ -813,7 +813,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:C:/Users/romeo/Documents/git/spring-angular2-starter/shardis-ui/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\shardis-ui\src\main\frontend\app\shared\large\large.directive.ts
+SF:C:/Users/romeo/Documents/git/spring-angular2-starter/ui-service/node_modules\angular2-template-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\node_modules\tslint-loader\index.js!C:\Users\romeo\Documents\git\spring-angular2-starter\ui-service\src\main\frontend\app\shared\large\large.directive.ts
 FN:6,(anonymous_3)
 FN:8,LargeDirective
 FNF:2

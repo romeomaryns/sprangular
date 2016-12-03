@@ -2,7 +2,7 @@ package eu.maryns;
 
 import org.junit.Test;
 
-public class ShardisDiscoveryTest {
+public class DiscoveryTest {
 
     @Test
     public void contextLoads() {
