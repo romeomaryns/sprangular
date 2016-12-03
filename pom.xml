@@ -4,23 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.shardis</groupId>
-    <artifactId>shardis</artifactId>
-    <version>2.2.0</version>
+    <groupId>eu.maryns</groupId>
+    <artifactId>sprangular</artifactId>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
 
-    <name>shardis</name>
-    <description>shardis</description>
+    <name>sprangular</name>
+    <description>sprangular</description>
 
     <modules>
-        <module>shardis-common</module>
-        <module>shardis-discovery</module>
-        <module>shardis-auth</module>
-        <module>shardis-gateway</module>
-        <module>shardis-ui</module>
-        <module>shardis-api</module>
-        <module>shardis-config</module>
-        <module>shardis-admin</module>
+        <module>common-service</module>
+        <module>discovery-service</module>
+        <module>auth-service</module>
+        <module>gateway-service</module>
+        <module>ui-service</module>
+        <module>api-service</module>
+        <module>config-service</module>
+        <module>admin-service</module>
     </modules>
 
     <properties>

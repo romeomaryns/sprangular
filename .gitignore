@@ -27,3 +27,12 @@ shardis-ui/node_modules/
 shardis-ui/coverage/
 ### dist
 shardis-ui/src/main/resources/static/
+ui-service/node/node_modules/
+ui-service/target/
+api-service/target/
+common-service/target/
+auth-service/target/
+admin-service/target/
+gateway-service/target/
+discovery-service/target/
+config-service/target/
