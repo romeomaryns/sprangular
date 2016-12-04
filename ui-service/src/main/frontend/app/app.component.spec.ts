@@ -6,7 +6,7 @@ import {AuthService} from './shared/auth/auth.service';
 import {RouterTestingModule} from '@angular/router/testing';
 import {COMMON_TESTING_MODULES, COMMON_TESING_PROVIDERS} from './testing/testing.modules';
 
-describe('App: ShardisUi', () => {
+describe('App: Ui', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -34,17 +34,17 @@ describe('App: ShardisUi', () => {
   });
 
 
-  it(`should have as url ''https://github.com/shardis''`, () => {
+  it(`should have as url ''https://github.com/romeomaryns/sprangular''`, () => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
-    expect(app.url).toEqual('https://github.com/shardis');
+    expect(app.url).toEqual('https://github.com/romeomaryns/sprangular');
   });
 
   it('should render github link', () => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('md-card.footer a').textContent).toContain('by Shardis');
+    expect(compiled.querySelector('md-card.footer a').textContent).toContain('Github');
   });
 
   it('should properly log you out', () => {
